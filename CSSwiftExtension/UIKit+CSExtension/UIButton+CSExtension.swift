@@ -21,10 +21,6 @@ public extension UIButton {
     
     // 重复点击的间隔
     var cs_accpetEventInterval: NSTimeInterval {
-        set {
-            objc_setAssociatedObject(self, &cs_associatedKeys.accpetEventInterval, newValue as NSTimeInterval, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-        
         get {
             if let accpetEventInterval = objc_getAssociatedObject(self, &cs_associatedKeys.accpetEventInterval) as? NSTimeInterval {
                 return accpetEventInterval
@@ -32,19 +28,23 @@ public extension UIButton {
             
             return 1.0
         }
+        
+        set {
+            objc_setAssociatedObject(self, &cs_associatedKeys.accpetEventInterval, newValue as NSTimeInterval, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
     }
     
     var cs_acceptEventTime: NSTimeInterval {
-        set {
-            objc_setAssociatedObject(self, &cs_associatedKeys.acceptEventTime, newValue as NSTimeInterval, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-        
         get {
             if let acceptEventTime = objc_getAssociatedObject(self, &cs_associatedKeys.acceptEventTime) as? NSTimeInterval {
                 return acceptEventTime
             }
             
             return 1.0
+        }
+        
+        set {
+            objc_setAssociatedObject(self, &cs_associatedKeys.acceptEventTime, newValue as NSTimeInterval, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
