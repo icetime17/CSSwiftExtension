@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         btn.layer.borderWidth = 2.0
         btn.addTarget(self, action: #selector(ViewController.actionBtn), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(btn)
+        btn.cs_accpetEventInterval = 5.0
         
         let a = UIApplication.sharedApplication().cs_snapShot(self.view)
         let a1 = self.view.cs_snapShot()
