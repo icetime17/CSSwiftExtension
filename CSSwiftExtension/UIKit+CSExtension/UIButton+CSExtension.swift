@@ -8,7 +8,77 @@
 
 import UIKit
 
-// MARK: - UIButton Related
+// MARK: - UIButton backgroundColor
+
+public extension UIButton {
+
+    private struct cs_backgroundColor {
+        static var keyBackgroundColors              = "cs_keyBackgroundColors"
+        
+        static var keyBackgroundColor_Normal        = "cs_keyBackgroundColor_Normal"
+        static var keyBackgroundColor_Highlighted   = "cs_keyBackgroundColor_Highlighted"
+    }
+    
+    var cs_dictBackgroundColors: Dictionary<String, UIColor>! {
+        get {
+            if let dictBackgroundColors = objc_getAssociatedObject(self, &cs_backgroundColor.keyBackgroundColors) {
+                return dictBackgroundColors as! Dictionary<String, UIColor>
+            }
+            
+            return nil
+        }
+        
+        set {
+            objc_setAssociatedObject(self, &cs_backgroundColor.keyBackgroundColors, newValue as Dictionary<String, UIColor>, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    func cs_setBackgroundColor(color: UIColor, forState: UIControlState) {
+        if self.cs_dictBackgroundColors == nil {
+            self.cs_dictBackgroundColors = Dictionary<String, UIColor>()
+        }
+        
+        if let key = self.cs_stringForUIControlState(forState) {
+            self.cs_dictBackgroundColors[key] = color
+        }
+    }
+    
+    private func cs_stringForUIControlState(state: UIControlState) -> String! {
+        var cs_string = ""
+        
+        switch state {
+        case UIControlState.Normal:
+            cs_string = cs_backgroundColor.keyBackgroundColor_Normal
+        case UIControlState.Highlighted:
+            cs_string = cs_backgroundColor.keyBackgroundColor_Highlighted
+        default:
+            cs_string = cs_backgroundColor.keyBackgroundColor_Normal
+        }
+        
+        return cs_string
+    }
+    
+    override var highlighted: Bool {
+        get {
+            return super.highlighted
+        }
+        
+        set {
+            if newValue {
+                if let key = self.cs_stringForUIControlState(.Highlighted) {
+                    self.backgroundColor = self.cs_dictBackgroundColors[key]! 
+                }
+            } else {
+                if let key = self.cs_stringForUIControlState(.Normal) {
+                    self.backgroundColor = self.cs_dictBackgroundColors[key]!
+                }
+            }
+        }
+    }
+    
+}
+
+// MARK: - UIButton multi click issue
 
 public extension UIButton {
     

@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         print(UIApplication.sharedApplication().cs_currentViewController())
         
         self.testVC()
+        
+        self.testBtnBackgroundColor()
     }
     
     func testVC() {
@@ -48,5 +50,17 @@ class ViewController: UIViewController {
         self.presentViewController(vcA, animated: true, completion: nil)
     }
 
+    func testBtnBackgroundColor() {
+        let btn = UIButton(frame: CGRectMake(0, 100, self.view.frame.size.width, 50))
+        btn.setTitle("UIButton BackgroundColor", forState: UIControlState.Normal)
+        btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Highlighted)
+        self.view.addSubview(btn)
+        
+        btn.backgroundColor = UIColor.greenColor()
+        btn.cs_setBackgroundColor(UIColor.greenColor(), forState: .Normal)
+        btn.cs_setBackgroundColor(UIColor.blueColor(), forState: .Highlighted)
+    }
+    
 }
 
