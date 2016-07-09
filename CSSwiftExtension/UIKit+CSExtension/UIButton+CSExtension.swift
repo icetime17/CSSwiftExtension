@@ -64,6 +64,10 @@ public extension UIButton {
         }
         
         set {
+            if self.cs_dictBackgroundColors == nil {
+                return
+            }
+            
             if newValue {
                 if let key = self.cs_stringForUIControlState(.Highlighted) {
                     self.backgroundColor = self.cs_dictBackgroundColors[key]! 
