@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         self.testVC()
         
         self.testBtnBackgroundColor()
+        
+        self.testCSDownloader()
     }
     
     func testVC() {
@@ -60,6 +62,24 @@ class ViewController: UIViewController {
         btn.backgroundColor = UIColor.greenColor()
         btn.cs_setBackgroundColor(UIColor.greenColor(), forState: .Normal)
         btn.cs_setBackgroundColor(UIColor.blueColor(), forState: .Highlighted)
+    }
+ 
+    func testCSDownloader() {
+        let btn = UIButton(frame: CGRectMake(0, 200, self.view.frame.size.width, 50))
+        btn.setTitle("CSDownloader", forState: UIControlState.Normal)
+        btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Highlighted)
+        btn.backgroundColor = UIColor.greenColor()
+        btn.cs_setBackgroundColor(UIColor.greenColor(), forState: .Normal)
+        btn.cs_setBackgroundColor(UIColor.blueColor(), forState: .Highlighted)
+        self.view.addSubview(btn)
+        
+        btn.addTarget(self, action: #selector(ViewController.actionCSDownloader), forControlEvents: .TouchUpInside)
+    }
+    
+    func actionCSDownloader() {
+        let vc = CSDownloaderViewController()
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
 }

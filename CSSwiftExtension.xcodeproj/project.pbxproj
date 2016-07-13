@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8319B7691D28C65000464B9D /* UIButton+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8319B7681D28C65000464B9D /* UIButton+CSExtension.swift */; };
+		837464591D33B75D0022EB14 /* CSDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837464581D33B75D0022EB14 /* CSDownloader.swift */; };
 		83A2FEE31D1EF3E900264119 /* NSData+CSExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2FEDC1D1EF3E900264119 /* NSData+CSExtensionTests.swift */; };
 		83A2FEE41D1EF3E900264119 /* NSFileManager+CSExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2FEDD1D1EF3E900264119 /* NSFileManager+CSExtensionTests.swift */; };
 		83A2FEE51D1EF3E900264119 /* String+CSExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2FEDE1D1EF3E900264119 /* String+CSExtensionTests.swift */; };
@@ -41,6 +42,7 @@
 		83A2FF681D1EFF6600264119 /* UIDevice+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2FF421D1EFF4300264119 /* UIDevice+CSExtension.swift */; };
 		83A2FF691D1EFF6900264119 /* UIImage+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2FF431D1EFF4300264119 /* UIImage+CSExtension.swift */; };
 		83A2FF6A1D1EFF6C00264119 /* UIView+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2FF441D1EFF4300264119 /* UIView+CSExtension.swift */; };
+		83C43EB01D3290150051D80A /* CSDownloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C43EAF1D3290150051D80A /* CSDownloaderViewController.swift */; };
 		A40559151D1803A400577D29 /* CSSwiftExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40559141D1803A400577D29 /* CSSwiftExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		8319B7681D28C65000464B9D /* UIButton+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+CSExtension.swift"; sourceTree = "<group>"; };
+		837464581D33B75D0022EB14 /* CSDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSDownloader.swift; sourceTree = "<group>"; };
 		83A2FEDC1D1EF3E900264119 /* NSData+CSExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+CSExtensionTests.swift"; sourceTree = "<group>"; };
 		83A2FEDD1D1EF3E900264119 /* NSFileManager+CSExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+CSExtensionTests.swift"; sourceTree = "<group>"; };
 		83A2FEDE1D1EF3E900264119 /* String+CSExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CSExtensionTests.swift"; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		83A2FF571D1EFF4A00264119 /* CSSwiftExtension.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CSSwiftExtension.xcdatamodel; sourceTree = "<group>"; };
 		83A2FF581D1EFF4A00264119 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83A2FF591D1EFF4A00264119 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		83C43EAF1D3290150051D80A /* CSDownloaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSDownloaderViewController.swift; sourceTree = "<group>"; };
 		A40558F91D1803A400577D29 /* CSSwiftExtensionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSSwiftExtensionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40559101D1803A400577D29 /* CSSwiftExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSSwiftExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40559141D1803A400577D29 /* CSSwiftExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSwiftExtensionTests.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				83A2FF3A1D1EFF4300264119 /* CSNetworkManager.swift */,
+				837464581D33B75D0022EB14 /* CSDownloader.swift */,
 			);
 			path = CSNetworkManager;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			children = (
 				83A2FF4F1D1EFF4A00264119 /* AppDelegate.swift */,
 				83A2FF591D1EFF4A00264119 /* ViewController.swift */,
+				83C43EAF1D3290150051D80A /* CSDownloaderViewController.swift */,
 				83A2FF511D1EFF4A00264119 /* AViewController.swift */,
 				83A2FF521D1EFF4A00264119 /* LaunchScreen.storyboard */,
 				83A2FF541D1EFF4A00264119 /* Main.storyboard */,
@@ -299,6 +305,7 @@
 			files = (
 				83A2FF481D1EFF4300264119 /* String+CSExtension.swift in Sources */,
 				8319B7691D28C65000464B9D /* UIButton+CSExtension.swift in Sources */,
+				837464591D33B75D0022EB14 /* CSDownloader.swift in Sources */,
 				83A2FF5F1D1EFF4A00264119 /* CSSwiftExtension.xcdatamodeld in Sources */,
 				83A2FF4B1D1EFF4300264119 /* UIDevice+CSExtension.swift in Sources */,
 				83A2FF491D1EFF4300264119 /* UIApplication+CSExtension.swift in Sources */,
@@ -309,6 +316,7 @@
 				83A2FF611D1EFF4A00264119 /* ViewController.swift in Sources */,
 				83A2FF5C1D1EFF4A00264119 /* AViewController.swift in Sources */,
 				83A2FF471D1EFF4300264119 /* NSFileManager+CSExtension.swift in Sources */,
+				83C43EB01D3290150051D80A /* CSDownloaderViewController.swift in Sources */,
 				83A2FF5A1D1EFF4A00264119 /* AppDelegate.swift in Sources */,
 				83A2FF4A1D1EFF4300264119 /* UIColor+CSExtension.swift in Sources */,
 			);

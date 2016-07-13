@@ -30,7 +30,23 @@ public class CSNetworkManager: NSObject {
      - parameter urlString:         url
      - parameter completionHandler: completionHandler to execute after getting response
      */
-    public class func cs_GET(urlString: String, completionHandler: (jsonObject: AnyObject) -> Void) {
+    public class func cs_GET(urlString: String, completionHandler: (data: NSData!, response: NSURLResponse!, error: NSError?) -> Void) {
+        let request = NSURLRequest(URL: NSURL(string: urlString)!)
+        
+        let dataTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler:
+        { (data, response, error) in
+            completionHandler(data: data, response: response, error: error)
+        })
+        dataTask.resume()
+    }
+    
+    /**
+     Send GET request to get JSON object.
+     
+     - parameter urlString:         url
+     - parameter completionHandler: completionHandler to execute after getting response
+     */
+    public class func cs_getJSONObject(urlString: String, completionHandler: (jsonObject: AnyObject) -> Void) {
         let request = NSURLRequest(URL: NSURL(string: urlString)!)
         
         let dataTask = NSURLSession.sharedSession().dataTaskWithRequest(request)

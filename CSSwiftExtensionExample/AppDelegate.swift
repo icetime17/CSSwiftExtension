@@ -26,18 +26,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func testCSNetworkManager() {
         let urlString = "https://itunes.apple.com/lookup?id=1096082348"
         
-        
-        CSNetworkManager.cs_GET(urlString)
-        { (jsonObject: AnyObject) in
-            if let results = jsonObject["results"]! {
-                let appVersion = results.firstObject!?["version"]! as! String
-                print("cs_GET : appVersion: \(appVersion)")
+        CSNetworkManager.cs_GET(urlString) { (data, response, error) in
+            do {
+                let jsonObject = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
+                if let results = jsonObject["results"]! {
+                    let appVersion = results.firstObject!?["version"]! as! String
+                    print("cs_GET : appVersion: \(appVersion)")
+                }
+            } catch {
+                print("cs_GET : failed...")
             }
         }
-
         
-        let jsonObject = CSNetworkManager.cs_getJSONObjectSynchronously(urlString)
-        { (jsonObject: AnyObject) in
+        
+        CSNetworkManager.cs_getJSONObject(urlString) { (jsonObject) in
+            if let results = jsonObject["results"]! {
+                let appVersion = results.firstObject!?["version"]! as! String
+                print("cs_getJSONObject : appVersion: \(appVersion)")
+            }
+        }
+        
+        
+        let jsonObject = CSNetworkManager.cs_getJSONObjectSynchronously(urlString) { (jsonObject) in
             if let results = jsonObject["results"]! {
                 let appVersion = results.firstObject!?["version"]! as! String
                 print("cs_getJSONObjectSynchronously : appVersion: \(appVersion)")
