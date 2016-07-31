@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         self.testBtnBackgroundColor()
         
         self.testCSDownloader()
+        
+        self.testImageView_CSBlur()
     }
     
     func testVC() {
@@ -80,6 +82,16 @@ class ViewController: UIViewController {
     func actionCSDownloader() {
         let vc = CSDownloaderViewController()
         self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func testImageView_CSBlur() {
+        let imageBackground = UIImageView(frame: self.view.frame, blurEffectStyle: .Light)
+        imageBackground.image = UIImage(named: "Model.jpg")
+        self.view.insertSubview(imageBackground, atIndex: 0)
+        
+        let imageViewBlur = UIImageView(frame: CGRectMake(100, 300, 200, 300))
+        imageViewBlur.image = UIImage(named: "Model.jpg")?.cs_imageWithCornerRadius(20)
+        self.view.addSubview(imageViewBlur)
     }
     
 }

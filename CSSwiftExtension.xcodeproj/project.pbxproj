@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8319B7691D28C65000464B9D /* UIButton+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8319B7681D28C65000464B9D /* UIButton+CSExtension.swift */; };
+		837411F31D4DD80D0023BFF1 /* UIImageView+CSBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837411F21D4DD80D0023BFF1 /* UIImageView+CSBlur.swift */; };
+		837411F61D4DDA330023BFF1 /* Model.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 837411F51D4DDA330023BFF1 /* Model.jpg */; };
 		837464591D33B75D0022EB14 /* CSDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837464581D33B75D0022EB14 /* CSDownloader.swift */; };
 		83A2FEE31D1EF3E900264119 /* NSData+CSExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2FEDC1D1EF3E900264119 /* NSData+CSExtensionTests.swift */; };
 		83A2FEE41D1EF3E900264119 /* NSFileManager+CSExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2FEDD1D1EF3E900264119 /* NSFileManager+CSExtensionTests.swift */; };
@@ -58,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		8319B7681D28C65000464B9D /* UIButton+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+CSExtension.swift"; sourceTree = "<group>"; };
+		837411F21D4DD80D0023BFF1 /* UIImageView+CSBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+CSBlur.swift"; sourceTree = "<group>"; };
+		837411F51D4DDA330023BFF1 /* Model.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Model.jpg; sourceTree = "<group>"; };
 		837464581D33B75D0022EB14 /* CSDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSDownloader.swift; sourceTree = "<group>"; };
 		83A2FEDC1D1EF3E900264119 /* NSData+CSExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+CSExtensionTests.swift"; sourceTree = "<group>"; };
 		83A2FEDD1D1EF3E900264119 /* NSFileManager+CSExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+CSExtensionTests.swift"; sourceTree = "<group>"; };
@@ -108,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		837411F41D4DDA330023BFF1 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				837411F51D4DDA330023BFF1 /* Model.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		83A2FF381D1EFF4300264119 /* CSSwiftExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,11 +153,12 @@
 			isa = PBXGroup;
 			children = (
 				83A2FF401D1EFF4300264119 /* UIApplication+CSExtension.swift */,
-				83A2FF411D1EFF4300264119 /* UIColor+CSExtension.swift */,
 				83A2FF421D1EFF4300264119 /* UIDevice+CSExtension.swift */,
-				83A2FF431D1EFF4300264119 /* UIImage+CSExtension.swift */,
 				83A2FF441D1EFF4300264119 /* UIView+CSExtension.swift */,
+				837411F21D4DD80D0023BFF1 /* UIImageView+CSBlur.swift */,
 				8319B7681D28C65000464B9D /* UIButton+CSExtension.swift */,
+				83A2FF411D1EFF4300264119 /* UIColor+CSExtension.swift */,
+				83A2FF431D1EFF4300264119 /* UIImage+CSExtension.swift */,
 			);
 			path = "UIKit+CSExtension";
 			sourceTree = "<group>";
@@ -153,6 +166,7 @@
 		83A2FF4E1D1EFF4A00264119 /* CSSwiftExtensionExample */ = {
 			isa = PBXGroup;
 			children = (
+				837411F41D4DDA330023BFF1 /* Images */,
 				83A2FF4F1D1EFF4A00264119 /* AppDelegate.swift */,
 				83A2FF591D1EFF4A00264119 /* ViewController.swift */,
 				83C43EAF1D3290150051D80A /* CSDownloaderViewController.swift */,
@@ -286,6 +300,7 @@
 				83A2FF5E1D1EFF4A00264119 /* Main.storyboard in Resources */,
 				83A2FF5B1D1EFF4A00264119 /* Assets.xcassets in Resources */,
 				83A2FF5D1D1EFF4A00264119 /* LaunchScreen.storyboard in Resources */,
+				837411F61D4DDA330023BFF1 /* Model.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +323,7 @@
 				837464591D33B75D0022EB14 /* CSDownloader.swift in Sources */,
 				83A2FF5F1D1EFF4A00264119 /* CSSwiftExtension.xcdatamodeld in Sources */,
 				83A2FF4B1D1EFF4300264119 /* UIDevice+CSExtension.swift in Sources */,
+				837411F31D4DD80D0023BFF1 /* UIImageView+CSBlur.swift in Sources */,
 				83A2FF491D1EFF4300264119 /* UIApplication+CSExtension.swift in Sources */,
 				83A2FF4C1D1EFF4300264119 /* UIImage+CSExtension.swift in Sources */,
 				83A2FF461D1EFF4300264119 /* NSData+CSExtension.swift in Sources */,
