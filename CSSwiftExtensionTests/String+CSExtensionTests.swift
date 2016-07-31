@@ -30,6 +30,13 @@ class String_ExtensionTests: XCTestCase {
         print("abc123".cs_stringValue()!)
     }
     
+    func test_cs_nsdata() {
+        let data = "abcdefghijklmn".cs_NSData()
+        print(data)
+        let s = String(data: data, encoding: NSUTF8StringEncoding)!
+        print(s)
+    }
+    
     func testPerformanceExample() {
         self.measureBlock {
         }

@@ -39,4 +39,9 @@ public extension String {
         return nil
     }
     
+    // cs_NSData: return NSData of String
+    func cs_NSData() -> NSData {
+        return self.dataUsingEncoding(NSUTF8StringEncoding)!
+    }
+    
 }
