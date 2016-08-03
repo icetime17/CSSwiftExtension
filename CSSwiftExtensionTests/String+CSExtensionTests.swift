@@ -37,6 +37,11 @@ class String_ExtensionTests: XCTestCase {
         print(s)
     }
     
+    func test_cs_NSDate() {
+        let date1 = "2016-08-03 11:48:32".cs_NSDate()
+        print(date1)
+    }
+    
     func testPerformanceExample() {
         self.measureBlock {
         }

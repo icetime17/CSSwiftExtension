@@ -44,4 +44,12 @@ public extension String {
         return self.dataUsingEncoding(NSUTF8StringEncoding)!
     }
     
+    // cs_NSDate: return NSDate of String
+    func cs_NSDate() -> NSDate {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        
+        return dateFormatter.dateFromString(self)!
+    }
+    
 }
