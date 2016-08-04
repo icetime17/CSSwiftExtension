@@ -153,6 +153,34 @@ public extension UIImage {
         return imageRotated
     }
     
+    
+    /**
+     Mirror UIImage
+     
+     - returns: UIImage mirrored
+     */
+    func cs_imageMirrored() -> UIImage {
+        let width = self.size.width
+        let height = self.size.height
+        
+        UIGraphicsBeginImageContext(self.size)
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetInterpolationQuality(context, .High)
+        
+        CGContextTranslateCTM(context, width, height)
+        CGContextConcatCTM(context, CGAffineTransformMakeScale(-1, -1))
+        CGContextDrawImage(context, CGRectMake(0, 0, width, height), self.CGImage)
+        
+        let imageRef = CGBitmapContextCreateImage(context)
+        
+        let resultImage = UIImage(CGImage: imageRef!)
+        
+        UIGraphicsEndImageContext()
+        
+        return resultImage
+    }
+    
+    
     /**
      UIImage with corner radius without Off-Screen Rendering.
      Much better than setting layer.cornerRadius and layer.masksToBounds.

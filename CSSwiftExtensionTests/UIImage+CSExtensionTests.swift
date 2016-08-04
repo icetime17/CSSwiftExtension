@@ -38,6 +38,10 @@ class UIImage_ExtensionTests: XCTestCase {
         let l = UIImage(pureColor: pureColor, size: CGSizeMake(200, 200))
         
         print(successed1)
+        
+        let m = g.cs_imageMirrored()
+        
+        
     }
     
     func testPerformanceExample() {
