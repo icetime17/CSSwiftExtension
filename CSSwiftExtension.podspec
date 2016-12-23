@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CSSwiftExtension"
-  s.version      = "0.0.6"
+  s.version      = "0.0.7"
   s.summary      = "Some useful extension for Swift."
 
   # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
                     Some useful extension for Swift.
-                    Including Foundation, UIKit and CSNetworkManager.
+                    Including Foundation, UIKit.
                    DESC
 
   s.homepage     = "https://github.com/icetime17/CSSwiftExtension"
@@ -92,7 +92,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "CSSwiftExtension/**/*"
+  s.source_files  = "Sources/*.swift"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
