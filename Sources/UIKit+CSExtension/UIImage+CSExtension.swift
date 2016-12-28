@@ -253,6 +253,29 @@ extension UIImage {
         return normalizedImage!
     }
     
+    public func cs_grayScale() -> UIImage {
+        // Create image rectangle with current image width/height
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height);
+        // Grayscale color space
+        let colorSpace = CGColorSpaceCreateDeviceGray()
+        // Create bitmap content with current image size and grayscale colorspace
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue)
+        // Draw image into current context, with specified rectangle
+        // using previously defined context (with grayscale colorspace)
+        guard let context = CGContext(data: nil, width: Int(size.width), height: Int(size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue) else { return self }
+        
+        context.draw(cgImage!, in: rect)
+        // Create bitmap image info from pixel data in current context
+        guard let imageRef = context.makeImage() else { return self }
+        // Create a new UIImage object
+        let newImage = UIImage(cgImage: imageRef)
+        
+        // Release colorspace, context and bitmap information
+        
+        // Return the new grayscale image
+        return newImage;
+    }
+    
 }
 
 // MARK: - 微信分享缩略图

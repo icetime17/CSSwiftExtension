@@ -33,6 +33,7 @@ class UIImage_CSExtensionTests: XCTestCase {
         let f = image?.cs_imageScaledToSize(targetSize: CGSize(width: 300, height: 300), withOriginalRatio: true)
         let g = image?.cs_wechatShareThumbnail()
         
+        let h = image?.cs_grayScale()
         
         print("done")
     }
