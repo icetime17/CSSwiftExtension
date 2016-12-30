@@ -1,0 +1,3 @@
+framework module CSSwiftExtension {
+    header "CSSwiftExtension-Swift.h"
+}

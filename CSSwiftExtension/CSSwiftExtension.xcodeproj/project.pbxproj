@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A40D58481E165AEB00763603 /* CSSwiftExtensionFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = A40D58461E165AEB00763603 /* CSSwiftExtensionFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A40D584B1E165AEB00763603 /* CSSwiftExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D58441E165AEB00763603 /* CSSwiftExtension.framework */; };
+		A40D584C1E165AEB00763603 /* CSSwiftExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A40D58441E165AEB00763603 /* CSSwiftExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A40D58511E165BE300763603 /* Date+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA41E0D20FE00FBB743 /* Date+CSExtension.swift */; };
+		A40D58521E165BE300763603 /* NSFileManager+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA51E0D20FE00FBB743 /* NSFileManager+CSExtension.swift */; };
+		A40D58531E165BE300763603 /* String+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA61E0D20FE00FBB743 /* String+CSExtension.swift */; };
+		A40D58541E165BE300763603 /* UIApplication+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA81E0D20FE00FBB743 /* UIApplication+CSExtension.swift */; };
+		A40D58551E165BE300763603 /* UIColor+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CAA1E0D20FE00FBB743 /* UIColor+CSExtension.swift */; };
+		A40D58561E165BE300763603 /* UIDevice+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CAB1E0D20FE00FBB743 /* UIDevice+CSExtension.swift */; };
+		A40D58571E165BE300763603 /* UIImage+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CAC1E0D20FE00FBB743 /* UIImage+CSExtension.swift */; };
+		A40D58581E165BE300763603 /* UIImageView+CSBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CAD1E0D20FE00FBB743 /* UIImageView+CSBlur.swift */; };
+		A40D58591E165BE300763603 /* UIView+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CAE1E0D20FE00FBB743 /* UIView+CSExtension.swift */; };
 		A4564CB01E0D20FE00FBB743 /* Date+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA41E0D20FE00FBB743 /* Date+CSExtension.swift */; };
 		A4564CB11E0D20FE00FBB743 /* NSFileManager+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA51E0D20FE00FBB743 /* NSFileManager+CSExtension.swift */; };
 		A4564CB21E0D20FE00FBB743 /* String+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA61E0D20FE00FBB743 /* String+CSExtension.swift */; };
@@ -29,6 +41,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A40D58491E165AEB00763603 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A47B45C41E0B674D00492FF2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A40D58431E165AEB00763603;
+			remoteInfo = CSSwiftExtensionFramework;
+		};
 		A47B45E11E0B674D00492FF2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A47B45C41E0B674D00492FF2 /* Project object */;
@@ -38,7 +57,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A40D58501E165AEB00763603 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A40D584C1E165AEB00763603 /* CSSwiftExtension.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A40D58441E165AEB00763603 /* CSSwiftExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSSwiftExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A40D58461E165AEB00763603 /* CSSwiftExtensionFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSwiftExtensionFramework.h; sourceTree = "<group>"; };
+		A40D58471E165AEB00763603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4564CA41E0D20FE00FBB743 /* Date+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+CSExtension.swift"; sourceTree = "<group>"; };
 		A4564CA51E0D20FE00FBB743 /* NSFileManager+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+CSExtension.swift"; sourceTree = "<group>"; };
 		A4564CA61E0D20FE00FBB743 /* String+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CSExtension.swift"; sourceTree = "<group>"; };
@@ -64,10 +100,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A40D58401E165AEB00763603 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A47B45C91E0B674D00492FF2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A40D584B1E165AEB00763603 /* CSSwiftExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A40D58451E165AEB00763603 /* CSSwiftExtensionFramework */ = {
+			isa = PBXGroup;
+			children = (
+				A40D58461E165AEB00763603 /* CSSwiftExtensionFramework.h */,
+				A40D58471E165AEB00763603 /* Info.plist */,
+			);
+			path = CSSwiftExtensionFramework;
+			sourceTree = "<group>";
+		};
 		A4564CA21E0D20FE00FBB743 /* Foundation+CSExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +163,7 @@
 				A47B45EF1E0B67C200492FF2 /* Sources */,
 				A47B45CE1E0B674D00492FF2 /* CSSwiftExtension */,
 				A47B45E31E0B674D00492FF2 /* CSSwiftExtensionTests */,
+				A40D58451E165AEB00763603 /* CSSwiftExtensionFramework */,
 				A47B45CD1E0B674D00492FF2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,6 +173,7 @@
 			children = (
 				A47B45CC1E0B674D00492FF2 /* CSSwiftExtension.app */,
 				A47B45E01E0B674D00492FF2 /* CSSwiftExtensionTests.xctest */,
+				A40D58441E165AEB00763603 /* CSSwiftExtension.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,7 +215,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		A40D58411E165AEB00763603 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A40D58481E165AEB00763603 /* CSSwiftExtensionFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		A40D58431E165AEB00763603 /* CSSwiftExtensionFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A40D584F1E165AEB00763603 /* Build configuration list for PBXNativeTarget "CSSwiftExtensionFramework" */;
+			buildPhases = (
+				A40D583F1E165AEB00763603 /* Sources */,
+				A40D58401E165AEB00763603 /* Frameworks */,
+				A40D58411E165AEB00763603 /* Headers */,
+				A40D58421E165AEB00763603 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CSSwiftExtensionFramework;
+			productName = CSSwiftExtensionFramework;
+			productReference = A40D58441E165AEB00763603 /* CSSwiftExtension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		A47B45CB1E0B674D00492FF2 /* CSSwiftExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A47B45E91E0B674D00492FF2 /* Build configuration list for PBXNativeTarget "CSSwiftExtension" */;
@@ -168,10 +252,12 @@
 				A47B45C81E0B674D00492FF2 /* Sources */,
 				A47B45C91E0B674D00492FF2 /* Frameworks */,
 				A47B45CA1E0B674D00492FF2 /* Resources */,
+				A40D58501E165AEB00763603 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A40D584A1E165AEB00763603 /* PBXTargetDependency */,
 			);
 			name = CSSwiftExtension;
 			productName = CSSwiftExtension;
@@ -206,6 +292,11 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = com.icetime17;
 				TargetAttributes = {
+					A40D58431E165AEB00763603 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = GGVWN85K85;
+						ProvisioningStyle = Automatic;
+					};
 					A47B45CB1E0B674D00492FF2 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = GGVWN85K85;
@@ -234,11 +325,19 @@
 			targets = (
 				A47B45CB1E0B674D00492FF2 /* CSSwiftExtension */,
 				A47B45DF1E0B674D00492FF2 /* CSSwiftExtensionTests */,
+				A40D58431E165AEB00763603 /* CSSwiftExtensionFramework */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A40D58421E165AEB00763603 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A47B45CA1E0B674D00492FF2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -260,6 +359,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A40D583F1E165AEB00763603 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A40D58511E165BE300763603 /* Date+CSExtension.swift in Sources */,
+				A40D58521E165BE300763603 /* NSFileManager+CSExtension.swift in Sources */,
+				A40D58531E165BE300763603 /* String+CSExtension.swift in Sources */,
+				A40D58541E165BE300763603 /* UIApplication+CSExtension.swift in Sources */,
+				A40D58551E165BE300763603 /* UIColor+CSExtension.swift in Sources */,
+				A40D58561E165BE300763603 /* UIDevice+CSExtension.swift in Sources */,
+				A40D58571E165BE300763603 /* UIImage+CSExtension.swift in Sources */,
+				A40D58581E165BE300763603 /* UIImageView+CSBlur.swift in Sources */,
+				A40D58591E165BE300763603 /* UIView+CSExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A47B45C81E0B674D00492FF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +407,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A40D584A1E165AEB00763603 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A40D58431E165AEB00763603 /* CSSwiftExtensionFramework */;
+			targetProxy = A40D58491E165AEB00763603 /* PBXContainerItemProxy */;
+		};
 		A47B45E21E0B674D00492FF2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A47B45CB1E0B674D00492FF2 /* CSSwiftExtension */;
@@ -319,6 +439,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A40D584D1E165AEB00763603 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GGVWN85K85;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CSSwiftExtensionFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.icetime17.CSSwiftExtensionFramework;
+				PRODUCT_NAME = CSSwiftExtension;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A40D584E1E165AEB00763603 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GGVWN85K85;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CSSwiftExtensionFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.icetime17.CSSwiftExtensionFramework;
+				PRODUCT_NAME = CSSwiftExtension;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		A47B45E71E0B674D00492FF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -413,10 +583,11 @@
 		A47B45EA1E0B674D00492FF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GGVWN85K85;
 				INFOPLIST_FILE = CSSwiftExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icetime17.CSSwiftExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -427,10 +598,11 @@
 		A47B45EB1E0B674D00492FF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GGVWN85K85;
 				INFOPLIST_FILE = CSSwiftExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icetime17.CSSwiftExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -471,6 +643,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A40D584F1E165AEB00763603 /* Build configuration list for PBXNativeTarget "CSSwiftExtensionFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A40D584D1E165AEB00763603 /* Debug */,
+				A40D584E1E165AEB00763603 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		A47B45C71E0B674D00492FF2 /* Build configuration list for PBXProject "CSSwiftExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
