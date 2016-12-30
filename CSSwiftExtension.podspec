@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CSSwiftExtension"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "Some ***useful extension for Swift*** to boost your productivity."
 
   s.description  = <<-DESC

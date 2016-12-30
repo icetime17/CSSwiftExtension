@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/icetime17/CSSwiftExtension.svg?branch=master)](https://travis-ci.org/icetime17/CSSwiftExtension)
 [![Cocoapods](https://img.shields.io/cocoapods/v/CSSwiftExtension.svg)](https://cocoapods.org/pods/CSSwiftExtension)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)](https://swift.org)
 [![Platform](https://img.shields.io/badge/Platform-iOS-lightgrey.svg)](https://github.com/icetime17/CSSwiftExtension)
 [![Xcode](https://img.shields.io/badge/Xcode-8.0-blue.svg)](https://developer.apple.com/xcode)
@@ -18,9 +19,48 @@ Xcode 8 (or later) with Swift 3. This library is made for iOS 8 or later, howeve
 
 ### CocoaPods
 
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
 ```bash
-pod 'CSSwiftExtension'
+$ gem install cocoapods
 ```
+
+To integrate CSSwiftExtension into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'CSSwiftExtension'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate CSSwiftExtension into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```
+github "icetime17/CSSwiftExtension"
+```
+
+Run `carthage update` to build the framework and drag the built `CSSwiftExtension.framework` in folder /Carthage/Build/iOS into your Xcode project.
 
 ### Manually
 

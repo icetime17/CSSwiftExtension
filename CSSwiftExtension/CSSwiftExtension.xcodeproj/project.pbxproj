@@ -650,6 +650,7 @@
 				A40D584E1E165AEB00763603 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A47B45C71E0B674D00492FF2 /* Build configuration list for PBXProject "CSSwiftExtension" */ = {
 			isa = XCConfigurationList;

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A40D58431E165AEB00763603"
-               BuildableName = "CSSwiftExtensionFramework.framework"
+               BuildableName = "CSSwiftExtension.framework"
                BlueprintName = "CSSwiftExtensionFramework"
                ReferencedContainer = "container:CSSwiftExtension.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A40D58431E165AEB00763603"
-            BuildableName = "CSSwiftExtensionFramework.framework"
+            BuildableName = "CSSwiftExtension.framework"
             BlueprintName = "CSSwiftExtensionFramework"
             ReferencedContainer = "container:CSSwiftExtension.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A40D58431E165AEB00763603"
-            BuildableName = "CSSwiftExtensionFramework.framework"
+            BuildableName = "CSSwiftExtension.framework"
             BlueprintName = "CSSwiftExtensionFramework"
             ReferencedContainer = "container:CSSwiftExtension.xcodeproj">
          </BuildableReference>
