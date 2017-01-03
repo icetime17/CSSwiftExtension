@@ -43,6 +43,7 @@
 		A47EAAEE1E1B776900D25169 /* AView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47EAAED1E1B776900D25169 /* AView.xib */; };
 		A47EAAF01E1B7F2000D25169 /* UITableView+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EAAEF1E1B7F2000D25169 /* UITableView+CSExtension.swift */; };
 		A47EAAF21E1B819600D25169 /* UICollectionView+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EAAF11E1B819600D25169 /* UICollectionView+CSExtension.swift */; };
+		A47EAAF41E1B874600D25169 /* CGPoint+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EAAF31E1B874600D25169 /* CGPoint+CSExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		A47EAAED1E1B776900D25169 /* AView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AView.xib; sourceTree = "<group>"; };
 		A47EAAEF1E1B7F2000D25169 /* UITableView+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+CSExtension.swift"; sourceTree = "<group>"; };
 		A47EAAF11E1B819600D25169 /* UICollectionView+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+CSExtension.swift"; sourceTree = "<group>"; };
+		A47EAAF31E1B874600D25169 /* CGPoint+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+CSExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				A4564CAE1E0D20FE00FBB743 /* UIView+CSExtension.swift */,
 				A47EAAEF1E1B7F2000D25169 /* UITableView+CSExtension.swift */,
 				A47EAAF11E1B819600D25169 /* UICollectionView+CSExtension.swift */,
+				A47EAAF31E1B874600D25169 /* CGPoint+CSExtension.swift */,
 			);
 			path = "UIKit+CSExtension";
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				A4564CB51E0D20FE00FBB743 /* UIColor+CSExtension.swift in Sources */,
 				A4564CB21E0D20FE00FBB743 /* String+CSExtension.swift in Sources */,
 				A40D58611E1B4D4500763603 /* UIScreen+CSExtension.swift in Sources */,
+				A47EAAF41E1B874600D25169 /* CGPoint+CSExtension.swift in Sources */,
 				A4564CB11E0D20FE00FBB743 /* NSFileManager+CSExtension.swift in Sources */,
 				A47EAAF21E1B819600D25169 /* UICollectionView+CSExtension.swift in Sources */,
 				A4564CB91E0D20FE00FBB743 /* UIView+CSExtension.swift in Sources */,
