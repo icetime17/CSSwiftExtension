@@ -8,7 +8,13 @@
 
 import Foundation
 
-// MARK: - String
+public extension String {
+
+    public var cs_length: Int {
+        return characters.count
+    }
+
+}
 
 public extension String {
     
