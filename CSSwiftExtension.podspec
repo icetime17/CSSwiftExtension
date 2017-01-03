@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CSSwiftExtension"
-  s.version      = "0.0.8"
+  s.version      = "0.0.9"
   s.summary      = "Some ***useful extension for Swift*** to boost your productivity."
 
   s.description  = <<-DESC
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/icetime17/CSSwiftExtension"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
-  s.author       = { "Chris Hu" => "icetime17@126.com" }
+  s.author       = { "Chris Hu" => "icetime017@gmail.com" }
 
   s.ios.deployment_target = "8.0"
 

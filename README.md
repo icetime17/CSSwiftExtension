@@ -75,7 +75,15 @@ Add the ***Sources*** folder to your Xcode project to use all extensions, or a s
 ```Swift
 let string = " hello 17, this is my city "
 let a = string.cs_trim()
+let b = string.cs_length
 ```
+
+#### Array extension
+```Swift
+[1, 5, 10].cs_sum
+["a", "b", "c", "a", "c"].cs_removeDuplicates
+```
+
 
 ### UIKit
 
@@ -88,6 +96,7 @@ UIApplication.shared.cs_currentViewController()
 #### UIColor extension
 ```Swift
 imageView.backgroundColor = UIColor(hexString: 0x123456, alpha: 0.5)
+imageView.backgroundColor = UIColor.cs_random
 ```
 
 #### UIImage extension
@@ -101,6 +110,17 @@ let e = image.cs_imageWithCornerRadius(cornerRadius: 100)
 let f = image.cs_imageScaledToSize(targetSize: CGSize(width: 300, height: 300), withOriginalRatio: true)
 let g = image.cs_wechatShareThumbnail()
 let h = image.cs_grayScale()
+
+// Thanks to https://github.com/bahlo/SwiftGif for gif support
+aImageView.loadGif(name: "Railway")
+aImageView.image = UIImage.gif(name: "Railway")
+```
+
+#### UIView extension
+```Swift
+imageView.cs_snapShot()
+let aView = AView.cs_loadFromNib("AView") as? AView
+aView.cs_cornerRadius(corners: [.bottomLeft, .bottomRight], radius: 20)
 ```
 
 #### UIImageView extension
@@ -108,9 +128,16 @@ let h = image.cs_grayScale()
 let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 500), blurEffectStyle: .light)
 ```
 
-#### UIView extension
+#### UITableView extension
 ```Swift
-imageView.cs_snapShot()
+aTableView.cs_removeEmptyFooter()
+aTableView.cs_scrollToTop(animated: true)
+```
+
+#### CGPoint extension
+```Swift
+aPoint.cs_distance(toPoint: bPoint)
+CGPoint.cs_distance(fromPoint: aPoint, toPoint: bPoint)
 ```
 
 
