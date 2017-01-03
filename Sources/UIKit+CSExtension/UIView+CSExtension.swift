@@ -113,7 +113,7 @@ public extension UIView {
     
     // init UIView from a nib file
     // let aView = AView.cs_loadFromNib("AView") as? AView
-    class func cs_loadFromNib(_ nibName: String, bundle: Bundle? = nil) -> UIView? {
+    public class func cs_loadFromNib(_ nibName: String, bundle: Bundle? = nil) -> UIView? {
         return UINib(nibName: nibName, bundle: bundle).instantiate(withOwner: nil, options: nil).first as? UIView
     }
 }

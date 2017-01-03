@@ -77,6 +77,8 @@ class ViewController: UIViewController {
         aView.center = view.center
         view.addSubview(aView)
         aView.lbTitle.text = "TestView"
+        
+        aView.lbTitle.backgroundColor = UIColor.cs_random
     }
 
     func actionTapGesture() {

@@ -19,4 +19,12 @@ public extension UIColor {
         let blue    = CGFloat((hexString & 0x0000FF)      ) / 255.0
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
+    
+    public class var cs_random: UIColor {
+        let r = CGFloat(Double(arc4random() % 255) / 255.0)
+        let g = CGFloat(Double(arc4random() % 255) / 255.0)
+        let b = CGFloat(Double(arc4random() % 255) / 255.0)
+        return UIColor(red: r, green: g, blue: b, alpha: 1)
+    }
+    
 }
