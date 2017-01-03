@@ -78,8 +78,6 @@ public extension UIView {
 }
 
 
-// MARK: - snapShot
-
 public extension UIView {
     
     public var cs_snapshot: UIImage? {
@@ -96,6 +94,7 @@ public extension UIView {
     
 }
 
+
 public extension UIView {
     
     // add corner radius
@@ -109,6 +108,7 @@ public extension UIView {
     
 }
 
+
 public extension UIView {
     
     // init UIView from a nib file
@@ -117,3 +117,11 @@ public extension UIView {
         return UINib(nibName: nibName, bundle: bundle).instantiate(withOwner: nil, options: nil).first as? UIView
     }
 }
+
+
+public extension UIView {
+    public func cs_removeGestureRecognizers() {
+        gestureRecognizers?.forEach(removeGestureRecognizer)
+    }
+}
+

@@ -9,8 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var imageView: UIImageView!
+    var anotherImageView: UIImageView!
+    
     var btnTest: UIButton!
+    
+    var tapGesture: UITapGestureRecognizer!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +38,7 @@ class ViewController: UIViewController {
     
     private func testBlurImageView() {
 //        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 500), blurEffectStyle: .light)
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
+        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
         imageView.backgroundColor = UIColor(hexString: 0x123456, alpha: 0.5)
         imageView.contentMode = .scaleAspectFit
         view.addSubview(imageView)
@@ -41,13 +47,19 @@ class ViewController: UIViewController {
     }
 
     func testAnotherImageView() {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
-        imageView.backgroundColor = UIColor(hexString: 0x123456, alpha: 0.5)
-        imageView.contentMode = .scaleAspectFit
-        view.addSubview(imageView)
-        imageView.center = view.center
-        imageView.image = UIImage(named: "Model.jpg")?.cs_grayScale()
-        imageView.alpha = 0.5
+        anotherImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
+        anotherImageView.backgroundColor = UIColor(hexString: 0x123456, alpha: 0.5)
+        anotherImageView.contentMode = .scaleAspectFit
+        view.addSubview(anotherImageView)
+        anotherImageView.center = view.center
+        anotherImageView.image = UIImage(named: "Model.jpg")?.cs_grayScale()
+        anotherImageView.alpha = 0.5
+        
+        print(anotherImageView.isUserInteractionEnabled)
+        
+        anotherImageView.isUserInteractionEnabled = true
+        tapGesture = UITapGestureRecognizer(target: self, action: .actionTapGesture)
+        anotherImageView.addGestureRecognizer(tapGesture)
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,6 +68,8 @@ class ViewController: UIViewController {
     }
     
     func actionBtnTest() {
+        print(tapGesture)
+        
         btnTest.cs_cornerRadius(corners: [.bottomLeft, .bottomRight], radius: 20)
         
         guard let aView = AView.cs_loadFromNib("AView") as? AView else { return }
@@ -65,12 +79,18 @@ class ViewController: UIViewController {
         aView.lbTitle.text = "TestView"
     }
 
+    func actionTapGesture() {
+        print(#function)
+        
+        anotherImageView.cs_removeGestureRecognizers()
+    }
 }
 
 
 // MARK: - Selector
 private extension Selector {
     static let actionBtnTest = #selector(ViewController.actionBtnTest)
+    static let actionTapGesture = #selector(ViewController.actionTapGesture)
 }
 
 
