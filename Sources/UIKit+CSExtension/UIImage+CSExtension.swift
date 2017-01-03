@@ -33,17 +33,14 @@ extension UIImage {
      - returns: UIImage
      */
     public convenience init(pureColor: UIColor, targetSize: CGSize) {
-        let rect = CGRect(x: 0, y: 0, width: targetSize.width, height: targetSize.height)
-        
-        UIGraphicsBeginImageContextWithOptions(targetSize, false, 0)
-        let context = UIGraphicsGetCurrentContext()
-        context?.setFillColor(pureColor.cgColor)
-        context?.fill(rect)
-        let imageWithPureColor: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        
-        let imageData = UIImagePNGRepresentation(imageWithPureColor)
-        self.init(data: imageData!)!
+        UIGraphicsBeginImageContextWithOptions(targetSize, false, 1)
+        defer {
+            UIGraphicsEndImageContext()
+        }
+        pureColor.setFill()
+        UIRectFill(CGRect(origin: CGPoint.zero, size: targetSize))
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        self.init(cgImage: image.cgImage!)
     }
     
 }
