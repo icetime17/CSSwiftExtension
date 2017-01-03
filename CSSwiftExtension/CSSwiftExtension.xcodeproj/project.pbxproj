@@ -41,6 +41,8 @@
 		A47B45E51E0B674D00492FF2 /* CSSwiftExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47B45E41E0B674D00492FF2 /* CSSwiftExtensionTests.swift */; };
 		A47EAAEC1E1B775C00D25169 /* AView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EAAEB1E1B775C00D25169 /* AView.swift */; };
 		A47EAAEE1E1B776900D25169 /* AView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47EAAED1E1B776900D25169 /* AView.xib */; };
+		A47EAAF01E1B7F2000D25169 /* UITableView+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EAAEF1E1B7F2000D25169 /* UITableView+CSExtension.swift */; };
+		A47EAAF21E1B819600D25169 /* UICollectionView+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EAAF11E1B819600D25169 /* UICollectionView+CSExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		A47B45E61E0B674D00492FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A47EAAEB1E1B775C00D25169 /* AView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AView.swift; sourceTree = "<group>"; };
 		A47EAAED1E1B776900D25169 /* AView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AView.xib; sourceTree = "<group>"; };
+		A47EAAEF1E1B7F2000D25169 /* UITableView+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+CSExtension.swift"; sourceTree = "<group>"; };
+		A47EAAF11E1B819600D25169 /* UICollectionView+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+CSExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,8 @@
 				A4564CAC1E0D20FE00FBB743 /* UIImage+CSExtension.swift */,
 				A4564CAD1E0D20FE00FBB743 /* UIImageView+CSBlur.swift */,
 				A4564CAE1E0D20FE00FBB743 /* UIView+CSExtension.swift */,
+				A47EAAEF1E1B7F2000D25169 /* UITableView+CSExtension.swift */,
+				A47EAAF11E1B819600D25169 /* UICollectionView+CSExtension.swift */,
 			);
 			path = "UIKit+CSExtension";
 			sourceTree = "<group>";
@@ -396,10 +402,12 @@
 				A4564CB21E0D20FE00FBB743 /* String+CSExtension.swift in Sources */,
 				A40D58611E1B4D4500763603 /* UIScreen+CSExtension.swift in Sources */,
 				A4564CB11E0D20FE00FBB743 /* NSFileManager+CSExtension.swift in Sources */,
+				A47EAAF21E1B819600D25169 /* UICollectionView+CSExtension.swift in Sources */,
 				A4564CB91E0D20FE00FBB743 /* UIView+CSExtension.swift in Sources */,
 				A4564CB71E0D20FE00FBB743 /* UIImage+CSExtension.swift in Sources */,
 				A4564CB81E0D20FE00FBB743 /* UIImageView+CSBlur.swift in Sources */,
 				A47EAAEC1E1B775C00D25169 /* AView.swift in Sources */,
+				A47EAAF01E1B7F2000D25169 /* UITableView+CSExtension.swift in Sources */,
 				A47B45D01E0B674D00492FF2 /* AppDelegate.swift in Sources */,
 				A4564CB31E0D20FE00FBB743 /* UIApplication+CSExtension.swift in Sources */,
 			);
