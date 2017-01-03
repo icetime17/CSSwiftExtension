@@ -95,3 +95,25 @@ public extension UIView {
     }
     
 }
+
+public extension UIView {
+    
+    // add corner radius
+    // aView.cs_cornerRadius(corners: [.bottomLeft, .bottomRight], radius: 20)
+    public func cs_cornerRadius(corners: UIRectCorner, radius: CGFloat) {
+        let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let shape = CAShapeLayer()
+        shape.path = maskPath.cgPath
+        layer.mask = shape
+    }
+    
+}
+
+public extension UIView {
+    
+    // init UIView from a nib file
+    // let aView = AView.cs_loadFromNib("AView") as? AView
+    class func cs_loadFromNib(_ nibName: String, bundle: Bundle? = nil) -> UIView? {
+        return UINib(nibName: nibName, bundle: bundle).instantiate(withOwner: nil, options: nil).first as? UIView
+    }
+}

@@ -56,23 +56,13 @@ class ViewController: UIViewController {
     }
     
     func actionBtnTest() {
-        /*
-        print(btnTest.cs_left)
-        btnTest.cs_left = btnTest.cs_left + 50
-        print(btnTest.cs_left)
- 
+        btnTest.cs_cornerRadius(corners: [.bottomLeft, .bottomRight], radius: 20)
         
-        print(btnTest.cs_right)
-        btnTest.cs_right = btnTest.cs_right + 50
-        print(btnTest.cs_right)
-         */
-        
-        print(btnTest.cs_height)
-        btnTest.cs_height = btnTest.cs_height + 50
-        print(btnTest.cs_height)
-        
-        print(UIDevice.current.cs_currentLanguage())
-        print(UIScreen.main.cs_screenSize())
+        guard let aView = AView.cs_loadFromNib("AView") as? AView else { return }
+        aView.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
+        aView.center = view.center
+        view.addSubview(aView)
+        aView.lbTitle.text = "TestView"
     }
 
 }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AView" customModule="CSSwiftExtension" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Model.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Xzq-hm-TiS">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxv-w7-eXt">
+                    <rect key="frame" x="0.0" y="35" width="100" height="30"/>
+                    <color key="backgroundColor" red="0.23921568630000001" green="0.83529411760000005" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Rrp-aD-QIv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Xzq-hm-TiS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OAd-Dc-Qat"/>
+                <constraint firstItem="dxv-w7-eXt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="UqS-Y7-zE0"/>
+                <constraint firstItem="Xzq-hm-TiS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aFL-1M-SR7"/>
+                <constraint firstItem="Xzq-hm-TiS" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="abK-OH-3Cw"/>
+                <constraint firstItem="Xzq-hm-TiS" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="ttO-eY-bRT"/>
+                <constraint firstItem="dxv-w7-eXt" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yOX-ce-jNB"/>
+                <constraint firstItem="dxv-w7-eXt" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="zw9-yT-Zf5"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="lbTitle" destination="dxv-w7-eXt" id="pgz-Ot-vgU"/>
+            </connections>
+            <point key="canvasLocation" x="-172.5" y="-371.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Model.jpg" width="1444" height="2000"/>
+    </resources>
+</document>
