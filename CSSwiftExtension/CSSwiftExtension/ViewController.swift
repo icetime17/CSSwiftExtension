@@ -55,6 +55,10 @@ class ViewController: UIViewController {
         anotherImageView.image = UIImage(named: "Model.jpg")?.cs_grayScale()
         anotherImageView.alpha = 0.5
         
+//        anotherImageView.loadGif(name: "Railway")
+//        anotherImageView.image = UIImage.gif(name: "Railway")
+        
+        
         print(anotherImageView.isUserInteractionEnabled)
         
         anotherImageView.isUserInteractionEnabled = true
