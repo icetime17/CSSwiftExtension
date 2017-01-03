@@ -10,12 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var btnTest: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         testBlurImageView()
         
         testAnotherImageView()
+        
+        addBtnTest()
+    }
+    
+    private func addBtnTest() {
+        btnTest = UIButton(frame: CGRect(x: 50, y: 50, width: 100, height: 30))
+        btnTest.backgroundColor = UIColor.black
+        view.addSubview(btnTest)
+        btnTest.setTitle("Test", for: .normal)
+        btnTest.addTarget(self, action: .actionBtnTest, for: .touchUpInside)
     }
     
     private func testBlurImageView() {
@@ -42,6 +54,33 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func actionBtnTest() {
+        /*
+        print(btnTest.cs_left)
+        btnTest.cs_left = btnTest.cs_left + 50
+        print(btnTest.cs_left)
+ 
+        
+        print(btnTest.cs_right)
+        btnTest.cs_right = btnTest.cs_right + 50
+        print(btnTest.cs_right)
+         */
+        
+        print(btnTest.cs_height)
+        btnTest.cs_height = btnTest.cs_height + 50
+        print(btnTest.cs_height)
+        
+        print(UIDevice.current.cs_currentLanguage())
+        print(UIScreen.main.cs_screenSize())
+    }
 
 }
+
+
+// MARK: - Selector
+private extension Selector {
+    static let actionBtnTest = #selector(ViewController.actionBtnTest)
+}
+
 

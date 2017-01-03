@@ -12,75 +12,63 @@ import UIKit
 
 public extension UIView {
 
-    var cs_left : CGFloat {
+    public var cs_left: CGFloat {
         get {
-            return self.frame.minX
+            return frame.minX
         }
         
         set(newValue) {
-            var frame = self.frame
             frame.origin.x = newValue
-            self.frame = frame
         }
     }
     
-    var cs_right : CGFloat {
+    public var cs_right: CGFloat {
         get {
-            return self.frame.maxX
+            return frame.maxX
         }
         
         set(newValue) {
-            var frame = self.frame
-            frame.origin.x = newValue - frame.size.width
-            self.frame = frame
+            frame.origin.x = newValue - frame.width
         }
     }
     
-    var cs_top : CGFloat {
+    public var cs_top: CGFloat {
         get {
-            return self.frame.minY
+            return frame.minY
         }
         
         set(newValue) {
-            var frame = self.frame
             frame.origin.y = newValue
-            self.frame = frame
         }
     }
     
-    var cs_bottom : CGFloat {
+    public var cs_bottom: CGFloat {
         get {
-            return self.frame.maxY
+            return frame.maxY
         }
         
         set(newValue) {
-            var frame = self.frame
-            frame.origin.y = newValue - frame.size.height
-            self.frame = frame
+            frame.origin.y = newValue - frame.height
         }
     }
     
-    var cs_width : CGFloat {
+    public var cs_width: CGFloat {
         get {
-            return self.frame.width
+            return frame.width
         }
         
         set(newValue) {
-            var frame = self.frame
             frame.size.width = newValue
-            self.frame = frame
         }
     }
     
-    var cs_height : CGFloat {
+    public var cs_height: CGFloat {
         get {
-            return self.frame.height
+            return frame.height
         }
         
         set(newValue) {
-            var frame = self.frame
             frame.size.height = newValue
-            self.frame = frame
         }
     }
     
