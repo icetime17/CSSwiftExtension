@@ -16,8 +16,7 @@ public extension UIView {
         get {
             return frame.minX
         }
-        
-        set(newValue) {
+        set {
             frame.origin.x = newValue
         }
     }
@@ -26,8 +25,7 @@ public extension UIView {
         get {
             return frame.maxX
         }
-        
-        set(newValue) {
+        set {
             frame.origin.x = newValue - frame.width
         }
     }
@@ -36,8 +34,7 @@ public extension UIView {
         get {
             return frame.minY
         }
-        
-        set(newValue) {
+        set {
             frame.origin.y = newValue
         }
     }
@@ -46,8 +43,7 @@ public extension UIView {
         get {
             return frame.maxY
         }
-        
-        set(newValue) {
+        set {
             frame.origin.y = newValue - frame.height
         }
     }
@@ -56,8 +52,7 @@ public extension UIView {
         get {
             return frame.width
         }
-        
-        set(newValue) {
+        set {
             frame.size.width = newValue
         }
     }
@@ -66,9 +61,17 @@ public extension UIView {
         get {
             return frame.height
         }
-        
-        set(newValue) {
+        set {
             frame.size.height = newValue
+        }
+    }
+    
+    public var cs_size: CGSize {
+        get {
+            return frame.size
+        }
+        set {
+            frame.size = newValue
         }
     }
     
@@ -79,12 +82,16 @@ public extension UIView {
 
 public extension UIView {
     
-    public func cs_snapShot() -> UIImage {
-        UIGraphicsBeginImageContext(self.bounds.size)
-        self.layer.render(in: UIGraphicsGetCurrentContext()!)
-        let snapShot: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return snapShot
+    public var cs_snapshot: UIImage? {
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, 0)
+        defer {
+            UIGraphicsEndImageContext()
+        }
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+        layer.render(in: context)
+        return UIGraphicsGetImageFromCurrentImageContext()
     }
     
 }
