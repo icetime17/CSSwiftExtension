@@ -34,6 +34,11 @@ class ViewController: UIViewController {
         view.addSubview(btnTest)
         btnTest.setTitle("Test", for: .normal)
         btnTest.addTarget(self, action: .actionBtnTest, for: .touchUpInside)
+        
+        btnTest.cs_acceptEventInterval = 2
+        
+        btnTest.cs_setBackgroundColor(UIColor.blue, for: .normal)
+        btnTest.cs_setBackgroundColor(UIColor.red, for: .highlighted)
     }
     
     private func testBlurImageView() {

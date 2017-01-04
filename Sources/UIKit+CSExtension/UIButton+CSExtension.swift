@@ -9,7 +9,7 @@
 import UIKit
 
 
-// to avoid UIButton's multiple click operation
+// MARK: - to avoid UIButton's multiple click operation
 public extension UIButton {
 
     private struct CS_AssociatedKeys {
@@ -70,3 +70,15 @@ public extension UIButton {
     }
     
 }
+
+
+// MARK: - set backgroundColor
+public extension UIButton {
+    
+    public func cs_setBackgroundColor(_ color: UIColor?, for state: UIControlState) {
+        let image = UIImage(pureColor: color!, targetSize: frame.size)
+        setBackgroundImage(image, for: state)
+    }
+    
+}
+
