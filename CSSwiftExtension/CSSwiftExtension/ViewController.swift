@@ -74,6 +74,10 @@ class ViewController: UIViewController {
     func actionBtnTest() {
         print(tapGesture)
         
+        DispatchQueue.cs_delay(2) {
+            print("delay ok")
+        }
+        
         btnTest.cs_cornerRadius(corners: [.bottomLeft, .bottomRight], radius: 20)
         
         guard let aView = AView.cs_loadFromNib("AView") as? AView else { return }

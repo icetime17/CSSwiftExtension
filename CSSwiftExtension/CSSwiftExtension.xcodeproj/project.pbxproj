@@ -47,6 +47,7 @@
 		A47EAAF61E1B8C9B00D25169 /* Array+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EAAF51E1B8C9B00D25169 /* Array+CSExtension.swift */; };
 		A47EAAF81E1B9E4200D25169 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EAAF71E1B9E4200D25169 /* UIImage+Gif.swift */; };
 		A47EAAFA1E1B9EA200D25169 /* Railway.gif in Resources */ = {isa = PBXBuildFile; fileRef = A47EAAF91E1B9EA200D25169 /* Railway.gif */; };
+		A47EAB1A1E1C90CA00D25169 /* DispatchQueue+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EAB191E1C90CA00D25169 /* DispatchQueue+CSExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		A47EAAF51E1B8C9B00D25169 /* Array+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+CSExtension.swift"; sourceTree = "<group>"; };
 		A47EAAF71E1B9E4200D25169 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		A47EAAF91E1B9EA200D25169 /* Railway.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Railway.gif; sourceTree = "<group>"; };
+		A47EAB191E1C90CA00D25169 /* DispatchQueue+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+CSExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				A47EAAF11E1B819600D25169 /* UICollectionView+CSExtension.swift */,
 				A47EAAF31E1B874600D25169 /* CGPoint+CSExtension.swift */,
 				A47EAAF71E1B9E4200D25169 /* UIImage+Gif.swift */,
+				A47EAB191E1C90CA00D25169 /* DispatchQueue+CSExtension.swift */,
 			);
 			path = "UIKit+CSExtension";
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				A47EAAF61E1B8C9B00D25169 /* Array+CSExtension.swift in Sources */,
 				A4564CB91E0D20FE00FBB743 /* UIView+CSExtension.swift in Sources */,
 				A4564CB71E0D20FE00FBB743 /* UIImage+CSExtension.swift in Sources */,
+				A47EAB1A1E1C90CA00D25169 /* DispatchQueue+CSExtension.swift in Sources */,
 				A4564CB81E0D20FE00FBB743 /* UIImageView+CSBlur.swift in Sources */,
 				A47EAAEC1E1B775C00D25169 /* AView.swift in Sources */,
 				A47EAAF01E1B7F2000D25169 /* UITableView+CSExtension.swift in Sources */,
