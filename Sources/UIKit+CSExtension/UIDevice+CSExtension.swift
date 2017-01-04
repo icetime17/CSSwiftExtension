@@ -13,33 +13,33 @@ import UIKit
 
 public extension UIDevice {
     
-    public func cs_currentLanguage() -> String {
+    public var cs_currentLanguage: String {
         return Locale.preferredLanguages.first!
     }
     
-    public func cs_isCurrentLanguage_en() -> Bool {
+    public var cs_isCurrentLanguage_en: Bool {
         let prefix = "en"
-        return self.cs_currentLanguage().hasPrefix(prefix)
+        return self.cs_currentLanguage.hasPrefix(prefix)
     }
     
-    public func cs_isCurrentLanguage_zh_Hans() -> Bool {
+    public var cs_isCurrentLanguage_zh_Hans: Bool {
         let prefix = "zh-Hans"
-        return self.cs_currentLanguage().hasPrefix(prefix)
+        return self.cs_currentLanguage.hasPrefix(prefix)
     }
     
-    public func cs_isCurrentLanguage_zh_Hant() -> Bool {
+    public var cs_isCurrentLanguage_zh_Hant: Bool {
         let prefix = "zh-Hant"
-        return self.cs_currentLanguage().hasPrefix(prefix)
+        return self.cs_currentLanguage.hasPrefix(prefix)
     }
     
-    public func cs_isCurrentLanguage_ja() -> Bool {
+    public var cs_isCurrentLanguage_ja: Bool {
         let prefix = "ja"
-        return self.cs_currentLanguage().hasPrefix(prefix)
+        return self.cs_currentLanguage.hasPrefix(prefix)
     }
     
-    public func cs_isCurrentLanguage_ko() -> Bool {
+    public var cs_isCurrentLanguage_ko: Bool {
         let prefix = "ko"
-        return self.cs_currentLanguage().hasPrefix(prefix)
+        return self.cs_currentLanguage.hasPrefix(prefix)
     }
     
 }

@@ -25,15 +25,15 @@ class UIImage_CSExtensionTests: XCTestCase {
     func testExtensions() {
         print("original image size : \(image?.size)")
         
-        let a = image?.cs_imageMirrored()
+        let a = image?.cs_imageMirrored
         let b = image?.cs_imageCropped(bounds: CGRect(x: 0, y: 0, width: 200, height: 200))
-        let c = image?.cs_imageWithNormalOrientation()
+        let c = image?.cs_imageWithNormalOrientation
         let d = image?.cs_imageRotatedByDegrees(degrees: 90)
         let e = image?.cs_imageWithCornerRadius(cornerRadius: 100)
         let f = image?.cs_imageScaledToSize(targetSize: CGSize(width: 300, height: 300), withOriginalRatio: true)
-        let g = image?.cs_wechatShareThumbnail()
+        let g = image?.cs_wechatShareThumbnail
         
-        let h = image?.cs_grayScale()
+        let h = image?.cs_grayScale
         
         print("done")
     }

@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         anotherImageView.contentMode = .scaleAspectFit
         view.addSubview(anotherImageView)
         anotherImageView.center = view.center
-        anotherImageView.image = UIImage(named: "Model.jpg")?.cs_grayScale()
+        anotherImageView.image = UIImage(named: "Model.jpg")?.cs_grayScale
         anotherImageView.alpha = 0.5
         
 //        anotherImageView.loadGif(name: "Railway")
@@ -77,12 +77,6 @@ class ViewController: UIViewController {
     }
     
     func actionBtnTest() {
-        print(tapGesture)
-        
-        DispatchQueue.cs_delay(2) {
-            print("delay ok")
-        }
-        
         btnTest.cs_cornerRadius(corners: [.bottomLeft, .bottomRight], radius: 20)
         
         guard let aView = AView.cs_loadFromNib("AView") as? AView else { return }

@@ -13,13 +13,13 @@ import UIKit
 public extension UIApplication {
     
     // cs_appDelegate: current AppDelegate
-    public func cs_appDelegate() -> UIApplicationDelegate {
+    public var cs_appDelegate: UIApplicationDelegate {
         return UIApplication.shared.delegate!
     }
     
     // cs_currentViewController: current UIViewController
-    public func cs_currentViewController() -> UIViewController {
-        let window = self.cs_appDelegate().window
+    public var cs_currentViewController: UIViewController {
+        let window = self.cs_appDelegate.window
         var viewController = window!!.rootViewController
         
         while ((viewController?.presentedViewController) != nil) {
@@ -32,7 +32,7 @@ public extension UIApplication {
             }
         }
         
-        return viewController!;
+        return viewController!
     }
     
 }
@@ -43,7 +43,7 @@ public extension UIApplication {
 public extension UIApplication {
     
     // cs_appVersion: current App Version
-    public func cs_appVersion() -> String {
+    public var cs_appVersion: String {
         let infoDict = Bundle.main.infoDictionary! as Dictionary<String, AnyObject>
         return infoDict["CFBundleShortVersionString"] as! String
     }

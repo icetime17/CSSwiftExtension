@@ -74,14 +74,14 @@ Add the ***Sources*** folder to your Xcode project to use all extensions, or a s
 #### String extension
 ```Swift
 let string = " hello 17, this is my city "
-let a = string.cs_trim()
+let a = string.cs_trimmed
 let b = string.cs_length
 ```
 
 #### Array extension
 ```Swift
 [1, 5, 10].cs_sum
-["a", "b", "c", "a", "c"].cs_removeDuplicates
+["a", "b", "c", "a", "c"].cs_removeDuplicates()
 ```
 
 
@@ -89,8 +89,8 @@ let b = string.cs_length
 
 #### UIApplication extension
 ```Swift
-UIApplication.shared.cs_appVersion()
-UIApplication.shared.cs_currentViewController()
+UIApplication.shared.cs_appVersion
+UIApplication.shared.cs_currentViewController
 ```
 
 #### UIColor extension
@@ -102,14 +102,14 @@ imageView.backgroundColor = UIColor.cs_random
 #### UIImage extension
 ```Swift
 guard let image = UIImage(named: "Model.jpg") else { return }
-let a = image.cs_imageMirrored()
+let a = image.cs_imageMirrored
 let b = image.cs_imageCropped(bounds: CGRect(x: 0, y: 0, width: 200, height: 200))
-let c = image.cs_imageWithNormalOrientation()
+let c = image.cs_imageWithNormalOrientation
 let d = image.cs_imageRotatedByDegrees(degrees: 90)
 let e = image.cs_imageWithCornerRadius(cornerRadius: 100)
 let f = image.cs_imageScaledToSize(targetSize: CGSize(width: 300, height: 300), withOriginalRatio: true)
-let g = image.cs_wechatShareThumbnail()
-let h = image.cs_grayScale()
+let g = image.cs_wechatShareThumbnail
+let h = image.cs_grayScale
 
 // Thanks to https://github.com/bahlo/SwiftGif for gif support
 aImageView.loadGif(name: "Railway")
@@ -134,10 +134,30 @@ aTableView.cs_removeEmptyFooter()
 aTableView.cs_scrollToTop(animated: true)
 ```
 
+#### UIButton extension
+```Swift
+btnTest.cs_acceptEventInterval = 2 // to avoid UIButton's multiple click operation
+btnTest.cs_setBackgroundColor(UIColor.blue, for: .normal) // set backgroundColor
+btnTest.cs_setBackgroundColor(UIColor.red, for: .highlighted)
+```
+
 #### CGPoint extension
 ```Swift
 aPoint.cs_distance(toPoint: bPoint)
 CGPoint.cs_distance(fromPoint: aPoint, toPoint: bPoint)
+```
+
+#### DispatchQueue extension
+```Swift
+DispatchQueue.cs_delay(2) {
+    print("delay action")
+}
+DispatchQueue.cs_global {
+    print("global action")
+    DispatchQueue.cs_main {
+        print("main action")
+    }
+}
 ```
 
 

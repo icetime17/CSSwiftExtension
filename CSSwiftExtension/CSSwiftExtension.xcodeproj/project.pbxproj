@@ -11,7 +11,7 @@
 		A40D584B1E165AEB00763603 /* CSSwiftExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D58441E165AEB00763603 /* CSSwiftExtension.framework */; };
 		A40D584C1E165AEB00763603 /* CSSwiftExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A40D58441E165AEB00763603 /* CSSwiftExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A40D58511E165BE300763603 /* Date+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA41E0D20FE00FBB743 /* Date+CSExtension.swift */; };
-		A40D58521E165BE300763603 /* NSFileManager+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA51E0D20FE00FBB743 /* NSFileManager+CSExtension.swift */; };
+		A40D58521E165BE300763603 /* FileManager+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA51E0D20FE00FBB743 /* FileManager+CSExtension.swift */; };
 		A40D58531E165BE300763603 /* String+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA61E0D20FE00FBB743 /* String+CSExtension.swift */; };
 		A40D58541E165BE300763603 /* UIApplication+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA81E0D20FE00FBB743 /* UIApplication+CSExtension.swift */; };
 		A40D58551E165BE300763603 /* UIColor+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CAA1E0D20FE00FBB743 /* UIColor+CSExtension.swift */; };
@@ -21,7 +21,7 @@
 		A40D58591E165BE300763603 /* UIView+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CAE1E0D20FE00FBB743 /* UIView+CSExtension.swift */; };
 		A40D58611E1B4D4500763603 /* UIScreen+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40D58601E1B4D4500763603 /* UIScreen+CSExtension.swift */; };
 		A4564CB01E0D20FE00FBB743 /* Date+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA41E0D20FE00FBB743 /* Date+CSExtension.swift */; };
-		A4564CB11E0D20FE00FBB743 /* NSFileManager+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA51E0D20FE00FBB743 /* NSFileManager+CSExtension.swift */; };
+		A4564CB11E0D20FE00FBB743 /* FileManager+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA51E0D20FE00FBB743 /* FileManager+CSExtension.swift */; };
 		A4564CB21E0D20FE00FBB743 /* String+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA61E0D20FE00FBB743 /* String+CSExtension.swift */; };
 		A4564CB31E0D20FE00FBB743 /* UIApplication+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA81E0D20FE00FBB743 /* UIApplication+CSExtension.swift */; };
 		A4564CB51E0D20FE00FBB743 /* UIColor+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CAA1E0D20FE00FBB743 /* UIColor+CSExtension.swift */; };
@@ -88,7 +88,7 @@
 		A40D58471E165AEB00763603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A40D58601E1B4D4500763603 /* UIScreen+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+CSExtension.swift"; sourceTree = "<group>"; };
 		A4564CA41E0D20FE00FBB743 /* Date+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+CSExtension.swift"; sourceTree = "<group>"; };
-		A4564CA51E0D20FE00FBB743 /* NSFileManager+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+CSExtension.swift"; sourceTree = "<group>"; };
+		A4564CA51E0D20FE00FBB743 /* FileManager+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+CSExtension.swift"; sourceTree = "<group>"; };
 		A4564CA61E0D20FE00FBB743 /* String+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CSExtension.swift"; sourceTree = "<group>"; };
 		A4564CA81E0D20FE00FBB743 /* UIApplication+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+CSExtension.swift"; sourceTree = "<group>"; };
 		A4564CAA1E0D20FE00FBB743 /* UIColor+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+CSExtension.swift"; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				A4564CA41E0D20FE00FBB743 /* Date+CSExtension.swift */,
-				A4564CA51E0D20FE00FBB743 /* NSFileManager+CSExtension.swift */,
+				A4564CA51E0D20FE00FBB743 /* FileManager+CSExtension.swift */,
 				A4564CA61E0D20FE00FBB743 /* String+CSExtension.swift */,
 				A47EAAF51E1B8C9B00D25169 /* Array+CSExtension.swift */,
 			);
@@ -399,7 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A40D58511E165BE300763603 /* Date+CSExtension.swift in Sources */,
-				A40D58521E165BE300763603 /* NSFileManager+CSExtension.swift in Sources */,
+				A40D58521E165BE300763603 /* FileManager+CSExtension.swift in Sources */,
 				A40D58531E165BE300763603 /* String+CSExtension.swift in Sources */,
 				A40D58541E165BE300763603 /* UIApplication+CSExtension.swift in Sources */,
 				A40D58551E165BE300763603 /* UIColor+CSExtension.swift in Sources */,
@@ -421,7 +421,7 @@
 				A4564CB21E0D20FE00FBB743 /* String+CSExtension.swift in Sources */,
 				A40D58611E1B4D4500763603 /* UIScreen+CSExtension.swift in Sources */,
 				A47EAAF41E1B874600D25169 /* CGPoint+CSExtension.swift in Sources */,
-				A4564CB11E0D20FE00FBB743 /* NSFileManager+CSExtension.swift in Sources */,
+				A4564CB11E0D20FE00FBB743 /* FileManager+CSExtension.swift in Sources */,
 				A47EAAF21E1B819600D25169 /* UICollectionView+CSExtension.swift in Sources */,
 				A47EAB1E1E1C9F9B00D25169 /* UIButton+CSExtension.swift in Sources */,
 				A47EAAF61E1B8C9B00D25169 /* Array+CSExtension.swift in Sources */,

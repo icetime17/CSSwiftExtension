@@ -1,5 +1,5 @@
 //
-//  NSFileManager+CSExtension.swift
+//  FileManager+CSExtension.swift
 //  CSSwiftExtension
 //
 //  Created by Chris Hu on 16/12/25.
@@ -8,27 +8,27 @@
 
 import Foundation
 
-// MARK: - NSFileManager
+// MARK: - FileManager
 
 public extension FileManager {
 
-    public func cs_homeDirectory() -> String {
+    public var cs_homeDirectory: String {
         return NSHomeDirectory()
     }
     
-    public func cs_tempDirectory() -> String {
+    public var cs_tempDirectory: String {
         return NSTemporaryDirectory()
     }
     
-    public func cs_documentsDirectory() -> String {
+    public var cs_documentsDirectory: String {
         return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     }
     
-    public func cs_libraryDirectory() -> String {
+    public var cs_libraryDirectory: String {
         return NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
     }
     
-    public func cs_cacheDirectory() -> String {
+    public var cs_cacheDirectory: String {
         return NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
     }
 }

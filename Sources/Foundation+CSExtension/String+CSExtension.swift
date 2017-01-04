@@ -19,12 +19,12 @@ public extension String {
 public extension String {
     
     // cs_trim: trim the \n and blank of leading and trailing
-    public func cs_trim() -> String? {
+    public var cs_trimmed: String {
         return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).trimmingCharacters(in: CharacterSet.whitespaces)
     }
     
     // cs_intValue: return Int value of String
-    public func cs_intValue() -> Int? {
+    public var cs_intValue: Int? {
         let scanner = Scanner(string: self)
         scanner.scanUpToCharacters(from: CharacterSet.decimalDigits, into: nil)
         var intValue = 0
@@ -35,7 +35,7 @@ public extension String {
     }
     
     // cs_stringValue: return String value of String
-    public func cs_stringValue() -> String? {
+    public var cs_stringValue: String? {
         let scanner = Scanner(string: self)
         var s: NSString? = ""
         if scanner.scanString(self, into: &s) {
@@ -46,12 +46,12 @@ public extension String {
     }
     
     // cs_Data: return Data of String
-    public func cs_Data() -> Data? {
+    public var cs_Data: Data? {
         return self.data(using: String.Encoding.utf8)!
     }
     
     // cs_Date: return Date of String
-    public func cs_Date() -> Date? {
+    public var cs_Date: Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         

@@ -23,11 +23,11 @@ class String_CSExtensionTests: XCTestCase {
     }
     
     func testExample() {
-        let a = string.cs_trim()
-        let b = string.cs_intValue()
-        let c = string.cs_stringValue()
-        let d = string.cs_Data()
-        let e = "2017-01-01 01:01:01".cs_Date()
+        let a = string.cs_trimmed
+        let b = string.cs_intValue
+        let c = string.cs_stringValue
+        let d = string.cs_Data
+        let e = "2017-01-01 01:01:01".cs_Date
         
         print("done")
     }
