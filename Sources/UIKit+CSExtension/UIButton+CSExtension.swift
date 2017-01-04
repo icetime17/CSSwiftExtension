@@ -29,6 +29,9 @@ public extension UIButton {
         
         set {
             assert(newValue > 0, "cs_acceptEventInterval should be valid")
+            
+            cs_methodSwizzling()
+            
             objc_setAssociatedObject(self,
                                      &CS_AssociatedKeys.acceptEventInterval,
                                      newValue,
@@ -53,13 +56,13 @@ public extension UIButton {
         }
     }
 
-    open override class func initialize() {
-        let before: Method  = class_getInstanceMethod(self, #selector(UIButton.sendAction(_:to:for:)))
-        let after: Method   = class_getInstanceMethod(self, #selector(UIButton.cs_sendAction(_:to:for:)))
+    private func cs_methodSwizzling() {
+        let before: Method  = class_getInstanceMethod(self.classForCoder, #selector(self.sendAction(_:to:for:)))
+        let after: Method   = class_getInstanceMethod(self.classForCoder, #selector(self.cs_sendAction(_:to:for:)))
         method_exchangeImplementations(before, after)
     }
     
-    func cs_sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
+    @objc private func cs_sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
         if Date().timeIntervalSince1970 - cs_waitingTime < cs_acceptEventInterval {
             return
         }
