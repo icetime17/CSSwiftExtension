@@ -76,6 +76,10 @@ Add the ***Sources*** folder to your Xcode project to use all extensions, or a s
 let string = " hello 17, this is my city "
 let a = string.cs_trimmed
 let b = string.cs_length
+aNonUTF8String.cs_utf8String
+
+let regExp_email = "^[a-zA-Z0-9]{1,}@[a-zA-Z0-9]{1,}\\.[a-zA-Z]{2,}$"
+cs_validateWithRegExp(regExp: regExp_email)
 ```
 
 #### Array extension
