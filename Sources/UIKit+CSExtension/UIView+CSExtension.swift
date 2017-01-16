@@ -125,3 +125,26 @@ public extension UIView {
     }
 }
 
+
+// MARK: - reuse
+public protocol ReusableView {
+    
+}
+
+public extension ReusableView where Self: UIView {
+    static var reuseIdentifier: String {
+        return String(describing: self)
+    }
+}
+
+
+// MARK: - nib
+public protocol NibLoadable {
+    
+}
+
+public extension NibLoadable where Self: UIView {
+    static var nibName: String {
+        return String(describing: self)
+    }
+}

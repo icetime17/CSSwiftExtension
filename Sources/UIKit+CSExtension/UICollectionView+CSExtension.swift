@@ -20,3 +20,29 @@ public extension UICollectionView {
     }
     
 }
+
+
+// MARK: - reuse
+extension UICollectionViewCell: ReusableView {
+    
+}
+
+extension UICollectionViewCell: NibLoadable {
+    
+}
+
+public extension UICollectionView {
+    
+    public func cs_register<T: UICollectionViewCell>(_: T.Type) where T: ReusableView, T: NibLoadable {
+        let nib = UINib(nibName: T.nibName, bundle: nil)
+        register(nib, forCellWithReuseIdentifier: T.reuseIdentifier)
+    }
+    
+    public func cs_dequeueReusableCell<T: UICollectionViewCell>(forIndexPath indexPath: IndexPath) -> T where T: ReusableView {
+        guard let cell = dequeueReusableCell(withReuseIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
+            fatalError("CSSwiftExtension: Could not dequeue cell with identifier \(T.reuseIdentifier)")
+        }
+        return cell
+    }
+    
+}
