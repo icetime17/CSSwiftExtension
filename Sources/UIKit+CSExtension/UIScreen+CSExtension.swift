@@ -22,23 +22,23 @@ public extension UIScreen {
         return (UIScreen.main.currentMode?.size)!
     }
     
-    public var cs_isIPhone4s: Bool {
+    public var cs_size_3_5: Bool {
         return self.cs_screenSize == CGSize(width: 640, height: 960)
     }
     
-    public var cs_isIPhone5: Bool {
+    public var cs_size_4_0: Bool {
         return self.cs_screenSize == CGSize(width: 640, height: 1136)
     }
     
-    public var cs_isIPhone6: Bool {
-        return self.cs_screenSize == CGSize(width: 750, height: 1134)
+    public var cs_size_4_7: Bool {
+        return self.cs_screenSize == CGSize(width: 750, height: 1334)
     }
     
-    public var cs_isIPhone6Plus: Bool {
-        return self.cs_screenSize == CGSize(width: 1142, height: 2208)
+    public var cs_size_5_5: Bool {
+        return self.cs_screenSize == CGSize(width: 1242, height: 2208)
     }
     
-    public var cs_isIPhone6PlusBigMode: Bool {
+    public var cs_size_5_5_BigMode: Bool {
         return self.cs_screenSize == CGSize(width: 1125, height: 2001)
     }
     
