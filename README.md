@@ -136,6 +136,9 @@ let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 500), 
 ```Swift
 aTableView.cs_removeEmptyFooter()
 aTableView.cs_scrollToTop(animated: true)
+
+tableView.cs_register(MyTableViewCell.self)
+let cell = tableView.cs_dequeueReusableCell(forIndexPath: indexPath) as MyTableViewCell
 ```
 
 #### UIButton extension
