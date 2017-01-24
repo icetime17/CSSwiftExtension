@@ -99,7 +99,7 @@ public extension UIView {
     
     // add corner radius
     // aView.cs_cornerRadius(corners: [.bottomLeft, .bottomRight], radius: 20)
-    public func cs_cornerRadius(corners: UIRectCorner, radius: CGFloat) {
+    public func cs_cornerRadius(corners: UIRectCorner = .allCorners, radius: CGFloat) {
         let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath
