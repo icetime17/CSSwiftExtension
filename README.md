@@ -93,27 +93,27 @@ cs_validateWithRegExp(regExp: regExp_email)
 
 #### UIApplication extension
 ```Swift
-UIApplication.shared.cs_appVersion
-UIApplication.shared.cs_currentViewController
+UIApplication.shared.cs.appVersion
+UIApplication.shared.cs.currentViewController
 ```
 
 #### UIColor extension
 ```Swift
 imageView.backgroundColor = UIColor(hexString: 0x123456, alpha: 0.5)
-imageView.backgroundColor = UIColor.cs_random
+imageView.backgroundColor = UIColor.cs.random
 ```
 
 #### UIImage extension
 ```Swift
 guard let image = UIImage(named: "Model.jpg") else { return }
-let a = image.cs_imageMirrored
-let b = image.cs_imageCropped(bounds: CGRect(x: 0, y: 0, width: 200, height: 200))
-let c = image.cs_imageWithNormalOrientation
-let d = image.cs_imageRotatedByDegrees(degrees: 90)
-let e = image.cs_imageWithCornerRadius(cornerRadius: 100)
-let f = image.cs_imageScaledToSize(targetSize: CGSize(width: 300, height: 300), withOriginalRatio: true)
-let g = image.cs_wechatShareThumbnail
-let h = image.cs_grayScale
+let a = image.cs.imageMirrored
+let b = image.cs.imageCropped(bounds: CGRect(x: 0, y: 0, width: 200, height: 200))
+let c = image.cs.imageWithNormalOrientation
+let d = image.cs.imageRotatedByDegrees(degrees: 90)
+let e = image.cs.imageWithCornerRadius(cornerRadius: 100)
+let f = image.cs.imageScaledToSize(targetSize: CGSize(width: 300, height: 300), withOriginalRatio: true)
+let g = image.cs.wechatShareThumbnail
+let h = image.cs.grayScale
 
 // Thanks to https://github.com/bahlo/SwiftGif for gif support
 aImageView.loadGif(name: "Railway")
@@ -123,8 +123,9 @@ aImageView.image = UIImage.gif(name: "Railway")
 #### UIView extension
 ```Swift
 imageView.cs_snapShot()
-let aView = AView.cs_loadFromNib("AView") as? AView
-aView.cs_cornerRadius(corners: [.bottomLeft, .bottomRight], radius: 20)
+let aView = AView.cs.loadFromNib("AView") as? AView
+aView.setCornerRadius(radius: 20)
+aView.setCornerRadius(corners: [.bottomLeft, .bottomRight], radius: 20)
 ```
 
 #### UIImageView extension
@@ -134,8 +135,8 @@ let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 500), 
 
 #### UITableView extension
 ```Swift
-aTableView.cs_removeEmptyFooter()
-aTableView.cs_scrollToTop(animated: true)
+aTableView.cs.removeEmptyFooter()
+aTableView.cs.scrollToTop(animated: true)
 
 tableView.cs_register(MyTableViewCell.self)
 let cell = tableView.cs_dequeueReusableCell(forIndexPath: indexPath) as MyTableViewCell
@@ -144,8 +145,8 @@ let cell = tableView.cs_dequeueReusableCell(forIndexPath: indexPath) as MyTableV
 #### UIButton extension
 ```Swift
 btnTest.cs_acceptEventInterval = 2 // to avoid UIButton's multiple click operation
-btnTest.cs_setBackgroundColor(UIColor.blue, for: .normal) // set backgroundColor
-btnTest.cs_setBackgroundColor(UIColor.red, for: .highlighted)
+btnTest.cs.setBackgroundColor(UIColor.blue, for: .normal) // set backgroundColor
+btnTest.cs.setBackgroundColor(UIColor.red, for: .highlighted)
 ```
 
 #### CGPoint extension
@@ -156,12 +157,12 @@ CGPoint.cs_distance(fromPoint: aPoint, toPoint: bPoint)
 
 #### DispatchQueue extension
 ```Swift
-DispatchQueue.cs_delay(2) {
+DispatchQueue.cs.delay(2) {
     print("delay action")
 }
-DispatchQueue.cs_global {
+DispatchQueue.cs.global {
     print("global action")
-    DispatchQueue.cs_main {
+    DispatchQueue.cs.main {
         print("main action")
     }
 }
