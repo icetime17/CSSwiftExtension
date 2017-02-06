@@ -64,7 +64,7 @@ class ViewController: UIViewController {
 //        anotherImageView.image = UIImage.gif(name: "Railway")
         
         
-        print(anotherImageView.isUserInteractionEnabled)
+        cs_print(anotherImageView.isUserInteractionEnabled)
         
         anotherImageView.isUserInteractionEnabled = true
         tapGesture = UITapGestureRecognizer(target: self, action: .actionTapGesture)
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
     }
 
     func actionTapGesture() {
-        print(#function)
+        cs_print(#function)
         
         anotherImageView.cs_removeGestureRecognizers()
     }

@@ -23,7 +23,7 @@ class UIImage_CSExtensionTests: XCTestCase {
     }
     
     func testExtensions() {
-        print("original image size : \(image?.size)")
+        cs_print("original image size : \(image?.size)")
         
         let a = image?.cs_imageMirrored
         let b = image?.cs_imageCropped(bounds: CGRect(x: 0, y: 0, width: 200, height: 200))
@@ -35,7 +35,7 @@ class UIImage_CSExtensionTests: XCTestCase {
         
         let h = image?.cs_grayScale
         
-        print("done")
+        cs_print("done")
     }
     
     func testPerformanceExample() {

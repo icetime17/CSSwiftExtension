@@ -29,7 +29,7 @@ class String_CSExtensionTests: XCTestCase {
         let d = string.cs_Data
         let e = "2017-01-01 01:01:01".cs_Date
         
-        print("done")
+        cs_print("done")
     }
     
     func testPerformanceExample() {

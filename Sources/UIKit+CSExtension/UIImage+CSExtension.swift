@@ -69,7 +69,7 @@ extension UIImage {
             do {
                 try FileManager.default.removeItem(atPath: filePath)
             } catch {
-                print("This file (\(filePath)) exists already, and NSFileManager failed to remove it.")
+                cs_print("This file (\(filePath)) exists already, and NSFileManager failed to remove it.")
                 return false
             }
         }
@@ -77,7 +77,7 @@ extension UIImage {
         if FileManager.default.createFile(atPath: filePath, contents: imageData as Data?, attributes: nil) {
             return imageData.write(toFile: filePath, atomically: true)
         } else {
-            print("FileManager failed to create file at path: \(filePath).")
+            cs_print("FileManager failed to create file at path: \(filePath).")
             return false
         }
     }

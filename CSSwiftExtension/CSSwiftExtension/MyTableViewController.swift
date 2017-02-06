@@ -27,7 +27,7 @@ class MyTableViewController: UIViewController {
         tableView.delegate = self
         
         tableView.cs_register(MyTableViewCell.self)
-        
+        tableView.rowHeight = 100
     }
     
 }
@@ -44,14 +44,13 @@ extension MyTableViewController: UITableViewDataSource {
         
         cell.myImageView.image = UIImage(named: "Model.jpg")
         cell.myLabel.text = "cell - \(indexPath.row)"
+        cs_print(cell.myLabel.text!)
         
         return cell
     }
 }
 
 extension MyTableViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
+    
 }
 
