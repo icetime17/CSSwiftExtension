@@ -46,7 +46,7 @@ extension UIImage {
 }
 
 // MARK: - save
-extension UIImage {
+public extension CSSwift where Base: UIImage {
     
     /**
      Save UIImage to file
@@ -56,12 +56,12 @@ extension UIImage {
      
      - returns: true or false
      */
-    public func cs_saveImageToFile(filePath: String, compressionFactor: CGFloat) -> Bool {
+    public func saveImageToFile(filePath: String, compressionFactor: CGFloat) -> Bool {
         let imageData: NSData!
         if filePath.hasSuffix(".jpeg") {
-            imageData = UIImageJPEGRepresentation(self, compressionFactor) as NSData!
+            imageData = UIImageJPEGRepresentation(base, compressionFactor) as NSData!
         } else {
-            imageData = UIImagePNGRepresentation(self)! as NSData!
+            imageData = UIImagePNGRepresentation(base)! as NSData!
         }
         
         
@@ -84,16 +84,16 @@ extension UIImage {
     
 }
 
-// MARK: - utils
-extension UIImage {
+// MARK: - utility
+public extension CSSwift where Base: UIImage {
     
     /**
      Crop UIImage
      
      - returns: UIImage cropped
      */
-    public func cs_imageCropped(bounds: CGRect) -> UIImage {
-        let imageRef = cgImage!.cropping(to: bounds)
+    public func imageCropped(bounds: CGRect) -> UIImage {
+        let imageRef = base.cgImage!.cropping(to: bounds)
         let imageCropped = UIImage(cgImage: imageRef!)
         return imageCropped
     }
@@ -103,24 +103,24 @@ extension UIImage {
      
      - returns: UIImage cropped
      */
-    public func cs_imageCroppedToFit(targetSize: CGSize) -> UIImage {
+    public func imageCroppedToFit(targetSize: CGSize) -> UIImage {
         var widthImage: CGFloat = 0.0
         var heightImage: CGFloat = 0.0
         var rectRatioed: CGRect!
         
-        if size.height / size.width < targetSize.height / targetSize.width {
+        if base.size.height / base.size.width < targetSize.height / targetSize.width {
             // 图片的height过小, 剪裁其width, 而height不变
-            heightImage = size.height
+            heightImage = base.size.height
             widthImage = heightImage * targetSize.width / targetSize.height
-            rectRatioed = CGRect(x: (size.width - widthImage) / 2, y: 0, width: widthImage, height: heightImage)
+            rectRatioed = CGRect(x: (base.size.width - widthImage) / 2, y: 0, width: widthImage, height: heightImage)
         } else {
             // 图片的width过小, 剪裁其height, 而width不变
-            widthImage = size.width
+            widthImage = base.size.width
             heightImage = widthImage * targetSize.height / targetSize.width
-            rectRatioed = CGRect(x: 0, y: (size.height - heightImage) / 2, width: widthImage, height: heightImage)
+            rectRatioed = CGRect(x: 0, y: (base.size.height - heightImage) / 2, width: widthImage, height: heightImage)
         }
         
-        return cs_imageCropped(bounds: rectRatioed)
+        return self.imageCropped(bounds: rectRatioed)
     }
     
     /**
@@ -128,17 +128,17 @@ extension UIImage {
      
      - returns: UIImage mirrored
      */
-    public var cs_imageMirrored: UIImage {
-        let width = size.width
-        let height = size.height
+    public var imageMirrored: UIImage {
+        let width = base.size.width
+        let height = base.size.height
         
-        UIGraphicsBeginImageContext(size)
+        UIGraphicsBeginImageContext(base.size)
         let context = UIGraphicsGetCurrentContext()
         context?.interpolationQuality = .high
         
         context?.translateBy(x: width, y: height)
         context?.concatenate(CGAffineTransform(scaleX: -1.0, y: -1.0))
-        context?.draw(cgImage!, in: CGRect(x: 0, y: 0, width: width, height: height))
+        context?.draw(base.cgImage!, in: CGRect(x: 0, y: 0, width: width, height: height))
         
         let imageRef = context!.makeImage()
         let resultImage = UIImage(cgImage: imageRef!)
@@ -154,11 +154,11 @@ extension UIImage {
      
      - returns: UIImage rotated
      */
-    public func cs_imageRotatedByDegrees(degrees: CGFloat) -> UIImage {
+    public func imageRotatedByDegrees(degrees: CGFloat) -> UIImage {
         let radians = CGFloat(M_PI) * degrees / 180.0
         
         // calculate the size of the rotated view's containing box for our drawing space
-        let rotatedViewBox = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let rotatedViewBox = UIView(frame: CGRect(x: 0, y: 0, width: base.size.width, height: base.size.height))
         rotatedViewBox.transform = CGAffineTransform(rotationAngle: radians)
         
         let rotatedSize = rotatedViewBox.frame.size
@@ -175,7 +175,7 @@ extension UIImage {
         
         // Now, draw the rotated/scaled image into the context
         context?.scaleBy(x: 1.0, y: -1.0)
-        context?.draw(cgImage!, in: CGRect(x: -self.size.width / 2.0, y: -self.size.height / 2.0, width: size.width, height: size.height))
+        context?.draw(base.cgImage!, in: CGRect(x: -base.size.width / 2.0, y: -base.size.height / 2.0, width: base.size.width, height: base.size.height))
         
         let imageRotated = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -191,11 +191,11 @@ extension UIImage {
      
      - returns: UIImage scaled
      */
-    public func cs_imageScaledToSize(targetSize: CGSize, withOriginalRatio: Bool) -> UIImage {
+    public func imageScaledToSize(targetSize: CGSize, withOriginalRatio: Bool) -> UIImage {
         var sizeFinal = targetSize
         
         if withOriginalRatio {
-            let ratioOriginal = size.width / size.height
+            let ratioOriginal = base.size.width / base.size.height
             let ratioTemp = targetSize.width / targetSize.height
             
             if ratioOriginal < ratioTemp {
@@ -206,7 +206,7 @@ extension UIImage {
         }
         
         UIGraphicsBeginImageContext(sizeFinal)
-        self.draw(in: CGRect(x: 0, y: 0, width: sizeFinal.width, height: sizeFinal.height))
+        base.draw(in: CGRect(x: 0, y: 0, width: sizeFinal.width, height: sizeFinal.height))
         let imageScaled: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return imageScaled
@@ -220,16 +220,16 @@ extension UIImage {
      
      - returns: UIImage
      */
-    public func cs_imageWithCornerRadius(cornerRadius: CGFloat) -> UIImage {
-        let frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+    public func imageWithCornerRadius(cornerRadius: CGFloat) -> UIImage {
+        let frame = CGRect(x: 0, y: 0, width: base.size.width, height: base.size.height)
         
-        UIGraphicsBeginImageContext(size)
+        UIGraphicsBeginImageContext(base.size)
         
         // Add a clip before drawing anything, in the shape of an rounded rect
         UIBezierPath(roundedRect: frame, cornerRadius: cornerRadius).addClip()
         
         // Draw the image
-        draw(in: frame)
+        base.draw(in: frame)
         
         let imageWithCornerRadius = UIGraphicsGetImageFromCurrentImageContext()
         
@@ -238,32 +238,32 @@ extension UIImage {
         return imageWithCornerRadius!
     }
     
-    public var cs_imageWithNormalOrientation: UIImage {
-        if imageOrientation == UIImageOrientation.up {
-            return self
+    public var imageWithNormalOrientation: UIImage {
+        if base.imageOrientation == UIImageOrientation.up {
+            return base
         }
         
-        UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        draw(in: CGRect(origin: CGPoint.zero, size: size))
+        UIGraphicsBeginImageContextWithOptions(base.size, false, base.scale)
+        base.draw(in: CGRect(origin: CGPoint.zero, size: base.size))
         let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return normalizedImage!
     }
     
-    public var cs_grayScale: UIImage {
+    public var grayScale: UIImage {
         // Create image rectangle with current image width/height
-        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height);
+        let rect = CGRect(x: 0, y: 0, width: base.size.width, height: base.size.height);
         // Grayscale color space
         let colorSpace = CGColorSpaceCreateDeviceGray()
         // Create bitmap content with current image size and grayscale colorspace
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue)
         // Draw image into current context, with specified rectangle
         // using previously defined context (with grayscale colorspace)
-        guard let context = CGContext(data: nil, width: Int(size.width), height: Int(size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue) else { return self }
+        guard let context = CGContext(data: nil, width: Int(base.size.width), height: Int(base.size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue) else { return base }
         
-        context.draw(cgImage!, in: rect)
+        context.draw(base.cgImage!, in: rect)
         // Create bitmap image info from pixel data in current context
-        guard let imageRef = context.makeImage() else { return self }
+        guard let imageRef = context.makeImage() else { return base }
         // Create a new UIImage object
         let newImage = UIImage(cgImage: imageRef)
         
@@ -276,50 +276,51 @@ extension UIImage {
 }
 
 // MARK: - 微信分享缩略图
-extension UIImage {
-    public var cs_wechatShareThumbnail: UIImage {
+public extension CSSwift where Base: UIImage {
+    
+    public var wechatShareThumbnail: UIImage {
         var scale: CGFloat = 0
         var isNeedCut = false
         var imageSize = CGSize.zero
-        let ratio = size.width / size.height
+        let ratio = base.size.width / base.size.height
         
         if ratio > 3 {
             isNeedCut = true
-            if size.height > 100 {
-                scale = 100 / size.height
+            if base.size.height > 100 {
+                scale = 100 / base.size.height
             } else {
                 scale = 1
             }
-            imageSize = CGSize(width: CGFloat(size.height * scale * 3), height: CGFloat(size.height * scale))
+            imageSize = CGSize(width: CGFloat(base.size.height * scale * 3), height: CGFloat(base.size.height * scale))
         } else if ratio < 0.333 {
             isNeedCut = true
-            if size.width > 100 {
-                scale = 100 / size.width
+            if base.size.width > 100 {
+                scale = 100 / base.size.width
             } else {
                 scale = 1
             }
-            imageSize = CGSize(width: size.width * scale, height: size.width * scale * 3)
+            imageSize = CGSize(width: base.size.width * scale, height: base.size.width * scale * 3)
         } else {
             isNeedCut = false
             if ratio > 1 {
-                scale = 280 / size.width
+                scale = 280 / base.size.width
             } else {
-                scale = 280 / size.height
+                scale = 280 / base.size.height
             }
             
             if scale > 1 {
                 scale = 1
             }
-            imageSize = CGSize(width: size.width * scale, height: size.height * scale)
+            imageSize = CGSize(width: base.size.width * scale, height: base.size.height * scale)
         }
         
-        let image = cs_thumbnailWithSize(targetSize: imageSize, isNeedCut: isNeedCut)
+        let image = self.thumbnailWithSize(targetSize: imageSize, isNeedCut: isNeedCut)
         let imageData = UIImageJPEGRepresentation(image, 0.4)
         return UIImage(data: imageData!)!
     }
     
-    private func cs_thumbnailWithSize(targetSize: CGSize, isNeedCut: Bool) -> UIImage {
-        var imageSize = size
+    private func thumbnailWithSize(targetSize: CGSize, isNeedCut: Bool) -> UIImage {
+        var imageSize = base.size
         let scaleWidth = targetSize.width / imageSize.width
         let scaleHeight = targetSize.height / imageSize.height
         let scale = max(scaleWidth, scaleHeight)
@@ -332,7 +333,7 @@ extension UIImage {
         
         UIGraphicsPushContext(context!)
         
-        draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
+        base.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
         
         UIGraphicsPopContext()
         
@@ -349,4 +350,5 @@ extension UIImage {
         
         return UIImage(cgImage: temp_img!)
     }
+    
 }

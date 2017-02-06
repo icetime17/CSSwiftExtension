@@ -10,118 +10,116 @@ import UIKit
 
 // MARK: - UIView frame Related
 
-public extension UIView {
+public extension CSSwift where Base: UIView {
 
-    public var cs_left: CGFloat {
+    public var left: CGFloat {
         get {
-            return frame.minX
+            return base.frame.minX
         }
         set {
-            frame.origin.x = newValue
+            base.frame.origin.x = newValue
         }
     }
     
-    public var cs_right: CGFloat {
+    public var right: CGFloat {
         get {
-            return frame.maxX
+            return base.frame.maxX
         }
         set {
-            frame.origin.x = newValue - frame.width
+            base.frame.origin.x = newValue - base.frame.width
         }
     }
     
-    public var cs_top: CGFloat {
+    public var top: CGFloat {
         get {
-            return frame.minY
+            return base.frame.minY
         }
         set {
-            frame.origin.y = newValue
+            base.frame.origin.y = newValue
         }
     }
     
-    public var cs_bottom: CGFloat {
+    public var bottom: CGFloat {
         get {
-            return frame.maxY
+            return base.frame.maxY
         }
         set {
-            frame.origin.y = newValue - frame.height
+            base.frame.origin.y = newValue - base.frame.height
         }
     }
     
-    public var cs_width: CGFloat {
+    public var width: CGFloat {
         get {
-            return frame.width
+            return base.frame.width
         }
         set {
-            frame.size.width = newValue
+            base.frame.size.width = newValue
         }
     }
     
-    public var cs_height: CGFloat {
+    public var height: CGFloat {
         get {
-            return frame.height
+            return base.frame.height
         }
         set {
-            frame.size.height = newValue
+            base.frame.size.height = newValue
         }
     }
     
-    public var cs_size: CGSize {
+    public var size: CGSize {
         get {
-            return frame.size
+            return base.frame.size
         }
         set {
-            frame.size = newValue
+            base.frame.size = newValue
         }
     }
     
 }
 
 
-public extension UIView {
+// MARK: -
+
+public extension CSSwift where Base: UIView {
     
-    public var cs_snapshot: UIImage? {
-        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, 0)
+    public var snapshot: UIImage? {
+        UIGraphicsBeginImageContextWithOptions(base.layer.frame.size, false, 0)
         defer {
             UIGraphicsEndImageContext()
         }
         guard let context = UIGraphicsGetCurrentContext() else {
             return nil
         }
-        layer.render(in: context)
+        base.layer.render(in: context)
         return UIGraphicsGetImageFromCurrentImageContext()
     }
     
-}
-
-
-public extension UIView {
-    
     // add corner radius
-    // aView.cs_cornerRadius(corners: [.bottomLeft, .bottomRight], radius: 20)
-    public func cs_cornerRadius(corners: UIRectCorner = .allCorners, radius: CGFloat) {
-        let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+    // aView.cs.setCornerRadius(corners: [.bottomLeft, .bottomRight], radius: 20)
+    public func setCornerRadius(corners: UIRectCorner = .allCorners, radius: CGFloat) {
+        let maskPath = UIBezierPath(roundedRect: base.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath
-        layer.mask = shape
+        base.layer.mask = shape
     }
     
 }
 
 
-public extension UIView {
+public extension CSSwift where Base: UIView {
     
     // init UIView from a nib file
-    // let aView = AView.cs_loadFromNib("AView") as? AView
-    public class func cs_loadFromNib(_ nibName: String, bundle: Bundle? = nil) -> UIView? {
+    // let aView = AView.cs.loadFromNib("AView") as? AView
+    public static func loadFromNib(_ nibName: String, bundle: Bundle? = nil) -> UIView? {
         return UINib(nibName: nibName, bundle: bundle).instantiate(withOwner: nil, options: nil).first as? UIView
     }
 }
 
 
-public extension UIView {
-    public func cs_removeGestureRecognizers() {
-        gestureRecognizers?.forEach(removeGestureRecognizer)
+// MARK: - Gesture
+public extension CSSwift where Base: UIView {
+    public func removeGestureRecognizers() {
+        base.gestureRecognizers?.forEach(base.removeGestureRecognizer)
     }
 }
 

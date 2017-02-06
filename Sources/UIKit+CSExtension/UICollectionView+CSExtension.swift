@@ -8,13 +8,13 @@
 
 import UIKit
 
-public extension UICollectionView {
+public extension CSSwift where Base: UICollectionView {
     
     // number of all items
-    public var cs_numberOfAllItems: Int {
+    public var numberOfAllItems: Int {
         var itemCount = 0
-        for section in 0..<numberOfSections {
-            itemCount += numberOfItems(inSection: section)
+        for section in 0..<base.numberOfSections {
+            itemCount += base.numberOfItems(inSection: section)
         }
         return itemCount
     }

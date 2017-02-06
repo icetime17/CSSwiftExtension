@@ -37,8 +37,8 @@ class ViewController: UIViewController {
         
         btnTest.cs_acceptEventInterval = 2
         
-        btnTest.cs_setBackgroundColor(UIColor.blue, for: .normal)
-        btnTest.cs_setBackgroundColor(UIColor.red, for: .highlighted)
+        btnTest.cs.setBackgroundColor(UIColor.blue, for: .normal)
+        btnTest.cs.setBackgroundColor(UIColor.red, for: .highlighted)
     }
     
     private func testBlurImageView() {
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         anotherImageView.contentMode = .scaleAspectFit
         view.addSubview(anotherImageView)
         anotherImageView.center = view.center
-        anotherImageView.image = UIImage(named: "Model.jpg")?.cs_grayScale
+        anotherImageView.image = UIImage(named: "Model.jpg")?.cs.grayScale
         anotherImageView.alpha = 0.5
         
 //        anotherImageView.loadGif(name: "Railway")
@@ -77,21 +77,21 @@ class ViewController: UIViewController {
     }
     
     func actionBtnTest() {
-        btnTest.cs_cornerRadius(corners: [.bottomLeft, .bottomRight], radius: 20)
+        btnTest.cs.setCornerRadius(radius: 20)
         
-        guard let aView = AView.cs_loadFromNib("AView") as? AView else { return }
+        guard let aView = AView.cs.loadFromNib("AView") as? AView else { return }
         aView.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
         aView.center = view.center
         view.addSubview(aView)
         aView.lbTitle.text = "TestView"
         
-        aView.lbTitle.backgroundColor = UIColor.cs_random
+        aView.lbTitle.backgroundColor = UIColor.cs.random
     }
 
     func actionTapGesture() {
         cs_print(#function)
         
-        anotherImageView.cs_removeGestureRecognizers()
+        anotherImageView.cs.removeGestureRecognizers()
     }
 }
 

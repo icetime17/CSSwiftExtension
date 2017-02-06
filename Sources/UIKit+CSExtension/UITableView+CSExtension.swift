@@ -8,32 +8,32 @@
 
 import UIKit
 
-public extension UITableView {
+public extension CSSwift where Base: UITableView {
     
     // number of all rows
-    public var cs_numberOfAllRows: Int {
+    public var numberOfAllRows: Int {
         var rowCount = 0
-        for section in 0..<numberOfSections {
-            rowCount += numberOfRows(inSection: section)
+        for section in 0..<base.numberOfSections {
+            rowCount += base.numberOfRows(inSection: section)
         }
         return rowCount
     }
     
 }
 
-public extension UITableView {
+public extension CSSwift where Base: UITableView {
 
-    public func cs_removeEmptyFooter() {
-        tableFooterView = UIView(frame: CGRect.zero)
+    public func removeEmptyFooter() {
+        base.tableFooterView = UIView(frame: CGRect.zero)
     }
     
-    public func cs_scrollToTop(animated: Bool = true) {
-        setContentOffset(CGPoint.zero, animated: animated)
+    public func scrollToTop(animated: Bool = true) {
+        base.setContentOffset(CGPoint.zero, animated: animated)
     }
     
-    public func cs_scrollToBottom(animated: Bool = true) {
-        let bottomOffset = CGPoint(x: 0, y: contentSize.height - bounds.height)
-        setContentOffset(bottomOffset, animated: animated)
+    public func scrollToBottom(animated: Bool = true) {
+        let bottomOffset = CGPoint(x: 0, y: base.contentSize.height - base.bounds.height)
+        base.setContentOffset(bottomOffset, animated: animated)
     }
     
 }

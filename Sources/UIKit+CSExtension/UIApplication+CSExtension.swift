@@ -10,16 +10,16 @@ import UIKit
 
 // MARK: - UIApplication
 
-public extension UIApplication {
+public extension CSSwift where Base: UIApplication {
     
-    // cs_appDelegate: current AppDelegate
-    public var cs_appDelegate: UIApplicationDelegate {
+    // cs.appDelegate: current AppDelegate
+    public var appDelegate: UIApplicationDelegate {
         return UIApplication.shared.delegate!
     }
     
-    // cs_currentViewController: current UIViewController
-    public var cs_currentViewController: UIViewController {
-        let window = self.cs_appDelegate.window
+    // cs.currentViewController: current UIViewController
+    public var currentViewController: UIViewController {
+        let window = self.appDelegate.window
         var viewController = window!!.rootViewController
         
         while ((viewController?.presentedViewController) != nil) {
@@ -40,10 +40,10 @@ public extension UIApplication {
 
 // MARK: - App Version Related
 
-public extension UIApplication {
+public extension CSSwift where Base: UIApplication {
     
-    // cs_appVersion: current App Version
-    public var cs_appVersion: String {
+    // cs.appVersion: current App Version
+    public var appVersion: String {
         let infoDict = Bundle.main.infoDictionary! as Dictionary<String, AnyObject>
         return infoDict["CFBundleShortVersionString"] as! String
     }
@@ -53,9 +53,9 @@ public extension UIApplication {
 
 // MARK: - snapShot
 
-public extension UIApplication {
+public extension CSSwift where Base: UIApplication {
     
-    public func cs_snapShot(_ inView: UIView) -> UIImage {
+    public func snapShot(_ inView: UIView) -> UIImage {
         UIGraphicsBeginImageContext(inView.bounds.size)
         inView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let snapShot: UIImage = UIGraphicsGetImageFromCurrentImageContext()!

@@ -6,6 +6,7 @@
 //  Copyright © 2017年 com.icetime17. All rights reserved.
 //
 
+import Foundation
 
 // MARK: - Integer
 public extension Array where Element: Integer {
