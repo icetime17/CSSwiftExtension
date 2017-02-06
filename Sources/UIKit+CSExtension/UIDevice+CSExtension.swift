@@ -17,27 +17,27 @@ public extension CSSwift where Base: UIDevice {
         return Locale.preferredLanguages.first!
     }
     
-    public var cs_isCurrentLanguage_en: Bool {
+    public var isCurrentLanguage_en: Bool {
         let prefix = "en"
         return self.currentLanguage.hasPrefix(prefix)
     }
     
-    public var cs_isCurrentLanguage_zh_Hans: Bool {
+    public var isCurrentLanguage_zh_Hans: Bool {
         let prefix = "zh-Hans"
         return self.currentLanguage.hasPrefix(prefix)
     }
     
-    public var cs_isCurrentLanguage_zh_Hant: Bool {
+    public var isCurrentLanguage_zh_Hant: Bool {
         let prefix = "zh-Hant"
         return self.currentLanguage.hasPrefix(prefix)
     }
     
-    public var cs_isCurrentLanguage_ja: Bool {
+    public var isCurrentLanguage_ja: Bool {
         let prefix = "ja"
         return self.currentLanguage.hasPrefix(prefix)
     }
     
-    public var cs_isCurrentLanguage_ko: Bool {
+    public var isCurrentLanguage_ko: Bool {
         let prefix = "ko"
         return self.currentLanguage.hasPrefix(prefix)
     }

@@ -10,25 +10,25 @@ import Foundation
 
 // MARK: - FileManager
 
-public extension FileManager {
+public extension CSSwift where Base: FileManager {
 
-    public var cs_homeDirectory: String {
+    public var homeDirectory: String {
         return NSHomeDirectory()
     }
     
-    public var cs_tempDirectory: String {
+    public var tempDirectory: String {
         return NSTemporaryDirectory()
     }
     
-    public var cs_documentsDirectory: String {
+    public var documentsDirectory: String {
         return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     }
     
-    public var cs_libraryDirectory: String {
+    public var libraryDirectory: String {
         return NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
     }
     
-    public var cs_cacheDirectory: String {
+    public var cacheDirectory: String {
         return NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
     }
 }
