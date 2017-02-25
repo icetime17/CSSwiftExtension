@@ -9,6 +9,18 @@
 import UIKit
 
 
+public extension CSSwift where Base: UIDevice {
+
+    public static var isSimulator: Bool {
+        #if (arch(i386) || arch(x86_64)) && os(iOS)
+            return true
+        #endif
+        
+        return false
+    }
+    
+}
+
 // MARK: - Language Related
 
 public extension CSSwift where Base: UIDevice {
