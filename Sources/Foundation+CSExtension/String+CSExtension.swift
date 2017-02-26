@@ -89,6 +89,16 @@ public extension String {
 // MARK: - Method
 public extension String {
     
+    // dynamic height
+    public func dts_heightOf(font: UIFont, maxSize: CGSize) -> CGFloat {
+        let rect = (self as NSString).boundingRect(with: maxSize,
+                                                   options: .usesLineFragmentOrigin,
+                                                   attributes: [NSFontAttributeName: font],
+                                                   context: nil)
+        return rect.height
+    }
+    
+    // custom font, line, kern
     public func cs_attributesStringWithFont(font: UIFont, lineSpacing: CGFloat, kernSpacing: CGFloat, textAlignment: NSTextAlignment) -> NSAttributedString {
         let paraStyle = NSMutableParagraphStyle()
         paraStyle.lineBreakMode = .byWordWrapping
