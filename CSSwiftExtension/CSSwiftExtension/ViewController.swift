@@ -26,6 +26,8 @@ class ViewController: UIViewController {
         testAnotherImageView()
         
         addBtnTest()
+        
+//        testImageWatermark()
     }
     
     private func addBtnTest() {
@@ -95,6 +97,33 @@ class ViewController: UIViewController {
     }
 }
 
+
+extension ViewController {
+    func testImageWatermark() {
+        guard let img = UIImage(named: "Model.jpg") else { return }
+        let ret1 = img.cs.imageWithWatermark(imgWatermark: img,
+                                            rectWatermark: CGRect(x: 0, y: 0, width: 200, height: 200))
+        cs_print(ret1.size)
+        
+        let ret2 = img.cs.imageWithWatermark(text: "This is Watermark",
+                                             point: CGPoint(x: 100, y: 100),
+                                             font: UIFont.systemFont(ofSize: 50))
+        cs_print(ret2.size)
+        
+        
+        let style = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        style.alignment = .center
+        let attributes = [
+            NSFontAttributeName: UIFont.systemFont(ofSize: 50),
+            NSParagraphStyleAttributeName: style,
+            NSForegroundColorAttributeName: UIColor.white,
+            ]
+        let ret3 = img.cs.imageWithWatermark(text: "This is Watermark",
+                                             point: CGPoint(x: 100, y: 100),
+                                             attributes: attributes)
+        cs_print(ret3.size)
+    }
+}
 
 // MARK: - Selector
 private extension Selector {

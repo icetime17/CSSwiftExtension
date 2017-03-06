@@ -275,6 +275,71 @@ public extension CSSwift where Base: UIImage {
     
 }
 
+// MARK: - Watermark
+public extension CSSwift where Base: UIImage {
+    // Image
+    public func imageWithWatermark(imgWatermark: UIImage, rectWatermark: CGRect) -> UIImage {
+        __prepareImageContext()
+        
+        imgWatermark.draw(in: rectWatermark)
+        
+        return __imageFromContext()
+    }
+    
+    // Text
+    public func imageWithWatermark(text: String,
+                                   point: CGPoint,
+                                   font: UIFont,
+                                   color: UIColor = .white) -> UIImage {
+        let style = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        style.alignment = .center
+        let attributes = [
+            NSFontAttributeName: font,
+            NSParagraphStyleAttributeName: style,
+            NSForegroundColorAttributeName: color,
+        ]
+        
+        return imageWithWatermark(text: text, point: point, attributes: attributes)
+    }
+    
+    // Text with custom style
+    /**
+     let style = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+     style.alignment = .center
+     let attributes = [
+        NSFontAttributeName: font,
+        NSParagraphStyleAttributeName: style,
+        NSForegroundColorAttributeName: color,
+     ]
+     imageWithWatermark(text: text, point: point, attributes: attributes)
+     */
+    public func imageWithWatermark(text: String,
+                                   point: CGPoint,
+                                   attributes: [String : Any]?) -> UIImage {
+        __prepareImageContext()
+        
+        (text as NSString).draw(at: point, withAttributes: attributes)
+        
+        return __imageFromContext()
+    }
+    
+    private func __prepareImageContext() {
+        let rectResult = CGRect(origin: CGPoint.zero, size: base.size)
+        UIGraphicsBeginImageContextWithOptions(rectResult.size, false, 0)
+        base.draw(in: rectResult)
+    }
+    
+    private func __imageFromContext() -> UIImage {
+        guard let retImage = UIGraphicsGetImageFromCurrentImageContext() else {
+            UIGraphicsEndImageContext()
+            return self.base
+        }
+        
+        UIGraphicsEndImageContext()
+        return retImage
+    }
+}
+
 // MARK: - 微信分享缩略图
 public extension CSSwift where Base: UIImage {
     
