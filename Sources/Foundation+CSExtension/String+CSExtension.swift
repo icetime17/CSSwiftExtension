@@ -11,6 +11,7 @@ import Foundation
 
 public extension String {
 
+    // length
     public var cs_length: Int {
         return characters.count
     }
@@ -64,6 +65,46 @@ public extension String {
         return dateFormatter.date(from: self)
     }
     
+}
+
+public extension String {
+    
+    // reverse
+    public var cs_reversed: String {
+        return String(characters.reversed())
+    }
+    
+    // index of subString
+    public func cs_indexOfSubString(_ tString: String) -> Int {
+        if tString.isEmpty {
+            return -1
+        }
+        
+        let oChars = [Character](characters)
+        let tChars = [Character](tString.characters)
+        
+        if oChars.count < tChars.count {
+            return -1
+        }
+        
+        for i in 0...(oChars.count - tChars.count) {
+            if oChars[i] != tChars[0] {
+                continue
+            }
+            
+            for j in 0..<tChars.count {
+                if oChars[i+j] != tChars[j] {
+                    break
+                }
+                
+                if j == tChars.count - 1 {
+                    return i
+                }
+            }
+        }
+        
+        return -1
+    }
 }
 
 // MARK: - Regular expression

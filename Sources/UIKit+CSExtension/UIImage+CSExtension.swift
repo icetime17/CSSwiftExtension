@@ -191,7 +191,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: UIImage scaled
      */
-    public func imageScaledToSize(targetSize: CGSize, withOriginalRatio: Bool) -> UIImage {
+    public func imageScaledToSize(targetSize: CGSize, withOriginalRatio: Bool = true) -> UIImage {
         var sizeFinal = targetSize
         
         if withOriginalRatio {
@@ -277,13 +277,25 @@ public extension CSSwift where Base: UIImage {
 
 // MARK: - Watermark
 public extension CSSwift where Base: UIImage {
-    // Image
+    // Add image watermark via rect
     public func imageWithWatermark(imgWatermark: UIImage, rectWatermark: CGRect) -> UIImage {
         __prepareImageContext()
         
         imgWatermark.draw(in: rectWatermark)
         
         return __imageFromContext()
+    }
+    
+    // Add image watermark via center and size
+    public func imageWithWatermark(imgWatermark: UIImage,
+                                   centerWatermark: CGPoint,
+                                   sizeWatermark: CGRect) -> UIImage {
+        let rectWatermark = CGRect(x: centerWatermark.x - sizeWatermark.width / 2,
+                                   y: centerWatermark.y - sizeWatermark.height / 2,
+                                   width: sizeWatermark.width,
+                                   height: sizeWatermark.height)
+        
+        return imageWithWatermark(imgWatermark: imgWatermark, rectWatermark: rectWatermark)
     }
     
     // Text
@@ -332,7 +344,7 @@ public extension CSSwift where Base: UIImage {
     private func __imageFromContext() -> UIImage {
         guard let retImage = UIGraphicsGetImageFromCurrentImageContext() else {
             UIGraphicsEndImageContext()
-            return self.base
+            return base
         }
         
         UIGraphicsEndImageContext()
