@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         
         addBtnTest()
         
-//        testImageWatermark()
+        testImageWatermark()
     }
     
     private func addBtnTest() {
@@ -101,15 +101,20 @@ class ViewController: UIViewController {
 extension ViewController {
     func testImageWatermark() {
         guard let img = UIImage(named: "Model.jpg") else { return }
-        let ret1 = img.cs.imageWithWatermark(imgWatermark: img,
-                                            rectWatermark: CGRect(x: 0, y: 0, width: 200, height: 200))
+        let ret1 = img.cs.imageWithWatermark(img: img,
+                                            rect: CGRect(x: 0, y: 0, width: 200, height: 200))
         cs_print(ret1.size)
+        
+        let ret11 = img.cs.imageWithWatermark(img: img,
+                                              center: CGPoint(x: img.size.width / 2, y: img.size.height / 2),
+                                              size: CGSize(width: 200, height: 200))
+        cs_print(ret11.size)
+        
         
         let ret2 = img.cs.imageWithWatermark(text: "This is Watermark",
                                              point: CGPoint(x: 100, y: 100),
                                              font: UIFont.systemFont(ofSize: 50))
         cs_print(ret2.size)
-        
         
         let style = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         style.alignment = .center

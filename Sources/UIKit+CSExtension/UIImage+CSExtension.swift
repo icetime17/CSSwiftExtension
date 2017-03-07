@@ -278,24 +278,24 @@ public extension CSSwift where Base: UIImage {
 // MARK: - Watermark
 public extension CSSwift where Base: UIImage {
     // Add image watermark via rect
-    public func imageWithWatermark(imgWatermark: UIImage, rectWatermark: CGRect) -> UIImage {
+    public func imageWithWatermark(img: UIImage, rect: CGRect) -> UIImage {
         __prepareImageContext()
         
-        imgWatermark.draw(in: rectWatermark)
+        img.draw(in: rect)
         
         return __imageFromContext()
     }
     
     // Add image watermark via center and size
-    public func imageWithWatermark(imgWatermark: UIImage,
-                                   centerWatermark: CGPoint,
-                                   sizeWatermark: CGRect) -> UIImage {
-        let rectWatermark = CGRect(x: centerWatermark.x - sizeWatermark.width / 2,
-                                   y: centerWatermark.y - sizeWatermark.height / 2,
-                                   width: sizeWatermark.width,
-                                   height: sizeWatermark.height)
+    public func imageWithWatermark(img: UIImage,
+                                   center: CGPoint,
+                                   size: CGSize) -> UIImage {
+        let rect = CGRect(x: center.x - size.width / 2,
+                          y: center.y - size.height / 2,
+                          width: size.width,
+                          height: size.height)
         
-        return imageWithWatermark(imgWatermark: imgWatermark, rectWatermark: rectWatermark)
+        return imageWithWatermark(img: img, rect: rect)
     }
     
     // Text
