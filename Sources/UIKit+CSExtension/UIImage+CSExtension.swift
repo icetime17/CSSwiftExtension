@@ -45,6 +45,15 @@ extension UIImage {
     
 }
 
+public extension CSSwift where Base: UIImage {
+    
+    // center
+    public var center: CGPoint {
+        return CGPoint(x: base.size.width / 2, y: base.size.height / 2)
+    }
+
+}
+
 // MARK: - save
 public extension CSSwift where Base: UIImage {
     
@@ -52,11 +61,12 @@ public extension CSSwift where Base: UIImage {
      Save UIImage to file
      
      - parameter filePath:          file path
-     - parameter compressionFactor: compression factor, only useful for JPEG format image.
+     - parameter compressionFactor: compression factor, only useful for JPEG format image. 
+                                    Default to be 1.0.
      
      - returns: true or false
      */
-    public func saveImageToFile(filePath: String, compressionFactor: CGFloat) -> Bool {
+    public func saveImageToFile(filePath: String, compressionFactor: CGFloat = 1.0) -> Bool {
         let imageData: NSData!
         if filePath.hasSuffix(".jpeg") {
             imageData = UIImageJPEGRepresentation(base, compressionFactor) as NSData!
@@ -120,7 +130,7 @@ public extension CSSwift where Base: UIImage {
             rectRatioed = CGRect(x: 0, y: (base.size.height - heightImage) / 2, width: widthImage, height: heightImage)
         }
         
-        return self.imageCropped(bounds: rectRatioed)
+        return imageCropped(bounds: rectRatioed)
     }
     
     /**
@@ -188,6 +198,7 @@ public extension CSSwift where Base: UIImage {
      
      - parameter targetSize:        targetSize
      - parameter withOriginalRatio: whether the result UIImage should keep the original ratio
+                                    Default to be true
      
      - returns: UIImage scaled
      */
@@ -336,9 +347,9 @@ public extension CSSwift where Base: UIImage {
     }
     
     private func __prepareImageContext() {
-        let rectResult = CGRect(origin: CGPoint.zero, size: base.size)
-        UIGraphicsBeginImageContextWithOptions(rectResult.size, false, 0)
-        base.draw(in: rectResult)
+        let rectCanvas = CGRect(origin: CGPoint.zero, size: base.size)
+        UIGraphicsBeginImageContextWithOptions(rectCanvas.size, false, 0)
+        base.draw(in: rectCanvas)
     }
     
     private func __imageFromContext() -> UIImage {
@@ -391,7 +402,7 @@ public extension CSSwift where Base: UIImage {
             imageSize = CGSize(width: base.size.width * scale, height: base.size.height * scale)
         }
         
-        let image = self.thumbnailWithSize(targetSize: imageSize, isNeedCut: isNeedCut)
+        let image = thumbnailWithSize(targetSize: imageSize, isNeedCut: isNeedCut)
         let imageData = UIImageJPEGRepresentation(image, 0.4)
         return UIImage(data: imageData!)!
     }

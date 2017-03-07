@@ -106,7 +106,7 @@ extension ViewController {
         cs_print(ret1.size)
         
         let ret11 = img.cs.imageWithWatermark(img: img,
-                                              center: CGPoint(x: img.size.width / 2, y: img.size.height / 2),
+                                              center: img.cs.center,
                                               size: CGSize(width: 200, height: 200))
         cs_print(ret11.size)
         
