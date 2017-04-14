@@ -46,7 +46,7 @@ public extension String {
         let scanner = Scanner(string: self)
         var s: NSString? = ""
         if scanner.scanString(self, into: &s) {
-            let stringValue = s as? String
+            let stringValue = s as String?
             return stringValue
         }
         return nil

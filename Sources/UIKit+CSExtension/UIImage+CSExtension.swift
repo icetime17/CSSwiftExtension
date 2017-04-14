@@ -20,8 +20,8 @@ extension UIImage {
      - returns: UIImage
      */
     public convenience init(urlString: String) {
-        let imageData = NSData(contentsOf: NSURL(string: urlString) as! URL)
-        self.init(data: imageData as! Data)!
+        let imageData = NSData(contentsOf: NSURL(string: urlString)! as URL)
+        self.init(data: imageData! as Data)!
     }
     
     /**
@@ -165,7 +165,7 @@ public extension CSSwift where Base: UIImage {
      - returns: UIImage rotated
      */
     public func imageRotatedByDegrees(degrees: CGFloat) -> UIImage {
-        let radians = CGFloat(M_PI) * degrees / 180.0
+        let radians = CGFloat(Double.pi) * degrees / 180.0
         
         // calculate the size of the rotated view's containing box for our drawing space
         let rotatedViewBox = UIView(frame: CGRect(x: 0, y: 0, width: base.size.width, height: base.size.height))
