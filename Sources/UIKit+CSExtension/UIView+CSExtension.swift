@@ -94,7 +94,7 @@ public extension CSSwift where Base: UIView {
         return UIGraphicsGetImageFromCurrentImageContext()
     }
     
-    // add corner radius
+    // add corner radius, may have `off-screen render` problem.
     // aView.cs.setCornerRadius(corners: [.bottomLeft, .bottomRight], radius: 20)
     public func setCornerRadius(corners: UIRectCorner = .allCorners, radius: CGFloat) {
         let maskPath = UIBezierPath(roundedRect: base.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
