@@ -81,6 +81,17 @@ public extension CSSwift where Base: UIView {
 // MARK: -
 
 public extension CSSwift where Base: UIView {
+    // when View does not care the UIViewControler it belongs to.
+    public var currentViewController: UIViewController {
+        var responder: UIResponder = base.next!
+        while !responder.isKind(of: UIWindow.classForCoder()) {
+            if responder.isKind(of: UIViewController.classForCoder()) {
+                break
+            }
+            responder = responder.next!
+        }
+        return responder as! UIViewController
+    }
     
     public var snapshot: UIImage? {
         UIGraphicsBeginImageContextWithOptions(base.layer.frame.size, false, 0)
@@ -123,6 +134,20 @@ public extension CSSwift where Base: UIView {
     }
 }
 
+// MARK: - Animation
+public extension CSSwift where Base: UIView {
+    public func pop() {
+        guard let superView = base.superview else { return }
+        let center = CGPoint(x: superView.frame.size.width / 2, y: superView.frame.height / 2)
+        base.center = center
+        base.alpha = 0
+        base.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        UIView.animate(withDuration: 0.3, animations: { 
+            self.base.alpha = 1
+            self.base.transform = .identity
+        })
+    }
+}
 
 // MARK: - reuse
 public protocol ReusableView {
