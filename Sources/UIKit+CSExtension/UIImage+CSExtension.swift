@@ -13,15 +13,15 @@ import ImageIO
 extension UIImage {
     
     /**
-     UIImage init from an URL string
+     UIImage init from an URL string. Synchronsize and NOT recommended.
      
      - parameter urlString: URL string
      
      - returns: UIImage
      */
     public convenience init(urlString: String) {
-        let imageData = NSData(contentsOf: NSURL(string: urlString)! as URL)
-        self.init(data: imageData! as Data)!
+        let imageData = try! Data(contentsOf: URL(string: urlString)!)
+        self.init(data: imageData)!
     }
     
     /**
