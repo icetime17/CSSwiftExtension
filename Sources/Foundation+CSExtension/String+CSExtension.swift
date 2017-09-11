@@ -161,3 +161,28 @@ public extension String {
     }
     
 }
+
+// MARK: - Version Compare
+public extension String {
+    
+    public func cs_isEqualTo(_ v: String) -> Bool {
+        return self.compare(v, options: .numeric, range: nil, locale: nil) == .orderedSame
+    }
+    
+    public func cs_isHigherThan(_ v: String) -> Bool {
+        return self.compare(v, options: .numeric, range: nil, locale: nil) == .orderedDescending
+    }
+    
+    public func cs_isEqualToOrHigherThan(_ v: String) -> Bool {
+        return self.compare(v, options: .numeric, range: nil, locale: nil) != .orderedAscending
+    }
+    
+    public func cs_isLowerThan(_ v: String) -> Bool {
+        return self.compare(v, options: .numeric, range: nil, locale: nil) == .orderedAscending
+    }
+    
+    public func cs_isEqualToOrLowerThan(_ v: String) -> Bool {
+        return self.compare(v, options: .numeric, range: nil, locale: nil) != .orderedDescending
+    }
+    
+}

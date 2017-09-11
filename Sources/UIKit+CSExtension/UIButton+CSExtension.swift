@@ -76,7 +76,7 @@ public extension UIButton {
 }
 
 
-// MARK: - set backgroundColor
+// MARK: - backgroundColor
 
 public extension CSSwift where Base: UIButton {
     
@@ -87,3 +87,13 @@ public extension CSSwift where Base: UIButton {
     
 }
 
+// MARK: - cornerRadius
+
+public extension CSSwift where Base: UIButton {
+    
+    public func setCornerRadius(_ v: CGFloat) {
+        base.layer.cornerRadius = v
+        base.layer.masksToBounds = true
+    }
+    
+}

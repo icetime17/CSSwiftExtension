@@ -28,9 +28,25 @@ class ViewController: UIViewController {
         addBtnTest()
         
         testImageWatermark()
+        
+        var json: JSONDictionary = [
+            "name":"chris",
+            "age":18,
+        ]
+        json.updateValue(17, forKey: "river")
+        json["city"] = "shanghai"
+        print(json)
+        
+        let appVersion = UIApplication.shared.cs.appVersion
+        print(appVersion)
+        print(appVersion.cs_isEqualTo("0.1.1"))
+        print(appVersion.cs_isHigherThan("0.0.9"))
+        print(appVersion.cs_isEqualToOrHigherThan("0.1.1"))
+        print(appVersion.cs_isHigherThan("1.0.0"))
     }
     
-    private func addBtnTest() {
+    @discardableResult // ignore return value
+    private func addBtnTest() -> Int {
         btnTest = UIButton(frame: CGRect(x: 50, y: 50, width: 100, height: 30))
         btnTest.backgroundColor = UIColor.black
         view.addSubview(btnTest)
@@ -41,6 +57,8 @@ class ViewController: UIViewController {
         
         btnTest.cs.setBackgroundColor(UIColor.blue, for: .normal)
         btnTest.cs.setBackgroundColor(UIColor.red, for: .highlighted)
+        
+        return 1
     }
     
     private func testBlurImageView() {

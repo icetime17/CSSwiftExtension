@@ -21,6 +21,18 @@ public extension CSSwift where Base: UICollectionView {
     
 }
 
+public extension CSSwift where Base: UICollectionView {
+    
+    public func scrollToTop(animated: Bool = true) {
+        base.setContentOffset(CGPoint.zero, animated: animated)
+    }
+    
+    public func scrollToBottom(animated: Bool = true) {
+        let bottomOffset = CGPoint(x: 0, y: base.contentSize.height - base.bounds.height)
+        base.setContentOffset(bottomOffset, animated: animated)
+    }
+    
+}
 
 // MARK: - reuse
 extension UICollectionViewCell: ReusableView {

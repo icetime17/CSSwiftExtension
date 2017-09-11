@@ -48,10 +48,10 @@
 		A47EAB1A1E1C90CA00D25169 /* DispatchQueue+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EAB191E1C90CA00D25169 /* DispatchQueue+CSExtension.swift */; };
 		A47EAB1E1E1C9F9B00D25169 /* UIButton+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EAB1D1E1C9F9B00D25169 /* UIButton+CSExtension.swift */; };
 		A49D41A81E6D63D500DF0AE2 /* NSObject+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49D41A71E6D63D500DF0AE2 /* NSObject+CSExtension.swift */; };
-		A4E9F34C1E48240600818627 /* CSSwiftExtension-Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9F34B1E48240600818627 /* CSSwiftExtension-Common.swift */; };
-		A4E9F34E1E48258200818627 /* CSSwiftExtension-Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9F34B1E48240600818627 /* CSSwiftExtension-Common.swift */; };
+		A4E9F34C1E48240600818627 /* CSSwiftExtension+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9F34B1E48240600818627 /* CSSwiftExtension+Common.swift */; };
+		A4E9F34E1E48258200818627 /* CSSwiftExtension+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9F34B1E48240600818627 /* CSSwiftExtension+Common.swift */; };
 		A4E9F34F1E48258C00818627 /* FileManager+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA51E0D20FE00FBB743 /* FileManager+CSExtension.swift */; };
-		A4E9F3501E48259F00818627 /* CSSwiftExtension-Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9F34B1E48240600818627 /* CSSwiftExtension-Common.swift */; };
+		A4E9F3501E48259F00818627 /* CSSwiftExtension+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9F34B1E48240600818627 /* CSSwiftExtension+Common.swift */; };
 		A4E9F3511E48268800818627 /* Date+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA41E0D20FE00FBB743 /* Date+CSExtension.swift */; };
 		A4E9F3521E48268C00818627 /* String+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4564CA61E0D20FE00FBB743 /* String+CSExtension.swift */; };
 		A4E9F3531E48268F00818627 /* Array+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EAAF51E1B8C9B00D25169 /* Array+CSExtension.swift */; };
@@ -150,7 +150,7 @@
 		A47EAB191E1C90CA00D25169 /* DispatchQueue+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+CSExtension.swift"; sourceTree = "<group>"; };
 		A47EAB1D1E1C9F9B00D25169 /* UIButton+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+CSExtension.swift"; sourceTree = "<group>"; };
 		A49D41A71E6D63D500DF0AE2 /* NSObject+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+CSExtension.swift"; sourceTree = "<group>"; };
-		A4E9F34B1E48240600818627 /* CSSwiftExtension-Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CSSwiftExtension-Common.swift"; sourceTree = "<group>"; };
+		A4E9F34B1E48240600818627 /* CSSwiftExtension+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CSSwiftExtension+Common.swift"; sourceTree = "<group>"; };
 		A4E9F3AB1E485A9D00818627 /* CSSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSwift.swift; sourceTree = "<group>"; };
 		A4F9E0591E2C6A920073423E /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		A4F9E05A1E2C6A920073423E /* MyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				A4E9F3AB1E485A9D00818627 /* CSSwift.swift */,
-				A4E9F34B1E48240600818627 /* CSSwiftExtension-Common.swift */,
+				A4E9F34B1E48240600818627 /* CSSwiftExtension+Common.swift */,
 				A4564CA21E0D20FE00FBB743 /* Foundation+CSExtension */,
 				A4564CA71E0D20FE00FBB743 /* UIKit+CSExtension */,
 			);
@@ -372,7 +372,7 @@
 					};
 					A47B45CB1E0B674D00492FF2 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = GGVWN85K85;
+						DevelopmentTeam = NZPBGBZZ28;
 						ProvisioningStyle = Automatic;
 					};
 					A47B45DF1E0B674D00492FF2 = {
@@ -443,7 +443,7 @@
 				A40D58521E165BE300763603 /* FileManager+CSExtension.swift in Sources */,
 				A40D58531E165BE300763603 /* String+CSExtension.swift in Sources */,
 				A40D58541E165BE300763603 /* UIApplication+CSExtension.swift in Sources */,
-				A4E9F34E1E48258200818627 /* CSSwiftExtension-Common.swift in Sources */,
+				A4E9F34E1E48258200818627 /* CSSwiftExtension+Common.swift in Sources */,
 				A4E9F3651E4826AD00818627 /* DispatchQueue+CSExtension.swift in Sources */,
 				A4E9F3591E48269900818627 /* UIScreen+CSExtension.swift in Sources */,
 				A4E9F35F1E4826A500818627 /* UICollectionView+CSExtension.swift in Sources */,
@@ -486,7 +486,7 @@
 				A4564CB81E0D20FE00FBB743 /* UIImageView+CSBlur.swift in Sources */,
 				A47EAAEC1E1B775C00D25169 /* AView.swift in Sources */,
 				A47EAAF01E1B7F2000D25169 /* UITableView+CSExtension.swift in Sources */,
-				A4E9F34C1E48240600818627 /* CSSwiftExtension-Common.swift in Sources */,
+				A4E9F34C1E48240600818627 /* CSSwiftExtension+Common.swift in Sources */,
 				A47B45D01E0B674D00492FF2 /* AppDelegate.swift in Sources */,
 				A47EAAF81E1B9E4200D25169 /* UIImage+Gif.swift in Sources */,
 				A4564CB31E0D20FE00FBB743 /* UIApplication+CSExtension.swift in Sources */,
@@ -515,7 +515,7 @@
 				A47B45E51E0B674D00492FF2 /* CSSwiftExtensionTests.swift in Sources */,
 				A4E9F3551E48269100818627 /* UIApplication+CSExtension.swift in Sources */,
 				A4564CBE1E0D229200FBB743 /* UIImage+CSExtension.swift in Sources */,
-				A4E9F3501E48259F00818627 /* CSSwiftExtension-Common.swift in Sources */,
+				A4E9F3501E48259F00818627 /* CSSwiftExtension+Common.swift in Sources */,
 				A4E9F35E1E4826A500818627 /* UICollectionView+CSExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,11 +703,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GGVWN85K85;
+				DEVELOPMENT_TEAM = NZPBGBZZ28;
 				INFOPLIST_FILE = CSSwiftExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.icetime17.CSSwiftExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.icetime.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -718,11 +718,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GGVWN85K85;
+				DEVELOPMENT_TEAM = NZPBGBZZ28;
 				INFOPLIST_FILE = CSSwiftExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.icetime17.CSSwiftExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.icetime.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

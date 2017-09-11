@@ -1,5 +1,5 @@
 //
-//  CSSwiftExtension-Common.swift
+//  CSSwiftExtension+Common.swift
 //  CSSwiftExtension
 //
 //  Created by Chris Hu on 17/2/6.
@@ -7,6 +7,10 @@
 //
 
 import Foundation
+
+
+public typealias JSONDictionary = [String: Any]
+
 
 public func cs_print(_ c: Any, file: String = #file, method: String = #function , line: Int = #line) {
     debugPrint(">>> \(file.components(separatedBy: "/").last!)-\(method)-\(line): \(c)")
