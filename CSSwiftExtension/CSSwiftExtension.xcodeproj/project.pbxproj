@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8365BA561F68AAB500E31A0D /* UIScrollView+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365BA551F68AAB500E31A0D /* UIScrollView+CSExtension.swift */; };
 		A4035F6E1F6650F6003AD29A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A4035F6D1F6650F6003AD29A /* README.md */; };
 		A4035F701F665101003AD29A /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = A4035F6F1F665101003AD29A /* LICENSE.md */; };
 		A40D58481E165AEB00763603 /* CSSwiftExtensionFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = A40D58461E165AEB00763603 /* CSSwiftExtensionFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -117,6 +118,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8365BA551F68AAB500E31A0D /* UIScrollView+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+CSExtension.swift"; sourceTree = "<group>"; };
 		A4035F6D1F6650F6003AD29A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A4035F6F1F665101003AD29A /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		A40D58441E165AEB00763603 /* CSSwiftExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSSwiftExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +220,7 @@
 				A4564CAC1E0D20FE00FBB743 /* UIImage+CSExtension.swift */,
 				A4564CAD1E0D20FE00FBB743 /* UIImageView+CSBlur.swift */,
 				A4564CAE1E0D20FE00FBB743 /* UIView+CSExtension.swift */,
+				8365BA551F68AAB500E31A0D /* UIScrollView+CSExtension.swift */,
 				A47EAAEF1E1B7F2000D25169 /* UITableView+CSExtension.swift */,
 				A47EAAF11E1B819600D25169 /* UICollectionView+CSExtension.swift */,
 				A47EAAF31E1B874600D25169 /* CGPoint+CSExtension.swift */,
@@ -486,6 +489,7 @@
 				A47EAB1E1E1C9F9B00D25169 /* UIButton+CSExtension.swift in Sources */,
 				A47EAAF61E1B8C9B00D25169 /* Array+CSExtension.swift in Sources */,
 				A4E9F3AC1E485A9D00818627 /* CSSwift.swift in Sources */,
+				8365BA561F68AAB500E31A0D /* UIScrollView+CSExtension.swift in Sources */,
 				A4564CB91E0D20FE00FBB743 /* UIView+CSExtension.swift in Sources */,
 				A4564CB71E0D20FE00FBB743 /* UIImage+CSExtension.swift in Sources */,
 				A47EAB1A1E1C90CA00D25169 /* DispatchQueue+CSExtension.swift in Sources */,
@@ -715,7 +719,7 @@
 				INFOPLIST_FILE = CSSwiftExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.icetime.-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.icetime.csswiftextension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -730,7 +734,7 @@
 				INFOPLIST_FILE = CSSwiftExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.icetime.-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.icetime.csswiftextension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
