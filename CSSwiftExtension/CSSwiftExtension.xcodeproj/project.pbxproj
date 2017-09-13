@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8365BA561F68AAB500E31A0D /* UIScrollView+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365BA551F68AAB500E31A0D /* UIScrollView+CSExtension.swift */; };
+		8365BA581F68AB4C00E31A0D /* CSSwiftExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8365BA571F68AB4C00E31A0D /* CSSwiftExtension.podspec */; };
 		A4035F6E1F6650F6003AD29A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A4035F6D1F6650F6003AD29A /* README.md */; };
 		A4035F701F665101003AD29A /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = A4035F6F1F665101003AD29A /* LICENSE.md */; };
 		A40D58481E165AEB00763603 /* CSSwiftExtensionFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = A40D58461E165AEB00763603 /* CSSwiftExtensionFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -119,6 +120,7 @@
 
 /* Begin PBXFileReference section */
 		8365BA551F68AAB500E31A0D /* UIScrollView+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+CSExtension.swift"; sourceTree = "<group>"; };
+		8365BA571F68AB4C00E31A0D /* CSSwiftExtension.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CSSwiftExtension.podspec; path = ../CSSwiftExtension.podspec; sourceTree = "<group>"; };
 		A4035F6D1F6650F6003AD29A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A4035F6F1F665101003AD29A /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		A40D58441E165AEB00763603 /* CSSwiftExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSSwiftExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,6 +238,7 @@
 			children = (
 				A4035F6D1F6650F6003AD29A /* README.md */,
 				A4035F6F1F665101003AD29A /* LICENSE.md */,
+				8365BA571F68AB4C00E31A0D /* CSSwiftExtension.podspec */,
 				A47B45EF1E0B67C200492FF2 /* Sources */,
 				A47B45CE1E0B674D00492FF2 /* CSSwiftExtension */,
 				A47B45E31E0B674D00492FF2 /* CSSwiftExtensionTests */,
@@ -428,6 +431,7 @@
 				A47B45DA1E0B674D00492FF2 /* LaunchScreen.storyboard in Resources */,
 				A4564CBD1E0D226500FBB743 /* Model.jpg in Resources */,
 				A47EAAEE1E1B776900D25169 /* AView.xib in Resources */,
+				8365BA581F68AB4C00E31A0D /* CSSwiftExtension.podspec in Resources */,
 				A47B45D71E0B674D00492FF2 /* Assets.xcassets in Resources */,
 				A4F9E05D1E2C6A920073423E /* MyTableViewCell.xib in Resources */,
 				A47B45D51E0B674D00492FF2 /* Main.storyboard in Resources */,
