@@ -80,7 +80,7 @@ public extension CSSwift where Base: UIImage {
             do {
                 try FileManager.default.removeItem(atPath: filePath)
             } catch {
-                cs_print("This file (\(filePath)) exists already, and NSFileManager failed to remove it.")
+                CS_Print("This file (\(filePath)) exists already, and NSFileManager failed to remove it.")
                 return false
             }
         }
@@ -88,7 +88,7 @@ public extension CSSwift where Base: UIImage {
         if FileManager.default.createFile(atPath: filePath, contents: imageData as Data?, attributes: nil) {
             return imageData.write(toFile: filePath, atomically: true)
         } else {
-            cs_print("FileManager failed to create file at path: \(filePath).")
+            CS_Print("FileManager failed to create file at path: \(filePath).")
             return false
         }
     }

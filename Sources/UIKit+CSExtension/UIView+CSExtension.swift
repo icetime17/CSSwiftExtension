@@ -136,16 +136,47 @@ public extension CSSwift where Base: UIView {
 
 // MARK: - Animation
 public extension CSSwift where Base: UIView {
-    public func pop() {
-        guard let superView = base.superview else { return }
-        let center = CGPoint(x: superView.frame.size.width / 2, y: superView.frame.height / 2)
-        base.center = center
+    public func pop(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
         base.alpha = 0
         base.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        UIView.animate(withDuration: 0.3, animations: { 
-            self.base.alpha = 1
-            self.base.transform = .identity
-        })
+        UIView.animate(withDuration: duration,
+                       delay: 0,
+                       usingSpringWithDamping: 0.6,
+                       initialSpringVelocity: 1,
+                       options: .layoutSubviews,
+                       animations: {
+                        self.base.alpha = 1
+                        self.base.transform = .identity
+                       },
+                       completion: completion)
+    }
+    
+    public func raise(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
+        let offsetY = CS_ScreenHeight - base.cs.top
+        base.transform = CGAffineTransform(translationX: 0, y: offsetY)
+        UIView.animate(withDuration: duration,
+                       delay: 0,
+                       usingSpringWithDamping: 0.6,
+                       initialSpringVelocity: 1,
+                       options: .layoutSubviews,
+                       animations: {
+                        self.base.transform = .identity
+                       },
+                       completion: completion)
+    }
+    
+    public func drop(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
+        let offsetY = base.cs.bottom
+        base.transform = CGAffineTransform(translationX: 0, y: -offsetY)
+        UIView.animate(withDuration: duration,
+                       delay: 0,
+                       usingSpringWithDamping: 0.6,
+                       initialSpringVelocity: 1,
+                       options: .layoutSubviews,
+                       animations: {
+                        self.base.transform = .identity
+                       },
+                       completion: completion)
     }
 }
 

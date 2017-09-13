@@ -30,7 +30,7 @@ extension UIImage {
     public class func gif(data: Data) -> UIImage? {
         // Create source from data
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
-            cs_print("SwiftGif: Source for the image does not exist")
+            CS_Print("SwiftGif: Source for the image does not exist")
             return nil
         }
         
@@ -40,13 +40,13 @@ extension UIImage {
     public class func gif(url: String) -> UIImage? {
         // Validate URL
         guard let bundleURL = URL(string: url) else {
-            cs_print("SwiftGif: This image named \"\(url)\" does not exist")
+            CS_Print("SwiftGif: This image named \"\(url)\" does not exist")
             return nil
         }
         
         // Validate data
         guard let imageData = try? Data(contentsOf: bundleURL) else {
-            cs_print("SwiftGif: Cannot turn image named \"\(url)\" into NSData")
+            CS_Print("SwiftGif: Cannot turn image named \"\(url)\" into NSData")
             return nil
         }
         
@@ -57,13 +57,13 @@ extension UIImage {
         // Check for existance of gif
         guard let bundleURL = Bundle.main
             .url(forResource: name, withExtension: "gif") else {
-                cs_print("SwiftGif: This image named \"\(name)\" does not exist")
+                CS_Print("SwiftGif: This image named \"\(name)\" does not exist")
                 return nil
         }
         
         // Validate data
         guard let imageData = try? Data(contentsOf: bundleURL) else {
-            cs_print("SwiftGif: Cannot turn image named \"\(name)\" into NSData")
+            CS_Print("SwiftGif: Cannot turn image named \"\(name)\" into NSData")
             return nil
         }
         

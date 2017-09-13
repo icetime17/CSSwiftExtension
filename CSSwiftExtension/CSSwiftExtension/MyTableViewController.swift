@@ -44,7 +44,7 @@ extension MyTableViewController: UITableViewDataSource {
         
         cell.myImageView.image = UIImage(named: "Model.jpg")
         cell.myLabel.text = "cell - \(indexPath.row)"
-        cs_print(cell.myLabel.text!)
+        CS_Print(cell.myLabel.text!)
         
         return cell
     }
