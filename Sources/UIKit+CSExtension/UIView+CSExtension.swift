@@ -136,7 +136,7 @@ public extension CSSwift where Base: UIView {
 
 // MARK: - Animation
 public extension CSSwift where Base: UIView {
-    public func pop(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
+    public func popAnimation(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
         base.alpha = 0
         base.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         UIView.animate(withDuration: duration,
@@ -151,7 +151,7 @@ public extension CSSwift where Base: UIView {
                        completion: completion)
     }
     
-    public func raise(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
+    public func raiseAnimation(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
         let offsetY = CS_ScreenHeight - base.cs.top
         base.transform = CGAffineTransform(translationX: 0, y: offsetY)
         UIView.animate(withDuration: duration,
@@ -165,7 +165,7 @@ public extension CSSwift where Base: UIView {
                        completion: completion)
     }
     
-    public func drop(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
+    public func dropAnimation(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
         let offsetY = base.cs.bottom
         base.transform = CGAffineTransform(translationX: 0, y: -offsetY)
         UIView.animate(withDuration: duration,
@@ -178,6 +178,23 @@ public extension CSSwift where Base: UIView {
                        },
                        completion: completion)
     }
+    
+    public func breathAnimation() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.scale")
+        animation.repeatCount = MAXFLOAT
+        animation.values = [1, 0.9, 1]
+        animation.keyTimes = [0, 0.5, 1]
+        animation.duration = 1.0
+        base.layer.add(animation, forKey: nil)
+    }
+    
+    public func hideAnimation(duration: TimeInterval = 3.0, completion: CS_ClosureWithBool? = nil) {
+        base.alpha = 1.0
+        UIView.animate(withDuration: duration, animations: { 
+            self.base.alpha = 0.0
+        }, completion: completion)
+    }
+    
 }
 
 // MARK: - reuse
