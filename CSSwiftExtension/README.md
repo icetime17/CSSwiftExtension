@@ -138,7 +138,7 @@ let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 500), 
 aTableView.cs.removeEmptyFooter()
 aTableView.cs.scrollToTop(animated: true)
 
-tableView.cs_register(MyTableViewCell.self)
+tableView.cs_registerNib(MyTableViewCell.self)
 let cell = tableView.cs_dequeueReusableCell(forIndexPath: indexPath) as MyTableViewCell
 ```
 

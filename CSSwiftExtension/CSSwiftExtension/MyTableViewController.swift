@@ -26,7 +26,7 @@ class MyTableViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.cs_register(MyTableViewCell.self)
+        tableView.cs_registerNib(MyTableViewCell.self)
         tableView.rowHeight = 100
     }
     

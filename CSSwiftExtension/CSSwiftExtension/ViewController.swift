@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         
         testImageWatermark()
         
-        var json: JSONDictionary = [
+        var json: CS_JSONDictionary = [
             "name":"chris",
             "age":18,
         ]
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
 //        anotherImageView.image = UIImage.gif(name: "Railway")
         
         
-        cs_print(anotherImageView.isUserInteractionEnabled)
+        CS_Print(anotherImageView.isUserInteractionEnabled)
         
         anotherImageView.isUserInteractionEnabled = true
         tapGesture = UITapGestureRecognizer(target: self, action: .actionTapGesture)
@@ -104,12 +104,41 @@ class ViewController: UIViewController {
         aView.center = view.center
         view.addSubview(aView)
         aView.lbTitle.text = "TestView"
-        
         aView.lbTitle.backgroundColor = UIColor.cs.random
+        
+        aView.cs.breathAnimation()
+//        aView.cs.hideAnimation()
+        
+//        aView.cs.popAnimation()
+//        aView.cs.popAnimation(duration: 1)
+//        aView.cs.popAnimation { (finished) in
+//            print("popAnimation : \(finished)")
+//        }
+//        aView.cs.popAnimation(duration: 1) { (finished) in
+//            print("popAnimation : \(finished)")
+//        }
+        
+//        aView.cs.raiseAnimation()
+//        aView.cs.raiseAnimation(duration: 1)
+//        aView.cs.raiseAnimation { (finished) in
+//            print("raiseAnimation : \(finished)")
+//        }
+//        aView.cs.raiseAnimation(duration: 1) { (finished) in
+//            print("raiseAnimation : \(finished)")
+//        }
+        
+//        aView.cs.dropAnimation()
+//        aView.cs.dropAnimation(duration: 1)
+//        aView.cs.dropAnimation { (finished) in
+//            print("dropAnimation : \(finished)")
+//        }
+//        aView.cs.dropAnimation(duration: 1) { (finished) in
+//            print("dropAnimation : \(finished)")
+//        }
     }
 
     func actionTapGesture() {
-        cs_print(#function)
+        CS_Print(#function)
         
         anotherImageView.cs.removeGestureRecognizers()
     }
@@ -121,18 +150,18 @@ extension ViewController {
         guard let img = UIImage(named: "Model.jpg") else { return }
         let ret1 = img.cs.imageWithWatermark(img: img,
                                             rect: CGRect(x: 0, y: 0, width: 200, height: 200))
-        cs_print(ret1.size)
+        CS_Print(ret1.size)
         
         let ret11 = img.cs.imageWithWatermark(img: img,
                                               center: img.cs.center,
                                               size: CGSize(width: 200, height: 200))
-        cs_print(ret11.size)
+        CS_Print(ret11.size)
         
         
         let ret2 = img.cs.imageWithWatermark(text: "This is Watermark",
                                              point: CGPoint(x: 100, y: 100),
                                              font: UIFont.systemFont(ofSize: 50))
-        cs_print(ret2.size)
+        CS_Print(ret2.size)
         
         let style = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         style.alignment = .center
@@ -144,7 +173,7 @@ extension ViewController {
         let ret3 = img.cs.imageWithWatermark(text: "This is Watermark",
                                              point: CGPoint(x: 100, y: 100),
                                              attributes: attributes)
-        cs_print(ret3.size)
+        CS_Print(ret3.size)
     }
 }
 

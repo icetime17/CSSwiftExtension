@@ -19,6 +19,66 @@ public extension CSSwift where Base: UICollectionView {
         return itemCount
     }
     
+    public var firstIndexPath: IndexPath? {
+        let numberOfSections = base.numberOfSections
+        if numberOfSections == 0 {
+            return nil
+        }
+        
+        let numberOfItemsOfFirstSection = base.numberOfItems(inSection: 0)
+        if numberOfItemsOfFirstSection == 0 {
+            return nil
+        }
+        
+        return IndexPath(item: 0, section: 0)
+    }
+    
+    public var lastIndexPath: IndexPath? {
+        let numberOfSections = base.numberOfSections
+        if numberOfSections == 0 {
+            return nil
+        }
+        
+        let numberOfItemsOfLastSection = base.numberOfItems(inSection: numberOfSections - 1)
+        if numberOfItemsOfLastSection == 0 {
+            return nil
+        }
+        
+        return IndexPath(item: numberOfItemsOfLastSection - 1, section: numberOfSections - 1)
+    }
+    
+}
+
+public extension CSSwift where Base: UICollectionView {
+    public func scrollToFirstCell(scrollPosition: UICollectionViewScrollPosition,
+                                 animated: Bool,
+                                 completion: CS_ClosureWithBool? = nil) {
+        if let firstIndexPath = base.cs.firstIndexPath {
+            base.scrollToItem(at: firstIndexPath, at: scrollPosition, animated: animated)
+            if let completion = completion {
+                completion(true)
+            }
+        } else {
+            if let completion = completion {
+                completion(false)
+            }
+        }
+    }
+    
+    public func scrollToLastCell(scrollPosition: UICollectionViewScrollPosition,
+                                 animated: Bool,
+                                 completion: CS_ClosureWithBool? = nil) {
+        if let lastIndexPath = base.cs.lastIndexPath {
+            base.scrollToItem(at: lastIndexPath, at: scrollPosition, animated: animated)
+            if let completion = completion {
+                completion(true)
+            }
+        } else {
+            if let completion = completion {
+                completion(false)
+            }
+        }
+    }
 }
 
 // MARK: - reuse
@@ -32,7 +92,7 @@ extension UICollectionViewCell: NibLoadable {
 
 public extension UICollectionView {
     
-    public func cs_register<T: UICollectionViewCell>(_: T.Type) where T: ReusableView, T: NibLoadable {
+    public func cs_registerNib<T: UICollectionViewCell>(_: T.Type) where T: ReusableView, T: NibLoadable {
         let nib = UINib(nibName: T.nibName, bundle: nil)
         register(nib, forCellWithReuseIdentifier: T.reuseIdentifier)
     }

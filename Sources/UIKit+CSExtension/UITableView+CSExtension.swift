@@ -41,7 +41,7 @@ extension UITableViewCell: NibLoadable {
 
 public extension UITableView {
     
-    public func cs_register<T: UITableViewCell>(_: T.Type) where T: ReusableView, T: NibLoadable {
+    public func cs_registerNib<T: UITableViewCell>(_: T.Type) where T: ReusableView, T: NibLoadable {
         let nib = UINib(nibName: T.nibName, bundle: nil)
         register(nib, forCellReuseIdentifier: T.reuseIdentifier)
     }
