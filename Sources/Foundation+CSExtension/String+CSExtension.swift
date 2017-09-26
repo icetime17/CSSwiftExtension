@@ -186,3 +186,13 @@ public extension String {
     }
     
 }
+
+public extension String {
+    
+    func cs_isTextWidthOutside(aView: UIView, with font: UIFont) -> Bool {
+        return self.size(attributes: [NSFontAttributeName: font]).width >= aView.bounds.width
+    }
+    
+}
+
+
