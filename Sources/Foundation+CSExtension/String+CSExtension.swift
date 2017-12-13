@@ -13,7 +13,7 @@ public extension String {
 
     // length
     public var cs_length: Int {
-        return characters.count
+        return self.count
     }
 
 }
@@ -71,7 +71,7 @@ public extension String {
     
     // reverse
     public var cs_reversed: String {
-        return String(characters.reversed())
+        return String(self.reversed())
     }
     
     // index of subString
@@ -80,8 +80,8 @@ public extension String {
             return -1
         }
         
-        let oChars = [Character](characters)
-        let tChars = [Character](tString.characters)
+        let oChars = [Character](self)
+        let tChars = [Character](tString)
         
         if oChars.count < tChars.count {
             return -1
@@ -134,7 +134,7 @@ public extension String {
     public func dts_heightOf(font: UIFont, maxSize: CGSize) -> CGFloat {
         let rect = (self as NSString).boundingRect(with: maxSize,
                                                    options: .usesLineFragmentOrigin,
-                                                   attributes: [NSFontAttributeName: font],
+                                                   attributes: [NSAttributedStringKey.font: font],
                                                    context: nil)
         return rect.height
     }
@@ -152,11 +152,11 @@ public extension String {
         paraStyle.tailIndent = 0.0
         
         // 字间距
-        let dict = [
-            NSFontAttributeName: font,
-            NSParagraphStyleAttributeName: paraStyle,
-            NSKernAttributeName: kernSpacing
-            ] as [String : Any]
+        let dict: [NSAttributedStringKey: Any] = [
+            NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): font,
+            NSAttributedStringKey(rawValue: NSAttributedStringKey.paragraphStyle.rawValue): paraStyle,
+            NSAttributedStringKey(rawValue: NSAttributedStringKey.kern.rawValue): kernSpacing
+            ]
         return NSAttributedString(string: self, attributes: dict)
     }
     
@@ -190,7 +190,7 @@ public extension String {
 public extension String {
     
     func cs_isTextWidthOutside(aView: UIView, with font: UIFont) -> Bool {
-        return self.size(attributes: [NSFontAttributeName: font]).width >= aView.bounds.width
+        return self.size(withAttributes: [NSAttributedStringKey.font: font]).width >= aView.bounds.width
     }
     
 }

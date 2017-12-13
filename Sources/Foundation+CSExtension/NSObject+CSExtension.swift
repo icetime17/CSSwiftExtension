@@ -16,9 +16,10 @@ public extension CSSwift where Base: NSObject {
         var count: u_int = 0
         let ivars = class_copyIvarList(base.classForCoder, &count)
         for i in 0..<Int(count) {
-            let ivar = ivars?[i]
-            if let cString = ivar_getName(ivar) {
-                ret.append(String(cString: cString))
+            if let ivar = ivars?[i] {
+                if let cString = ivar_getName(ivar) {
+                    ret.append(String(cString: cString))
+                }
             }
         }
         free(ivars)
@@ -32,8 +33,8 @@ public extension CSSwift where Base: NSObject {
         var count: u_int = 0
         let properties = class_copyPropertyList(base.classForCoder, &count)
         for i in 0..<Int(count) {
-            let property = properties?[i]
-            if let cString = property_getName(property) {
+            if let property = properties?[i] {
+                let cString = property_getName(property)
                 ret.append(String(cString: cString))
             }
         }
@@ -48,9 +49,9 @@ public extension CSSwift where Base: NSObject {
         var count: u_int = 0
         let methods = class_copyMethodList(base.classForCoder, &count)
         for i in 0..<Int(count) {
-            let method = methods?[i]
-            let selector = method_getName(method)
-            if let cString = sel_getName(selector) {
+            if let method = methods?[i] {
+                let selector = method_getName(method)
+                let cString = sel_getName(selector)
                 ret.append(String(cString: cString))
             }
         }
@@ -65,8 +66,8 @@ public extension CSSwift where Base: NSObject {
         var count: u_int = 0
         let protocols = class_copyProtocolList(base.classForCoder, &count)
         for i in 0..<Int(count) {
-            let proto = protocols?[i]
-            if let cString = protocol_getName(proto) {
+            if let proto = protocols?[i] {
+                let cString = protocol_getName(proto)
                 ret.append(String(cString: cString))
             }
         }

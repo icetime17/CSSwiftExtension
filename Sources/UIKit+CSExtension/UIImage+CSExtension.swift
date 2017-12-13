@@ -341,14 +341,13 @@ public extension CSSwift where Base: UIImage {
                                    point: CGPoint,
                                    font: UIFont,
                                    color: UIColor = .white) -> UIImage {
-        let style = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
-        style.alignment = .center
-        let attributes = [
-            NSFontAttributeName: font,
-            NSParagraphStyleAttributeName: style,
-            NSForegroundColorAttributeName: color,
+        let paraStyle = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        paraStyle.alignment = .center
+        let attributes: [NSAttributedStringKey: Any] = [
+            NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): font,
+            NSAttributedStringKey(rawValue: NSAttributedStringKey.paragraphStyle.rawValue): paraStyle,
+            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): color
         ]
-        
         return imageWithWatermark(text: text, point: point, attributes: attributes)
     }
     
@@ -365,7 +364,7 @@ public extension CSSwift where Base: UIImage {
      */
     public func imageWithWatermark(text: String,
                                    point: CGPoint,
-                                   attributes: [String : Any]?) -> UIImage {
+                                   attributes: [NSAttributedStringKey: Any]?) -> UIImage {
         p_setUpImageContext()
         
         (text as NSString).draw(at: point, withAttributes: attributes)

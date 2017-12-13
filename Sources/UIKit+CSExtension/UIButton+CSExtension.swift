@@ -58,8 +58,8 @@ public extension UIButton {
     }
 
     private func cs_methodSwizzling() {
-        let before: Method  = class_getInstanceMethod(self.classForCoder, #selector(self.sendAction(_:to:for:)))
-        let after: Method   = class_getInstanceMethod(self.classForCoder, #selector(self.cs_sendAction(_:to:for:)))
+        let before: Method  = class_getInstanceMethod(self.classForCoder, #selector(self.sendAction(_:to:for:)))!
+        let after: Method   = class_getInstanceMethod(self.classForCoder, #selector(self.cs_sendAction(_:to:for:)))!
         method_exchangeImplementations(before, after)
     }
     

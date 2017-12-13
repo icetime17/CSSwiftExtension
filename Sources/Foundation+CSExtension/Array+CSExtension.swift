@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Integer
-public extension Array where Element: Integer {
+public extension Array where Element: BinaryInteger {
     
     public var cs_sum: Element {
         return reduce(0, +)
