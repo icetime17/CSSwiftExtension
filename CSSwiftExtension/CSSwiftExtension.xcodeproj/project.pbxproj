@@ -377,7 +377,7 @@
 				TargetAttributes = {
 					A40D58431E165AEB00763603 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = GGVWN85K85;
+						DevelopmentTeam = NZPBGBZZ28;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -389,7 +389,7 @@
 					};
 					A47B45DF1E0B674D00492FF2 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = GGVWN85K85;
+						DevelopmentTeam = NZPBGBZZ28;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A47B45CB1E0B674D00492FF2;
@@ -577,7 +577,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GGVWN85K85;
+				DEVELOPMENT_TEAM = NZPBGBZZ28;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -603,7 +603,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GGVWN85K85;
+				DEVELOPMENT_TEAM = NZPBGBZZ28;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -764,7 +764,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = GGVWN85K85;
+				DEVELOPMENT_TEAM = NZPBGBZZ28;
 				INFOPLIST_FILE = CSSwiftExtensionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icetime17.CSSwiftExtensionTests;
@@ -780,7 +780,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = GGVWN85K85;
+				DEVELOPMENT_TEAM = NZPBGBZZ28;
 				INFOPLIST_FILE = CSSwiftExtensionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icetime17.CSSwiftExtensionTests;
