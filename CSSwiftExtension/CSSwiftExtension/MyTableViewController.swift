@@ -26,7 +26,7 @@ class MyTableViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.cs_registerNib(MyTableViewCell.self)
+        tableView.cs.registerNib(MyTableViewCell.self)
         tableView.rowHeight = 100
     }
     
@@ -40,7 +40,7 @@ extension MyTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.cs_dequeueReusableCell(forIndexPath: indexPath) as MyTableViewCell
+        let cell = tableView.cs.dequeueReusableCell(forIndexPath: indexPath) as MyTableViewCell
         
         cell.myImageView.image = UIImage(named: "Model.jpg")
         cell.myLabel.text = "cell - \(indexPath.row)"

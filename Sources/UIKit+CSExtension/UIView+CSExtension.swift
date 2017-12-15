@@ -152,7 +152,7 @@ public extension CSSwift where Base: UIView {
     }
     
     public func raiseAnimation(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
-        let offsetY = CS_ScreenHeight - base.cs.top
+        let offsetY = CS_ScreenHeight - base.frame.minY
         base.transform = CGAffineTransform(translationX: 0, y: offsetY)
         UIView.animate(withDuration: duration,
                        delay: 0,
@@ -166,7 +166,7 @@ public extension CSSwift where Base: UIView {
     }
     
     public func dropAnimation(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
-        let offsetY = base.cs.bottom
+        let offsetY = base.frame.maxY
         base.transform = CGAffineTransform(translationX: 0, y: -offsetY)
         UIView.animate(withDuration: duration,
                        delay: 0,
