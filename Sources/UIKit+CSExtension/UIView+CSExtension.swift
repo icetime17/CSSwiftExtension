@@ -197,6 +197,7 @@ public extension CSSwift where Base: UIView {
     
 }
 
+/*
 // MARK: - reuse
 public protocol ReusableView {
     
@@ -219,3 +220,5 @@ public extension NibLoadable where Self: UIView {
         return String(describing: self)
     }
 }
+*/
+

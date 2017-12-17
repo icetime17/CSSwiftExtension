@@ -106,6 +106,7 @@ public extension CSSwift where Base: UICollectionView {
     }
 }
 
+/*
 // MARK: - reuse
 extension UICollectionViewCell: ReusableView {
     
@@ -137,3 +138,4 @@ public extension CSSwift where Base: UICollectionView {
     }
     
 }
+*/

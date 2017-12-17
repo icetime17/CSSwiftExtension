@@ -29,7 +29,7 @@ public extension CSSwift where Base: UITableView {
     
 }
 
-
+/*
 // MARK: - reuse
 extension UITableViewCell: ReusableView {
     
@@ -54,3 +54,4 @@ public extension CSSwift where Base: UITableView {
     }
     
 }
+*/
