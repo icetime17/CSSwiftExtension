@@ -349,11 +349,11 @@ public extension CSSwift where Base: UIImage {
                                    color: UIColor = .white) -> UIImage {
         let paraStyle = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         paraStyle.alignment = .center
-        let attributes: [NSAttributedStringKey: Any] = [
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): font,
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.paragraphStyle.rawValue): paraStyle,
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): color
-        ]
+        let attributes = [
+            .font: font,
+            .paragraphStyle: paraStyle,
+            .foregroundColor: color
+        ] as [NSAttributedStringKey: Any]
         return imageWithWatermark(text: text, point: point, attributes: attributes)
     }
     

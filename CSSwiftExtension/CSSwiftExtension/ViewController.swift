@@ -174,11 +174,11 @@ extension ViewController {
         
         let style = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         style.alignment = .center
-        let attributes: [NSAttributedStringKey: Any] = [
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): UIFont.systemFont(ofSize: 50),
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.paragraphStyle.rawValue): style,
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.white,
-            ]
+        let attributes = [
+            .font: UIFont.systemFont(ofSize: 50),
+            .paragraphStyle: style,
+            .foregroundColor: UIColor.white
+            ] as [NSAttributedStringKey: Any]
         let ret3 = img.cs.imageWithWatermark(text: "This is Watermark",
                                              point: CGPoint(x: 100, y: 100),
                                              attributes: attributes)
