@@ -10,14 +10,6 @@ import UIKit
 
 
 public extension CSSwift where Base: UIDevice {
-
-    public static var isSimulator: Bool {
-        #if targetEnvironment(simulator)
-            return true
-        #endif
-        
-        return false
-    }
     
 }
 
