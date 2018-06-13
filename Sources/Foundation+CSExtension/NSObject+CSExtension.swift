@@ -14,15 +14,15 @@ public extension CSSwift where Base: NSObject {
         var ret = [String]()
         
         var count: u_int = 0
-        let ivars = class_copyIvarList(base.classForCoder, &count)
-        for i in 0..<Int(count) {
-            if let ivar = ivars?[i] {
+        if let ivars = class_copyIvarList(base.classForCoder, &count) {
+            for i in 0..<Int(count) {
+                let ivar = ivars[i]
                 if let cString = ivar_getName(ivar) {
-                    ret.append(String(cString: cString))
+                    ret.append(String(cString: cString as UnsafePointer<CChar>))
                 }
             }
+            free(ivars)
         }
-        free(ivars)
         
         return ret
     }
@@ -35,7 +35,7 @@ public extension CSSwift where Base: NSObject {
             for i in 0..<Int(count) {
                 let property = properties[i]
                 let cString = property_getName(property)
-                ret.append(String(cString: cString))
+                ret.append(String(cString: cString as UnsafePointer<CChar>))
             }
             free(properties)
         }
@@ -52,7 +52,7 @@ public extension CSSwift where Base: NSObject {
                 let method = methods[i]
                 let selector = method_getName(method)
                 let cString = sel_getName(selector)
-                ret.append(String(cString: cString))
+                ret.append(String(cString: cString as UnsafePointer<CChar>))
             }
             free(methods)
         }
@@ -68,7 +68,7 @@ public extension CSSwift where Base: NSObject {
             for i in 0..<Int(count) {
                 let proto = protocols[i]
                 let cString = protocol_getName(proto)
-                ret.append(String(cString: cString))
+                ret.append(String(cString: cString as UnsafePointer<CChar>))
             }
             // No need to free protocols because it's AutoreleasingUnsafeMutablePointer<Protocol?>!
         }
