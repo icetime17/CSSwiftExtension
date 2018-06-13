@@ -10,7 +10,7 @@ import UIKit
 import ImageIO
 
 // MARK: - init
-extension UIImage {
+public extension UIImage {
     
     /**
      UIImage init from an URL string. Synchronsize and NOT recommended.
@@ -68,14 +68,6 @@ public extension CSSwift where Base: UIImage {
      - returns: true or false
      */
     public func saveImageToFile(filePath: String, compressionFactor: CGFloat = 1.0) -> Bool {
-        let imageData: NSData!
-        if filePath.hasSuffix(".jpeg") {
-            imageData = UIImageJPEGRepresentation(base, compressionFactor) as NSData!
-        } else {
-            imageData = UIImagePNGRepresentation(base)! as NSData!
-        }
-        
-        
         if FileManager.default.fileExists(atPath: filePath) {
             do {
                 try FileManager.default.removeItem(atPath: filePath)
@@ -85,12 +77,26 @@ public extension CSSwift where Base: UIImage {
             }
         }
         
-        if FileManager.default.createFile(atPath: filePath, contents: imageData as Data?, attributes: nil) {
-            return imageData.write(toFile: filePath, atomically: true)
+        var imageData: Data?
+        if filePath.hasSuffix(".jpeg") {
+            imageData = UIImageJPEGRepresentation(base, compressionFactor)
+        } else {
+            imageData = UIImagePNGRepresentation(base)
+        }
+        
+        if FileManager.default.createFile(atPath: filePath, contents: imageData, attributes: nil) {
+            let url = URL(fileURLWithPath: filePath)
+            do {
+                try imageData?.write(to: url)
+                return true
+            } catch {
+                CS_Print("FileManager failed to write imageData to filepath: \(filePath).")
+            }
         } else {
             CS_Print("FileManager failed to create file at path: \(filePath).")
-            return false
         }
+        
+        return false
     }
     
 }

@@ -10,8 +10,8 @@
 
 Some ***useful extension for Swift*** to boost your productivity.
 
-
 ## Requirements:
+
 Xcode 8 (or later) with Swift 3. This library is made for iOS 8 or later.
 
 
@@ -29,7 +29,7 @@ To integrate CSSwiftExtension into your Xcode project using CocoaPods, specify i
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
