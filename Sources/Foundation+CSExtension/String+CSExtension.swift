@@ -186,3 +186,22 @@ public extension String {
     }
     
 }
+
+// MARK: - encode and decode
+public extension String {
+    public var urlEncoded: String? {
+        return addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    }
+    
+    public var urlDecoded: String? {
+        return removingPercentEncoding
+    }
+    
+    public var positiveNegativeString: String {
+        guard let value = Double(self) else {
+            return self
+        }
+        let prefix = value > 0.0 ? "+" : ""
+        return prefix + self
+    }
+}

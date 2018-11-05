@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8365BA561F68AAB500E31A0D /* UIScrollView+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365BA551F68AAB500E31A0D /* UIScrollView+CSExtension.swift */; };
 		8365BA581F68AB4C00E31A0D /* CSSwiftExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8365BA571F68AB4C00E31A0D /* CSSwiftExtension.podspec */; };
+		8C14CC5D219016AD0035CEC2 /* UIResponder+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14CC5C219016AD0035CEC2 /* UIResponder+CSExtension.swift */; };
+		8C14CC612190177F0035CEC2 /* Bundle+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14CC602190177F0035CEC2 /* Bundle+CSExtension.swift */; };
 		A4035F6E1F6650F6003AD29A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A4035F6D1F6650F6003AD29A /* README.md */; };
 		A4035F701F665101003AD29A /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = A4035F6F1F665101003AD29A /* LICENSE.md */; };
 		A40D58481E165AEB00763603 /* CSSwiftExtensionFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = A40D58461E165AEB00763603 /* CSSwiftExtensionFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -121,6 +123,8 @@
 /* Begin PBXFileReference section */
 		8365BA551F68AAB500E31A0D /* UIScrollView+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+CSExtension.swift"; sourceTree = "<group>"; };
 		8365BA571F68AB4C00E31A0D /* CSSwiftExtension.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CSSwiftExtension.podspec; path = ../CSSwiftExtension.podspec; sourceTree = "<group>"; };
+		8C14CC5C219016AD0035CEC2 /* UIResponder+CSExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+CSExtension.swift"; sourceTree = "<group>"; };
+		8C14CC602190177F0035CEC2 /* Bundle+CSExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+CSExtension.swift"; sourceTree = "<group>"; };
 		A4035F6D1F6650F6003AD29A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A4035F6F1F665101003AD29A /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		A40D58441E165AEB00763603 /* CSSwiftExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSSwiftExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +212,7 @@
 				A4564CA51E0D20FE00FBB743 /* FileManager+CSExtension.swift */,
 				A4564CA61E0D20FE00FBB743 /* String+CSExtension.swift */,
 				A47EAAF51E1B8C9B00D25169 /* Array+CSExtension.swift */,
+				8C14CC602190177F0035CEC2 /* Bundle+CSExtension.swift */,
 			);
 			path = "Foundation+CSExtension";
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				A47EAAF71E1B9E4200D25169 /* UIImage+Gif.swift */,
 				A47EAB191E1C90CA00D25169 /* DispatchQueue+CSExtension.swift */,
 				A47EAB1D1E1C9F9B00D25169 /* UIButton+CSExtension.swift */,
+				8C14CC5C219016AD0035CEC2 /* UIResponder+CSExtension.swift */,
 			);
 			path = "UIKit+CSExtension";
 			sourceTree = "<group>";
@@ -487,6 +493,7 @@
 				A4564CB21E0D20FE00FBB743 /* String+CSExtension.swift in Sources */,
 				A40D58611E1B4D4500763603 /* UIScreen+CSExtension.swift in Sources */,
 				A47EAAF41E1B874600D25169 /* CGPoint+CSExtension.swift in Sources */,
+				8C14CC612190177F0035CEC2 /* Bundle+CSExtension.swift in Sources */,
 				A4564CB11E0D20FE00FBB743 /* FileManager+CSExtension.swift in Sources */,
 				A4035F701F665101003AD29A /* LICENSE.md in Sources */,
 				A47EAAF21E1B819600D25169 /* UICollectionView+CSExtension.swift in Sources */,
@@ -506,6 +513,7 @@
 				A47B45D01E0B674D00492FF2 /* AppDelegate.swift in Sources */,
 				A47EAAF81E1B9E4200D25169 /* UIImage+Gif.swift in Sources */,
 				A4564CB31E0D20FE00FBB743 /* UIApplication+CSExtension.swift in Sources */,
+				8C14CC5D219016AD0035CEC2 /* UIResponder+CSExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,24 +17,6 @@ public extension CSSwift where Base: UIApplication {
         return UIApplication.shared.delegate!
     }
     
-    // cs.currentViewController: current UIViewController
-    public var currentViewController: UIViewController {
-        let window = self.appDelegate.window
-        var viewController = window!!.rootViewController
-        
-        while ((viewController?.presentedViewController) != nil) {
-            viewController = viewController?.presentedViewController
-            
-            if ((viewController?.isKind(of: UINavigationController.classForCoder())) == true) {
-                viewController = (viewController as! UINavigationController).visibleViewController
-            } else if ((viewController?.isKind(of: UITabBarController.classForCoder())) == true) {
-                viewController = (viewController as! UITabBarController).selectedViewController
-            }
-        }
-        
-        return viewController!
-    }
-    
 }
 
 

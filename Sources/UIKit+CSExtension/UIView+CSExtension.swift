@@ -81,17 +81,6 @@ public extension CSSwift where Base: UIView {
 // MARK: -
 
 public extension CSSwift where Base: UIView {
-    // when View does not care the UIViewControler it belongs to.
-    public var currentViewController: UIViewController {
-        var responder: UIResponder = base.next!
-        while !responder.isKind(of: UIWindow.classForCoder()) {
-            if responder.isKind(of: UIViewController.classForCoder()) {
-                break
-            }
-            responder = responder.next!
-        }
-        return responder as! UIViewController
-    }
     
     public var snapshot: UIImage? {
         UIGraphicsBeginImageContextWithOptions(base.layer.frame.size, false, 0)
@@ -217,5 +206,15 @@ public protocol NibLoadable {
 public extension NibLoadable where Self: UIView {
     static var nibName: String {
         return String(describing: self)
+    }
+}
+
+
+public extension CSSwift where Base: UIView {
+    public func addBorder(width: CGFloat) {
+        let border = CALayer()
+        border.frame = CGRect(x: 0, y: base.frame.height - width, width: base.frame.width, height: width)
+        border.backgroundColor = UIColor(hexString: 0xCCCCCC).cgColor
+        base.layer.addSublayer(border)
     }
 }
