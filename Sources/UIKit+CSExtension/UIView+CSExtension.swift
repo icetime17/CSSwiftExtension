@@ -211,10 +211,10 @@ public extension NibLoadable where Self: UIView {
 
 
 public extension CSSwift where Base: UIView {
-    public func addBorder(width: CGFloat) {
+    public func addBottomBorder(width: CGFloat, color: UIColor) {
         let border = CALayer()
         border.frame = CGRect(x: 0, y: base.frame.height - width, width: base.frame.width, height: width)
-        border.backgroundColor = UIColor(hexString: 0xCCCCCC).cgColor
+        border.backgroundColor = color.cgColor
         base.layer.addSublayer(border)
     }
 }

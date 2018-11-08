@@ -10,15 +10,6 @@ import UIKit
 import Foundation
 
 public extension String {
-
-    // length
-    public var cs_length: Int {
-        return characters.count
-    }
-
-}
-
-public extension String {
     
     // utf8 String
     public var cs_utf8String: String {
@@ -69,19 +60,14 @@ public extension String {
 
 public extension String {
     
-    // reverse
-    public var cs_reversed: String {
-        return String(characters.reversed())
-    }
-    
     // index of subString
     public func cs_indexOfSubString(_ tString: String) -> Int {
         if tString.isEmpty {
             return -1
         }
         
-        let oChars = [Character](characters)
-        let tChars = [Character](tString.characters)
+        let oChars = [Character](self)
+        let tChars = [Character](tString)
         
         if oChars.count < tChars.count {
             return -1
