@@ -41,12 +41,12 @@ extension UITableViewCell: NibLoadable {
 
 public extension UITableView {
     
-    public func cs_registerNib<T: UITableViewCell>(_: T.Type) where T: ReusableView, T: NibLoadable {
+    public func cs_registerNib<T: UITableViewCell>(_: T.Type) {
         let nib = UINib(nibName: T.nibName, bundle: nil)
         register(nib, forCellReuseIdentifier: T.reuseIdentifier)
     }
     
-    public func cs_dequeueReusableCell<T: UITableViewCell>(forIndexPath indexPath: IndexPath) -> T where T: ReusableView {
+    public func cs_dequeueReusableCell<T: UITableViewCell>(forIndexPath indexPath: IndexPath) -> T {
         guard let cell = dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
             fatalError("CSSwiftExtension: Could not dequeue cell with identifier \(T.reuseIdentifier)")
         }

@@ -395,7 +395,7 @@
 					};
 					A47B45DF1E0B674D00492FF2 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = GGVWN85K85;
+						DevelopmentTeam = NZPBGBZZ28;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A47B45CB1E0B674D00492FF2;
 					};
@@ -773,7 +773,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = GGVWN85K85;
+				DEVELOPMENT_TEAM = NZPBGBZZ28;
 				INFOPLIST_FILE = CSSwiftExtensionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icetime17.CSSwiftExtensionTests;
@@ -788,7 +788,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = GGVWN85K85;
+				DEVELOPMENT_TEAM = NZPBGBZZ28;
 				INFOPLIST_FILE = CSSwiftExtensionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icetime17.CSSwiftExtensionTests;

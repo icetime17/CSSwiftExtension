@@ -92,12 +92,12 @@ extension UICollectionViewCell: NibLoadable {
 
 public extension UICollectionView {
     
-    public func cs_registerNib<T: UICollectionViewCell>(_: T.Type) where T: ReusableView, T: NibLoadable {
+    public func cs_registerNib<T: UICollectionViewCell>(_: T.Type) {
         let nib = UINib(nibName: T.nibName, bundle: nil)
         register(nib, forCellWithReuseIdentifier: T.reuseIdentifier)
     }
     
-    public func cs_dequeueReusableCell<T: UICollectionViewCell>(forIndexPath indexPath: IndexPath) -> T where T: ReusableView {
+    public func cs_dequeueReusableCell<T: UICollectionViewCell>(forIndexPath indexPath: IndexPath) -> T {
         guard let cell = dequeueReusableCell(withReuseIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
             fatalError("CSSwiftExtension: Could not dequeue cell with identifier \(T.reuseIdentifier)")
         }

@@ -43,6 +43,9 @@ class ViewController: UIViewController {
         print(appVersion.cs_isHigherThan("0.0.9"))
         print(appVersion.cs_isEqualToOrHigherThan("0.1.1"))
         print(appVersion.cs_isHigherThan("1.0.0"))
+        
+        
+        print("hello world".cs_indexOfSubString("world"))
     }
     
     @discardableResult // ignore return value

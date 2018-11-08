@@ -68,13 +68,13 @@ public extension CSSwift where Base: UIImage {
      - returns: true or false
      */
     public func saveImageToFile(filePath: String, compressionFactor: CGFloat = 1.0) -> Bool {
-        let imageData: NSData!
+        var imageDataOrNil: Data?
         if filePath.hasSuffix(".jpeg") {
-            imageData = UIImageJPEGRepresentation(base, compressionFactor) as NSData!
+            imageDataOrNil = UIImageJPEGRepresentation(base, compressionFactor)
         } else {
-            imageData = UIImagePNGRepresentation(base)! as NSData!
+            imageDataOrNil = UIImagePNGRepresentation(base)
         }
-        
+        guard let imageData = imageDataOrNil else { return false }
         
         if FileManager.default.fileExists(atPath: filePath) {
             do {
@@ -86,7 +86,14 @@ public extension CSSwift where Base: UIImage {
         }
         
         if FileManager.default.createFile(atPath: filePath, contents: imageData as Data?, attributes: nil) {
-            return imageData.write(toFile: filePath, atomically: true)
+            let url = URL(fileURLWithPath: filePath)
+            do {
+                try imageData.write(to: url)
+            } catch {
+                print(error)
+                return false
+            }
+            return true
         } else {
             CS_Print("FileManager failed to create file at path: \(filePath).")
             return false
