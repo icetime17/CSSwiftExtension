@@ -11,7 +11,7 @@ import UIKit
 public extension CSSwift where Base: UITableView {
     
     // number of all rows
-    public var numberOfAllRows: Int {
+    var numberOfAllRows: Int {
         var rowCount = 0
         for section in 0..<base.numberOfSections {
             rowCount += base.numberOfRows(inSection: section)
@@ -23,13 +23,13 @@ public extension CSSwift where Base: UITableView {
 
 public extension CSSwift where Base: UITableView {
 
-    public func removeEmptyFooter() {
+    func removeEmptyFooter() {
         base.tableFooterView = UIView(frame: CGRect.zero)
     }
     
 }
 
-
+/*
 // MARK: - reuse
 extension UITableViewCell: ReusableView {
     
@@ -39,18 +39,19 @@ extension UITableViewCell: NibLoadable {
     
 }
 
-public extension UITableView {
+public extension CSSwift where Base: UITableView {
     
-    public func cs_registerNib<T: UITableViewCell>(_: T.Type) {
+    func registerNib<T: UITableViewCell>(_: T.Type) where T: ReusableView & NibLoadable {
         let nib = UINib(nibName: T.nibName, bundle: nil)
-        register(nib, forCellReuseIdentifier: T.reuseIdentifier)
+        base.register(nib, forCellReuseIdentifier: T.reuseIdentifier)
     }
     
-    public func cs_dequeueReusableCell<T: UITableViewCell>(forIndexPath indexPath: IndexPath) -> T {
-        guard let cell = dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
+    func dequeueReusableCell<T: UITableViewCell>(forIndexPath indexPath: IndexPath) -> T where T: ReusableView {
+        guard let cell = base.dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
             fatalError("CSSwiftExtension: Could not dequeue cell with identifier \(T.reuseIdentifier)")
         }
         return cell
     }
     
 }
+*/

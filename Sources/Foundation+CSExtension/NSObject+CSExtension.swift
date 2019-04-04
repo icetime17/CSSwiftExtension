@@ -10,67 +10,68 @@ import Foundation
 
 public extension CSSwift where Base: NSObject {
 
-    public var ivars: [String] {
+    var ivars: [String] {
         var ret = [String]()
         
         var count: u_int = 0
-        let ivars = class_copyIvarList(base.classForCoder, &count)
-        for i in 0..<Int(count) {
-            let ivar = ivars?[i]
-            if let cString = ivar_getName(ivar) {
-                ret.append(String(cString: cString))
+        if let ivars = class_copyIvarList(base.classForCoder, &count) {
+            for i in 0..<Int(count) {
+                let ivar = ivars[i]
+                if let cString = ivar_getName(ivar) {
+                    ret.append(String(cString: cString as UnsafePointer<CChar>))
+                }
             }
+            free(ivars)
         }
-        free(ivars)
         
         return ret
     }
 
-    public var properties: [String] {
+    var properties: [String] {
         var ret = [String]()
         
         var count: u_int = 0
-        let properties = class_copyPropertyList(base.classForCoder, &count)
-        for i in 0..<Int(count) {
-            let property = properties?[i]
-            if let cString = property_getName(property) {
-                ret.append(String(cString: cString))
+        if let properties = class_copyPropertyList(base.classForCoder, &count) {
+            for i in 0..<Int(count) {
+                let property = properties[i]
+                let cString = property_getName(property)
+                ret.append(String(cString: cString as UnsafePointer<CChar>))
             }
+            free(properties)
         }
-        free(properties)
         
         return ret
     }
     
-    public var methods: [String] {
+    var methods: [String] {
         var ret = [String]()
         
         var count: u_int = 0
-        let methods = class_copyMethodList(base.classForCoder, &count)
-        for i in 0..<Int(count) {
-            let method = methods?[i]
-            let selector = method_getName(method)
-            if let cString = sel_getName(selector) {
-                ret.append(String(cString: cString))
+        if let methods = class_copyMethodList(base.classForCoder, &count) {
+            for i in 0..<Int(count) {
+                let method = methods[i]
+                let selector = method_getName(method)
+                let cString = sel_getName(selector)
+                ret.append(String(cString: cString as UnsafePointer<CChar>))
             }
+            free(methods)
         }
-        free(methods)
         
         return ret
     }
     
-    public var protocols: [String] {
+    var protocols: [String] {
         var ret = [String]()
         
         var count: u_int = 0
-        let protocols = class_copyProtocolList(base.classForCoder, &count)
-        for i in 0..<Int(count) {
-            let proto = protocols?[i]
-            if let cString = protocol_getName(proto) {
-                ret.append(String(cString: cString))
+        if let protocols = class_copyProtocolList(base.classForCoder, &count) {
+            for i in 0..<Int(count) {
+                let proto = protocols[i]
+                let cString = protocol_getName(proto)
+                ret.append(String(cString: cString as UnsafePointer<CChar>))
             }
+            // No need to free protocols because it's AutoreleasingUnsafeMutablePointer<Protocol?>!
         }
-        // No need to free protocols because it's AutoreleasingUnsafeMutablePointer<Protocol?>!
         
         return ret
     }

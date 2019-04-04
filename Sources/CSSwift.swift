@@ -28,7 +28,7 @@ public protocol CSSwiftCompatible {
 
 public extension CSSwiftCompatible {
 
-    public static var cs: CSSwift<Self>.Type {
+    static var cs: CSSwift<Self>.Type {
         get {
             return CSSwift<Self>.self
         }
@@ -37,7 +37,7 @@ public extension CSSwiftCompatible {
         }
     }
 
-    public var cs: CSSwift<Self> {
+    var cs: CSSwift<Self> {
         get {
             return CSSwift(self)
         }

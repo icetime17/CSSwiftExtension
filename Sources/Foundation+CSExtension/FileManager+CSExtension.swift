@@ -12,23 +12,23 @@ import Foundation
 
 public extension CSSwift where Base: FileManager {
 
-    public var homeDirectory: String {
+    var homeDirectory: String {
         return NSHomeDirectory()
     }
     
-    public var tempDirectory: String {
+    var tempDirectory: String {
         return NSTemporaryDirectory()
     }
     
-    public var documentsDirectory: String {
+    var documentsDirectory: String {
         return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     }
     
-    public var libraryDirectory: String {
+    var libraryDirectory: String {
         return NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
     }
     
-    public var cacheDirectory: String {
+    var cacheDirectory: String {
         return NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
     }
 }

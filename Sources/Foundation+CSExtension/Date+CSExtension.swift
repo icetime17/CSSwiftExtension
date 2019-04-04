@@ -13,7 +13,7 @@ import Foundation
 public extension Date {
     
     // string from Date
-    public func cs_stringFromDate(_ dateFormat: String?) -> String {
+    func cs_stringFromDate(_ dateFormat: String?) -> String {
         let dateFormatter = DateFormatter()
         if dateFormat != nil {
             dateFormatter.dateFormat = dateFormat

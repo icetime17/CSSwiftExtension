@@ -9,9 +9,9 @@
 import UIKit
 
 
-let CS_ScreenSize    = UIScreen.main.bounds.size
-let CS_ScreenWidth   = CS_ScreenSize.width
-let CS_ScreenHeight  = CS_ScreenSize.height
+public let CS_ScreenSize    = UIScreen.main.bounds.size
+public let CS_ScreenWidth   = CS_ScreenSize.width
+public let CS_ScreenHeight  = CS_ScreenSize.height
 
 
 public typealias CS_JSONDictionary = [String: Any]

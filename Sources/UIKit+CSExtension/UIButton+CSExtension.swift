@@ -20,7 +20,7 @@ public extension UIButton {
 
     // timeInterval for UIButton to be clicked again
     // default to be 0.0s
-    public var cs_acceptEventInterval: TimeInterval {
+    var cs_acceptEventInterval: TimeInterval {
         get {
             if let acceptEventInterval = objc_getAssociatedObject(self, &CS_AssociatedKeys.acceptEventInterval) as? TimeInterval {
                 return acceptEventInterval
@@ -58,8 +58,8 @@ public extension UIButton {
     }
 
     private func cs_methodSwizzling() {
-        let before: Method  = class_getInstanceMethod(self.classForCoder, #selector(self.sendAction(_:to:for:)))
-        let after: Method   = class_getInstanceMethod(self.classForCoder, #selector(self.cs_sendAction(_:to:for:)))
+        let before: Method  = class_getInstanceMethod(self.classForCoder, #selector(self.sendAction(_:to:for:)))!
+        let after: Method   = class_getInstanceMethod(self.classForCoder, #selector(self.cs_sendAction(_:to:for:)))!
         method_exchangeImplementations(before, after)
     }
     
@@ -80,7 +80,7 @@ public extension UIButton {
 
 public extension CSSwift where Base: UIButton {
     
-    public func setBackgroundColor(_ color: UIColor?, for state: UIControlState) {
+    func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
         let image = UIImage(pureColor: color!, targetSize: base.frame.size)
         base.setBackgroundImage(image, for: state)
     }
@@ -91,7 +91,7 @@ public extension CSSwift where Base: UIButton {
 
 public extension CSSwift where Base: UIButton {
     
-    public func setCornerRadius(_ v: CGFloat) {
+    func setCornerRadius(_ v: CGFloat) {
         base.layer.cornerRadius = v
         base.layer.masksToBounds = true
     }

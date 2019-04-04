@@ -10,7 +10,7 @@ import UIKit
 import ImageIO
 
 // MARK: - init
-extension UIImage {
+public extension UIImage {
     
     /**
      UIImage init from an URL string. Synchronsize and NOT recommended.
@@ -19,7 +19,7 @@ extension UIImage {
      
      - returns: UIImage
      */
-    public convenience init(urlString: String) {
+    convenience init(urlString: String) {
         let imageData = try! Data(contentsOf: URL(string: urlString)!)
         self.init(data: imageData)!
     }
@@ -32,7 +32,7 @@ extension UIImage {
      
      - returns: UIImage
      */
-    public convenience init(pureColor: UIColor, targetSize: CGSize) {
+    convenience init(pureColor: UIColor, targetSize: CGSize) {
         UIGraphicsBeginImageContextWithOptions(targetSize, false, 1)
         defer {
             UIGraphicsEndImageContext()
@@ -49,7 +49,7 @@ extension UIImage {
 public extension CSSwift where Base: UIImage {
     
     // center
-    public var center: CGPoint {
+    var center: CGPoint {
         return CGPoint(x: base.size.width / 2, y: base.size.height / 2)
     }
 
@@ -67,15 +67,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: true or false
      */
-    public func saveImageToFile(filePath: String, compressionFactor: CGFloat = 1.0) -> Bool {
-        var imageDataOrNil: Data?
-        if filePath.hasSuffix(".jpeg") {
-            imageDataOrNil = UIImageJPEGRepresentation(base, compressionFactor)
-        } else {
-            imageDataOrNil = UIImagePNGRepresentation(base)
-        }
-        guard let imageData = imageDataOrNil else { return false }
-        
+    func saveImageToFile(filePath: String, compressionFactor: CGFloat = 1.0) -> Bool {
         if FileManager.default.fileExists(atPath: filePath) {
             do {
                 try FileManager.default.removeItem(atPath: filePath)
@@ -85,19 +77,26 @@ public extension CSSwift where Base: UIImage {
             }
         }
         
-        if FileManager.default.createFile(atPath: filePath, contents: imageData as Data?, attributes: nil) {
+        var imageData: Data?
+        if filePath.hasSuffix(".jpeg") {
+            imageData = base.jpegData(compressionQuality: compressionFactor)
+        } else {
+            imageData = base.pngData()
+        }
+        
+        if FileManager.default.createFile(atPath: filePath, contents: imageData, attributes: nil) {
             let url = URL(fileURLWithPath: filePath)
             do {
-                try imageData.write(to: url)
+                try imageData?.write(to: url)
+                return true
             } catch {
-                print(error)
-                return false
+                CS_Print("FileManager failed to write imageData to filepath: \(filePath).")
             }
-            return true
         } else {
             CS_Print("FileManager failed to create file at path: \(filePath).")
-            return false
         }
+        
+        return false
     }
     
 }
@@ -110,7 +109,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: UIImage cropped
      */
-    public func imageCropped(bounds: CGRect) -> UIImage {
+    func imageCropped(bounds: CGRect) -> UIImage {
         let imageRef = base.cgImage!.cropping(to: bounds)
         let imageCropped = UIImage(cgImage: imageRef!)
         return imageCropped
@@ -121,7 +120,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: UIImage cropped
      */
-    public func imageCroppedToFit(targetSize: CGSize) -> UIImage {
+    func imageCroppedToFit(targetSize: CGSize) -> UIImage {
         var widthImage: CGFloat = 0.0
         var heightImage: CGFloat = 0.0
         var rectRatioed: CGRect!
@@ -146,7 +145,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: UIImage mirrored
      */
-    public var imageMirrored: UIImage {
+    var imageMirrored: UIImage {
         let width = base.size.width
         let height = base.size.height
         
@@ -175,7 +174,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: UIImage rotated
      */
-    public func imageRotatedByDegrees(degrees: CGFloat) -> UIImage {
+    func imageRotatedByDegrees(degrees: CGFloat) -> UIImage {
         let radians = CGFloat(Double.pi) * degrees / 180.0
         
         // calculate the size of the rotated view's containing box for our drawing space
@@ -216,7 +215,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: UIImage scaled
      */
-    public func imageScaledToSize(targetSize: CGSize, withOriginalRatio: Bool = true) -> UIImage {
+    func imageScaledToSize(targetSize: CGSize, withOriginalRatio: Bool = true) -> UIImage {
         var sizeFinal = targetSize
         
         if withOriginalRatio {
@@ -250,7 +249,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: UIImage
      */
-    public func imageWithCornerRadius(cornerRadius: CGFloat, backgroundColor: UIColor = UIColor.clear) -> UIImage {
+    func imageWithCornerRadius(cornerRadius: CGFloat, backgroundColor: UIColor = UIColor.clear) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: base.size.width, height: base.size.height)
         
         UIGraphicsBeginImageContext(base.size)
@@ -272,8 +271,8 @@ public extension CSSwift where Base: UIImage {
         return imageWithCornerRadius!
     }
     
-    public var imageWithNormalOrientation: UIImage {
-        if base.imageOrientation == UIImageOrientation.up {
+    var imageWithNormalOrientation: UIImage {
+        if base.imageOrientation == UIImage.Orientation.up {
             return base
         }
         
@@ -288,7 +287,7 @@ public extension CSSwift where Base: UIImage {
         return normalizedImage!
     }
     
-    public var grayScale: UIImage {
+    var grayScale: UIImage {
         // Create image rectangle with current image width/height
         let rect = CGRect(x: 0, y: 0, width: base.size.width, height: base.size.height);
         // Grayscale color space
@@ -319,7 +318,7 @@ public extension CSSwift where Base: UIImage {
 // MARK: - Watermark
 public extension CSSwift where Base: UIImage {
     // Add image watermark via rect
-    public func imageWithWatermark(img: UIImage, rect: CGRect) -> UIImage {
+    func imageWithWatermark(img: UIImage, rect: CGRect) -> UIImage {
         p_setUpImageContext()
         
         img.draw(in: rect)
@@ -332,7 +331,7 @@ public extension CSSwift where Base: UIImage {
     }
     
     // Add image watermark via center and size
-    public func imageWithWatermark(img: UIImage,
+    func imageWithWatermark(img: UIImage,
                                    center: CGPoint,
                                    size: CGSize) -> UIImage {
         let rect = CGRect(x: center.x - size.width / 2,
@@ -344,18 +343,17 @@ public extension CSSwift where Base: UIImage {
     }
     
     // Text
-    public func imageWithWatermark(text: String,
+    func imageWithWatermark(text: String,
                                    point: CGPoint,
                                    font: UIFont,
                                    color: UIColor = .white) -> UIImage {
-        let style = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
-        style.alignment = .center
+        let paraStyle = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        paraStyle.alignment = .center
         let attributes = [
-            NSFontAttributeName: font,
-            NSParagraphStyleAttributeName: style,
-            NSForegroundColorAttributeName: color,
-        ]
-        
+            .font: font,
+            .paragraphStyle: paraStyle,
+            .foregroundColor: color
+        ] as [NSAttributedString.Key: Any]
         return imageWithWatermark(text: text, point: point, attributes: attributes)
     }
     
@@ -370,9 +368,9 @@ public extension CSSwift where Base: UIImage {
      ]
      imageWithWatermark(text: text, point: point, attributes: attributes)
      */
-    public func imageWithWatermark(text: String,
+    func imageWithWatermark(text: String,
                                    point: CGPoint,
-                                   attributes: [String : Any]?) -> UIImage {
+                                   attributes: [NSAttributedString.Key: Any]?) -> UIImage {
         p_setUpImageContext()
         
         (text as NSString).draw(at: point, withAttributes: attributes)
@@ -406,7 +404,7 @@ public extension CSSwift where Base: UIImage {
 // MARK: - 微信分享缩略图
 public extension CSSwift where Base: UIImage {
     
-    public var wechatShareThumbnail: UIImage {
+    var wechatShareThumbnail: UIImage {
         var scale: CGFloat = 0
         var isNeedCut = false
         var imageSize = CGSize.zero
@@ -443,7 +441,7 @@ public extension CSSwift where Base: UIImage {
         }
         
         let image = p_thumbnailWithSize(targetSize: imageSize, isNeedCut: isNeedCut)
-        let imageData = UIImageJPEGRepresentation(image, 0.4)
+        let imageData = image.jpegData(compressionQuality: 0.4)
         return UIImage(data: imageData!)!
     }
     

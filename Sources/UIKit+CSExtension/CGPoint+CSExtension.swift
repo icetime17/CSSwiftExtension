@@ -10,11 +10,11 @@ import UIKit
 
 public extension CGPoint {
 
-    public static func cs_distance(fromPoint: CGPoint, toPoint: CGPoint) -> CGFloat {
+    static func cs_distance(fromPoint: CGPoint, toPoint: CGPoint) -> CGFloat {
         return sqrt(pow(toPoint.x - fromPoint.x, 2) + pow(toPoint.y - fromPoint.y, 2))
     }
     
-    public func cs_distance(toPoint: CGPoint) -> CGFloat {
+    func cs_distance(toPoint: CGPoint) -> CGFloat {
         return CGPoint.cs_distance(fromPoint: self, toPoint: toPoint)
     }
     
