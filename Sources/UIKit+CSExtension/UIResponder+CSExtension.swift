@@ -11,7 +11,7 @@ import UIKit
 public extension CSSwift where Base: UIResponder {
 
     // cs.currentViewController: current UIViewController
-    public var currentViewController: UIViewController? {
+    var currentViewController: UIViewController? {
         var responder = base.next
         while responder != nil {
             if responder!.isKind(of: UIViewController.self) {

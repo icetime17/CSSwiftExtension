@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64F1A12F2255F82F007DA727 /* UIResponder+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F1A12E2255F82F007DA727 /* UIResponder+CSExtension.swift */; };
+		64F1A1312255F835007DA727 /* Bundle+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F1A1302255F835007DA727 /* Bundle+CSExtension.swift */; };
 		8365BA561F68AAB500E31A0D /* UIScrollView+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365BA551F68AAB500E31A0D /* UIScrollView+CSExtension.swift */; };
 		8365BA581F68AB4C00E31A0D /* CSSwiftExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8365BA571F68AB4C00E31A0D /* CSSwiftExtension.podspec */; };
 		A40D58481E165AEB00763603 /* CSSwiftExtensionFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = A40D58461E165AEB00763603 /* CSSwiftExtensionFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -117,6 +119,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		64F1A12E2255F82F007DA727 /* UIResponder+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+CSExtension.swift"; sourceTree = "<group>"; };
+		64F1A1302255F835007DA727 /* Bundle+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+CSExtension.swift"; sourceTree = "<group>"; };
 		8365BA551F68AAB500E31A0D /* UIScrollView+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+CSExtension.swift"; sourceTree = "<group>"; };
 		8365BA571F68AB4C00E31A0D /* CSSwiftExtension.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CSSwiftExtension.podspec; path = ../CSSwiftExtension.podspec; sourceTree = "<group>"; };
 		A4035F6D1F6650F6003AD29A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 		A4564CA21E0D20FE00FBB743 /* Foundation+CSExtension */ = {
 			isa = PBXGroup;
 			children = (
+				64F1A1302255F835007DA727 /* Bundle+CSExtension.swift */,
 				A49D41A71E6D63D500DF0AE2 /* NSObject+CSExtension.swift */,
 				A4564CA41E0D20FE00FBB743 /* Date+CSExtension.swift */,
 				A4564CA51E0D20FE00FBB743 /* FileManager+CSExtension.swift */,
@@ -213,6 +218,7 @@
 		A4564CA71E0D20FE00FBB743 /* UIKit+CSExtension */ = {
 			isa = PBXGroup;
 			children = (
+				64F1A12E2255F82F007DA727 /* UIResponder+CSExtension.swift */,
 				A4564CA81E0D20FE00FBB743 /* UIApplication+CSExtension.swift */,
 				A4564CAA1E0D20FE00FBB743 /* UIColor+CSExtension.swift */,
 				A4564CAB1E0D20FE00FBB743 /* UIDevice+CSExtension.swift */,
@@ -491,6 +497,7 @@
 				A4564CB11E0D20FE00FBB743 /* FileManager+CSExtension.swift in Sources */,
 				A47EAAF21E1B819600D25169 /* UICollectionView+CSExtension.swift in Sources */,
 				A47EAB1E1E1C9F9B00D25169 /* UIButton+CSExtension.swift in Sources */,
+				64F1A1312255F835007DA727 /* Bundle+CSExtension.swift in Sources */,
 				A47EAAF61E1B8C9B00D25169 /* Array+CSExtension.swift in Sources */,
 				A4E9F3AC1E485A9D00818627 /* CSSwift.swift in Sources */,
 				8365BA561F68AAB500E31A0D /* UIScrollView+CSExtension.swift in Sources */,
@@ -504,6 +511,7 @@
 				A47EAAF01E1B7F2000D25169 /* UITableView+CSExtension.swift in Sources */,
 				A4E9F34C1E48240600818627 /* CSSwiftExtension+Common.swift in Sources */,
 				A47B45D01E0B674D00492FF2 /* AppDelegate.swift in Sources */,
+				64F1A12F2255F82F007DA727 /* UIResponder+CSExtension.swift in Sources */,
 				A47EAAF81E1B9E4200D25169 /* UIImage+Gif.swift in Sources */,
 				A4564CB31E0D20FE00FBB743 /* UIApplication+CSExtension.swift in Sources */,
 			);
