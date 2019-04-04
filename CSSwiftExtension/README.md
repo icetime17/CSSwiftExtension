@@ -4,15 +4,15 @@
 [![Cocoapods](https://img.shields.io/cocoapods/v/CSSwiftExtension.svg)](https://cocoapods.org/pods/CSSwiftExtension)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/badge/Platform-iOS-lightgrey.svg)](https://github.com/icetime17/CSSwiftExtension)
-[![Swift](https://img.shields.io/badge/Swift-4.0-orange.svg)](https://swift.org)
-[![Xcode](https://img.shields.io/badge/Xcode-9.2-blue.svg)](https://developer.apple.com/xcode)
+[![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://swift.org)
+[![Xcode](https://img.shields.io/badge/Xcode-10.0-blue.svg)](https://developer.apple.com/xcode)
 [![MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
 Some ***useful extension for Swift*** to boost your productivity.
 
 ## Requirements:
 
-Xcode 8 (or later) with Swift 3. This library is made for iOS 8 or later.
+Xcode 10 (or later) with Swift 5. This library is made for iOS 10 or later.
 
 
 ## Installation
