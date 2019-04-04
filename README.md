@@ -4,15 +4,15 @@
 [![Cocoapods](https://img.shields.io/cocoapods/v/CSSwiftExtension.svg)](https://cocoapods.org/pods/CSSwiftExtension)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/badge/Platform-iOS-lightgrey.svg)](https://github.com/icetime17/CSSwiftExtension)
-[![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)](https://swift.org)
-[![Xcode](https://img.shields.io/badge/Xcode-8.0-blue.svg)](https://developer.apple.com/xcode)
+[![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://swift.org)
+[![Xcode](https://img.shields.io/badge/Xcode-10.0-blue.svg)](https://developer.apple.com/xcode)
 [![MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
 Some ***useful extension for Swift*** to boost your productivity.
 
-
 ## Requirements:
-Xcode 8 (or later) with Swift 3. This library is made for iOS 8 or later.
+
+Xcode 10 (or later) with Swift 5. This library is made for iOS 10 or later.
 
 
 ## Installation
@@ -29,7 +29,7 @@ To integrate CSSwiftExtension into your Xcode project using CocoaPods, specify i
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
@@ -75,7 +75,6 @@ Add the ***Sources*** folder to your Xcode project to use all extensions, or a s
 ```Swift
 let string = " hello 17, this is my city "
 let a = string.cs_trimmed
-let b = string.cs_length
 aNonUTF8String.cs_utf8String
 
 let regExp_email = "^[a-zA-Z0-9]{1,}@[a-zA-Z0-9]{1,}\\.[a-zA-Z]{2,}$"
@@ -138,7 +137,7 @@ let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 500), 
 aTableView.cs.removeEmptyFooter()
 aTableView.cs.scrollToTop(animated: true)
 
-tableView.cs_register(MyTableViewCell.self)
+tableView.cs_registerNib(MyTableViewCell.self)
 let cell = tableView.cs_dequeueReusableCell(forIndexPath: indexPath) as MyTableViewCell
 ```
 

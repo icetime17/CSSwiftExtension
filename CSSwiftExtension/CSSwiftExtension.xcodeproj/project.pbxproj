@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		64F1A12F2255F82F007DA727 /* UIResponder+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F1A12E2255F82F007DA727 /* UIResponder+CSExtension.swift */; };
 		64F1A1312255F835007DA727 /* Bundle+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F1A1302255F835007DA727 /* Bundle+CSExtension.swift */; };
+		64F1A1342255FCF8007DA727 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 64F1A1322255FCF7007DA727 /* README.md */; };
+		64F1A1352255FCF8007DA727 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 64F1A1332255FCF8007DA727 /* LICENSE.md */; };
 		8365BA561F68AAB500E31A0D /* UIScrollView+CSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365BA551F68AAB500E31A0D /* UIScrollView+CSExtension.swift */; };
 		8365BA581F68AB4C00E31A0D /* CSSwiftExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8365BA571F68AB4C00E31A0D /* CSSwiftExtension.podspec */; };
 		A40D58481E165AEB00763603 /* CSSwiftExtensionFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = A40D58461E165AEB00763603 /* CSSwiftExtensionFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -121,10 +123,10 @@
 /* Begin PBXFileReference section */
 		64F1A12E2255F82F007DA727 /* UIResponder+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+CSExtension.swift"; sourceTree = "<group>"; };
 		64F1A1302255F835007DA727 /* Bundle+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+CSExtension.swift"; sourceTree = "<group>"; };
+		64F1A1322255FCF7007DA727 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		64F1A1332255FCF8007DA727 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		8365BA551F68AAB500E31A0D /* UIScrollView+CSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+CSExtension.swift"; sourceTree = "<group>"; };
 		8365BA571F68AB4C00E31A0D /* CSSwiftExtension.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CSSwiftExtension.podspec; path = ../CSSwiftExtension.podspec; sourceTree = "<group>"; };
-		A4035F6D1F6650F6003AD29A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A4035F6F1F665101003AD29A /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		A40D58441E165AEB00763603 /* CSSwiftExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSSwiftExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40D58461E165AEB00763603 /* CSSwiftExtensionFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSwiftExtensionFramework.h; sourceTree = "<group>"; };
 		A40D58471E165AEB00763603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -240,8 +242,8 @@
 		A47B45C31E0B674D00492FF2 = {
 			isa = PBXGroup;
 			children = (
-				A4035F6D1F6650F6003AD29A /* README.md */,
-				A4035F6F1F665101003AD29A /* LICENSE.md */,
+				64F1A1332255FCF8007DA727 /* LICENSE.md */,
+				64F1A1322255FCF7007DA727 /* README.md */,
 				8365BA571F68AB4C00E31A0D /* CSSwiftExtension.podspec */,
 				A47B45EF1E0B67C200492FF2 /* Sources */,
 				A47B45CE1E0B674D00492FF2 /* CSSwiftExtension */,
@@ -435,12 +437,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64F1A1352255FCF8007DA727 /* LICENSE.md in Resources */,
 				A47EAAFA1E1B9EA200D25169 /* Railway.gif in Resources */,
 				A47B45DA1E0B674D00492FF2 /* LaunchScreen.storyboard in Resources */,
 				A4564CBD1E0D226500FBB743 /* Model.jpg in Resources */,
 				A47EAAEE1E1B776900D25169 /* AView.xib in Resources */,
 				8365BA581F68AB4C00E31A0D /* CSSwiftExtension.podspec in Resources */,
 				A47B45D71E0B674D00492FF2 /* Assets.xcassets in Resources */,
+				64F1A1342255FCF8007DA727 /* README.md in Resources */,
 				A4F9E05D1E2C6A920073423E /* MyTableViewCell.xib in Resources */,
 				A47B45D51E0B674D00492FF2 /* Main.storyboard in Resources */,
 			);
