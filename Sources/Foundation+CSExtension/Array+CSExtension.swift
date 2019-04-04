@@ -11,7 +11,7 @@ import Foundation
 // MARK: - Integer
 public extension Array where Element: BinaryInteger {
     
-    public var cs_sum: Element {
+    var cs_sum: Element {
         return reduce(0, +)
     }
 
@@ -22,7 +22,7 @@ public extension Array where Element: BinaryInteger {
 public extension Array where Element: Equatable {
     
     // remove duplicate element
-    public mutating func cs_removeDuplicates() {
+    mutating func cs_removeDuplicates() {
 //        self = reduce([]) { (result, element) -> [Element] in
 //            result.contains(element) ? result : result + [element]
 //        }

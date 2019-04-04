@@ -12,7 +12,7 @@ import Foundation
 public extension String {
 
     // length
-    public var cs_length: Int {
+    var cs_length: Int {
         return self.count
     }
 
@@ -21,17 +21,17 @@ public extension String {
 public extension String {
     
     // utf8 String
-    public var cs_utf8String: String {
+    var cs_utf8String: String {
         return String(utf8String: cString(using: String.Encoding.utf8)!)!
     }
     
     // cs_trimmed: trim the \n and blank of leading and trailing
-    public var cs_trimmed: String {
+    var cs_trimmed: String {
         return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).trimmingCharacters(in: CharacterSet.whitespaces)
     }
     
     // cs_intValue: return Int value of String
-    public var cs_intValue: Int? {
+    var cs_intValue: Int? {
         let scanner = Scanner(string: self)
         scanner.scanUpToCharacters(from: CharacterSet.decimalDigits, into: nil)
         var intValue = 0
@@ -42,7 +42,7 @@ public extension String {
     }
     
     // cs_stringValue: return String value of String
-    public var cs_stringValue: String? {
+    var cs_stringValue: String? {
         let scanner = Scanner(string: self)
         var s: NSString? = ""
         if scanner.scanString(self, into: &s) {
@@ -53,12 +53,12 @@ public extension String {
     }
     
     // cs_Data: return Data of String
-    public var cs_Data: Data? {
+    var cs_Data: Data? {
         return self.data(using: String.Encoding.utf8)!
     }
     
     // cs_Date: return Date of String
-    public var cs_Date: Date? {
+    var cs_Date: Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         
@@ -70,12 +70,12 @@ public extension String {
 public extension String {
     
     // reverse
-    public var cs_reversed: String {
+    var cs_reversed: String {
         return String(self.reversed())
     }
     
     // index of subString
-    public func cs_indexOfSubString(_ tString: String) -> Int {
+    func cs_indexOfSubString(_ tString: String) -> Int {
         if tString.isEmpty {
             return -1
         }
@@ -110,17 +110,17 @@ public extension String {
 // MARK: - Regular expression
 public extension String {
     
-    public func cs_validateWithRegExp(regExp: String) -> Bool {
+    func cs_validateWithRegExp(regExp: String) -> Bool {
         let predicate = NSPredicate(format: "SELF MATCHES %@", regExp)
         return predicate.evaluate(with: self)
     }
     
-    public var cs_isEmailValidate: Bool {
+    var cs_isEmailValidate: Bool {
         let regExp_email = "^[a-zA-Z0-9]{1,}@[a-zA-Z0-9]{1,}\\.[a-zA-Z]{2,}$"
         return cs_validateWithRegExp(regExp: regExp_email)
     }
     
-    public var cs_isPhoneNumberValidate: Bool {
+    var cs_isPhoneNumberValidate: Bool {
         let regExp_phoneNumber = "^1\\d{10}$"
         return cs_validateWithRegExp(regExp: regExp_phoneNumber)
     }
@@ -131,16 +131,16 @@ public extension String {
 public extension String {
     
     // dynamic height
-    public func dts_heightOf(font: UIFont, maxSize: CGSize) -> CGFloat {
+    func dts_heightOf(font: UIFont, maxSize: CGSize) -> CGFloat {
         let rect = (self as NSString).boundingRect(with: maxSize,
                                                    options: .usesLineFragmentOrigin,
-                                                   attributes: [.font: font] as [NSAttributedStringKey : Any],
+                                                   attributes: [.font: font] as [NSAttributedString.Key : Any],
                                                    context: nil)
         return rect.height
     }
     
     // custom font, line, kern
-    public func cs_attributesStringWithFont(font: UIFont, lineSpacing: CGFloat, kernSpacing: CGFloat, textAlignment: NSTextAlignment) -> NSAttributedString {
+    func cs_attributesStringWithFont(font: UIFont, lineSpacing: CGFloat, kernSpacing: CGFloat, textAlignment: NSTextAlignment) -> NSAttributedString {
         let paraStyle = NSMutableParagraphStyle()
         paraStyle.lineBreakMode = .byWordWrapping
         paraStyle.alignment = textAlignment
@@ -156,7 +156,7 @@ public extension String {
             .font: font,
             .paragraphStyle: paraStyle,
             .kern: kernSpacing
-            ] as [NSAttributedStringKey : Any]
+            ] as [NSAttributedString.Key : Any]
         return NSAttributedString(string: self, attributes: dict)
     }
     
@@ -165,23 +165,23 @@ public extension String {
 // MARK: - Version Compare
 public extension String {
     
-    public func cs_isEqualTo(_ v: String) -> Bool {
+    func cs_isEqualTo(_ v: String) -> Bool {
         return self.compare(v, options: .numeric, range: nil, locale: nil) == .orderedSame
     }
     
-    public func cs_isHigherThan(_ v: String) -> Bool {
+    func cs_isHigherThan(_ v: String) -> Bool {
         return self.compare(v, options: .numeric, range: nil, locale: nil) == .orderedDescending
     }
     
-    public func cs_isEqualToOrHigherThan(_ v: String) -> Bool {
+    func cs_isEqualToOrHigherThan(_ v: String) -> Bool {
         return self.compare(v, options: .numeric, range: nil, locale: nil) != .orderedAscending
     }
     
-    public func cs_isLowerThan(_ v: String) -> Bool {
+    func cs_isLowerThan(_ v: String) -> Bool {
         return self.compare(v, options: .numeric, range: nil, locale: nil) == .orderedAscending
     }
     
-    public func cs_isEqualToOrLowerThan(_ v: String) -> Bool {
+    func cs_isEqualToOrLowerThan(_ v: String) -> Bool {
         return self.compare(v, options: .numeric, range: nil, locale: nil) != .orderedDescending
     }
     
@@ -189,8 +189,8 @@ public extension String {
 
 public extension String {
     
-    public func cs_isTextWidthOutside(aView: UIView, with font: UIFont) -> Bool {
-        return self.size(withAttributes: [.font: font] as [NSAttributedStringKey : Any]).width >= aView.bounds.width
+    func cs_isTextWidthOutside(aView: UIView, with font: UIFont) -> Bool {
+        return self.size(withAttributes: [.font: font] as [NSAttributedString.Key : Any]).width >= aView.bounds.width
     }
     
 }

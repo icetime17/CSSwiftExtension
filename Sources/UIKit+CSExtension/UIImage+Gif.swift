@@ -14,7 +14,7 @@ import ImageIO
 
 public extension UIImageView {
     
-    public func loadGif(name: String) {
+    func loadGif(name: String) {
         DispatchQueue.global().async {
             let image = UIImage.gif(name: name)
             DispatchQueue.main.async {
@@ -27,7 +27,7 @@ public extension UIImageView {
 
 public extension UIImage {
     
-    public class func gif(data: Data) -> UIImage? {
+    class func gif(data: Data) -> UIImage? {
         // Create source from data
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
             CS_Print("SwiftGif: Source for the image does not exist")
@@ -37,7 +37,7 @@ public extension UIImage {
         return UIImage.animatedImageWithSource(source)
     }
     
-    public class func gif(url: String) -> UIImage? {
+    class func gif(url: String) -> UIImage? {
         // Validate URL
         guard let bundleURL = URL(string: url) else {
             CS_Print("SwiftGif: This image named \"\(url)\" does not exist")
@@ -53,7 +53,7 @@ public extension UIImage {
         return gif(data: imageData)
     }
     
-    public class func gif(name: String) -> UIImage? {
+    class func gif(name: String) -> UIImage? {
         // Check for existance of gif
         guard let bundleURL = Bundle.main
             .url(forResource: name, withExtension: "gif") else {

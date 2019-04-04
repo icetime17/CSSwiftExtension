@@ -13,7 +13,7 @@ import UIKit
 public extension UIImageView {
 
     // Add blur effect UIImageView
-    public convenience init(frame: CGRect, blurEffectStyle: UIBlurEffectStyle) {
+    convenience init(frame: CGRect, blurEffectStyle: UIBlurEffect.Style) {
         self.init(frame: frame)
         
         let blurView = UIVisualEffectView(frame: self.bounds)

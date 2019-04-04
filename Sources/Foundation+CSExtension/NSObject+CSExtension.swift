@@ -10,7 +10,7 @@ import Foundation
 
 public extension CSSwift where Base: NSObject {
 
-    public var ivars: [String] {
+    var ivars: [String] {
         var ret = [String]()
         
         var count: u_int = 0
@@ -27,7 +27,7 @@ public extension CSSwift where Base: NSObject {
         return ret
     }
 
-    public var properties: [String] {
+    var properties: [String] {
         var ret = [String]()
         
         var count: u_int = 0
@@ -43,7 +43,7 @@ public extension CSSwift where Base: NSObject {
         return ret
     }
     
-    public var methods: [String] {
+    var methods: [String] {
         var ret = [String]()
         
         var count: u_int = 0
@@ -60,7 +60,7 @@ public extension CSSwift where Base: NSObject {
         return ret
     }
     
-    public var protocols: [String] {
+    var protocols: [String] {
         var ret = [String]()
         
         var count: u_int = 0

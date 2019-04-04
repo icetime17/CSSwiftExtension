@@ -12,7 +12,7 @@ import UIKit
 
 public extension CSSwift where Base: UIView {
 
-    public var left: CGFloat {
+    var left: CGFloat {
         get {
             return base.frame.minX
         }
@@ -21,7 +21,7 @@ public extension CSSwift where Base: UIView {
         }
     }
     
-    public var right: CGFloat {
+    var right: CGFloat {
         get {
             return base.frame.maxX
         }
@@ -30,7 +30,7 @@ public extension CSSwift where Base: UIView {
         }
     }
     
-    public var top: CGFloat {
+    var top: CGFloat {
         get {
             return base.frame.minY
         }
@@ -39,7 +39,7 @@ public extension CSSwift where Base: UIView {
         }
     }
     
-    public var bottom: CGFloat {
+    var bottom: CGFloat {
         get {
             return base.frame.maxY
         }
@@ -48,7 +48,7 @@ public extension CSSwift where Base: UIView {
         }
     }
     
-    public var width: CGFloat {
+    var width: CGFloat {
         get {
             return base.frame.width
         }
@@ -57,7 +57,7 @@ public extension CSSwift where Base: UIView {
         }
     }
     
-    public var height: CGFloat {
+    var height: CGFloat {
         get {
             return base.frame.height
         }
@@ -66,7 +66,7 @@ public extension CSSwift where Base: UIView {
         }
     }
     
-    public var size: CGSize {
+    var size: CGSize {
         get {
             return base.frame.size
         }
@@ -82,7 +82,7 @@ public extension CSSwift where Base: UIView {
 
 public extension CSSwift where Base: UIView {
     // when View does not care the UIViewControler it belongs to.
-    public var currentViewController: UIViewController {
+    var currentViewController: UIViewController {
         var responder: UIResponder = base.next!
         while !responder.isKind(of: UIWindow.classForCoder()) {
             if responder.isKind(of: UIViewController.classForCoder()) {
@@ -93,7 +93,7 @@ public extension CSSwift where Base: UIView {
         return responder as! UIViewController
     }
     
-    public var snapshot: UIImage? {
+    var snapshot: UIImage? {
         UIGraphicsBeginImageContextWithOptions(base.layer.frame.size, false, 0)
         defer {
             UIGraphicsEndImageContext()
@@ -107,7 +107,7 @@ public extension CSSwift where Base: UIView {
     
     // add corner radius, may have `off-screen render` problem.
     // aView.cs.setCornerRadius(corners: [.bottomLeft, .bottomRight], radius: 20)
-    public func setCornerRadius(corners: UIRectCorner = .allCorners, radius: CGFloat) {
+    func setCornerRadius(corners: UIRectCorner = .allCorners, radius: CGFloat) {
         let maskPath = UIBezierPath(roundedRect: base.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath
@@ -121,7 +121,7 @@ public extension CSSwift where Base: UIView {
     
     // init UIView from a nib file
     // let aView = AView.cs.loadFromNib("AView") as? AView
-    public static func loadFromNib(_ nibName: String, bundle: Bundle? = nil) -> UIView? {
+    static func loadFromNib(_ nibName: String, bundle: Bundle? = nil) -> UIView? {
         return UINib(nibName: nibName, bundle: bundle).instantiate(withOwner: nil, options: nil).first as? UIView
     }
 }
@@ -129,14 +129,14 @@ public extension CSSwift where Base: UIView {
 
 // MARK: - Gesture
 public extension CSSwift where Base: UIView {
-    public func removeGestureRecognizers() {
+    func removeGestureRecognizers() {
         base.gestureRecognizers?.forEach(base.removeGestureRecognizer)
     }
 }
 
 // MARK: - Animation
 public extension CSSwift where Base: UIView {
-    public func popAnimation(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
+    func popAnimation(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
         base.alpha = 0
         base.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         UIView.animate(withDuration: duration,
@@ -151,7 +151,7 @@ public extension CSSwift where Base: UIView {
                        completion: completion)
     }
     
-    public func raiseAnimation(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
+    func raiseAnimation(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
         let offsetY = CS_ScreenHeight - base.frame.minY
         base.transform = CGAffineTransform(translationX: 0, y: offsetY)
         UIView.animate(withDuration: duration,
@@ -165,7 +165,7 @@ public extension CSSwift where Base: UIView {
                        completion: completion)
     }
     
-    public func dropAnimation(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
+    func dropAnimation(duration: TimeInterval = 0.5, completion: CS_ClosureWithBool? = nil) {
         let offsetY = base.frame.maxY
         base.transform = CGAffineTransform(translationX: 0, y: -offsetY)
         UIView.animate(withDuration: duration,
@@ -179,7 +179,7 @@ public extension CSSwift where Base: UIView {
                        completion: completion)
     }
     
-    public func breathAnimation() {
+    func breathAnimation() {
         let animation = CAKeyframeAnimation(keyPath: "transform.scale")
         animation.repeatCount = MAXFLOAT
         animation.values = [1, 0.9, 1]
@@ -188,7 +188,7 @@ public extension CSSwift where Base: UIView {
         base.layer.add(animation, forKey: nil)
     }
     
-    public func hideAnimation(duration: TimeInterval = 3.0, completion: CS_ClosureWithBool? = nil) {
+    func hideAnimation(duration: TimeInterval = 3.0, completion: CS_ClosureWithBool? = nil) {
         base.alpha = 1.0
         UIView.animate(withDuration: duration, animations: { 
             self.base.alpha = 0.0

@@ -11,7 +11,7 @@ import UIKit
 public extension CSSwift where Base: UICollectionView {
     
     // number of all items
-    public var numberOfAllItems: Int {
+    var numberOfAllItems: Int {
         var itemCount = 0
         for section in 0..<base.numberOfSections {
             itemCount += base.numberOfItems(inSection: section)
@@ -19,7 +19,7 @@ public extension CSSwift where Base: UICollectionView {
         return itemCount
     }
     
-    public var firstIndexPath: IndexPath? {
+    var firstIndexPath: IndexPath? {
         let numberOfSections = base.numberOfSections
         if numberOfSections == 0 {
             return nil
@@ -33,7 +33,7 @@ public extension CSSwift where Base: UICollectionView {
         return IndexPath(item: 0, section: 0)
     }
     
-    public var lastIndexPath: IndexPath? {
+    var lastIndexPath: IndexPath? {
         let numberOfSections = base.numberOfSections
         if numberOfSections == 0 {
             return nil
@@ -50,7 +50,7 @@ public extension CSSwift where Base: UICollectionView {
 }
 
 public extension CSSwift where Base: UICollectionView {
-    public func scrollToFirstCell(scrollPosition: UICollectionViewScrollPosition,
+    func scrollToFirstCell(scrollPosition: UICollectionView.ScrollPosition,
                                  animated: Bool,
                                  completion: CS_ClosureWithBool? = nil) {
         let numberOfSections = base.numberOfSections
@@ -78,7 +78,7 @@ public extension CSSwift where Base: UICollectionView {
         }
     }
     
-    public func scrollToLastCell(scrollPosition: UICollectionViewScrollPosition,
+    func scrollToLastCell(scrollPosition: UICollectionView.ScrollPosition,
                                  animated: Bool,
                                  completion: CS_ClosureWithBool? = nil) {
         let numberOfSections = base.numberOfSections
@@ -125,12 +125,12 @@ public protocol TestProtocol: ReusableView, NibLoadable {
 
 public extension CSSwift where Base: UICollectionView {
     
-    public func registerNib<T: UICollectionViewCell>(_: T.Type) where T: ReusableView & NibLoadable {
+    func registerNib<T: UICollectionViewCell>(_: T.Type) where T: ReusableView & NibLoadable {
         let nib = UINib(nibName: T.nibName, bundle: nil)
         base.register(nib, forCellWithReuseIdentifier: T.reuseIdentifier)
     }
     
-    public func dequeueReusableCell<T: UICollectionViewCell>(forIndexPath indexPath: IndexPath) -> T where T: ReusableView {
+    func dequeueReusableCell<T: UICollectionViewCell>(forIndexPath indexPath: IndexPath) -> T where T: ReusableView {
         guard let cell = base.dequeueReusableCell(withReuseIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
             fatalError("CSSwiftExtension: Could not dequeue cell with identifier \(T.reuseIdentifier)")
         }

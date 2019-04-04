@@ -178,7 +178,7 @@ extension ViewController {
             .font: UIFont.systemFont(ofSize: 50),
             .paragraphStyle: style,
             .foregroundColor: UIColor.white
-            ] as [NSAttributedStringKey: Any]
+            ] as [NSAttributedString.Key: Any]
         let ret3 = img.cs.imageWithWatermark(text: "This is Watermark",
                                              point: CGPoint(x: 100, y: 100),
                                              attributes: attributes)

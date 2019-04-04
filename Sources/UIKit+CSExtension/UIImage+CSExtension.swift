@@ -19,7 +19,7 @@ public extension UIImage {
      
      - returns: UIImage
      */
-    public convenience init(urlString: String) {
+    convenience init(urlString: String) {
         let imageData = try! Data(contentsOf: URL(string: urlString)!)
         self.init(data: imageData)!
     }
@@ -32,7 +32,7 @@ public extension UIImage {
      
      - returns: UIImage
      */
-    public convenience init(pureColor: UIColor, targetSize: CGSize) {
+    convenience init(pureColor: UIColor, targetSize: CGSize) {
         UIGraphicsBeginImageContextWithOptions(targetSize, false, 1)
         defer {
             UIGraphicsEndImageContext()
@@ -49,7 +49,7 @@ public extension UIImage {
 public extension CSSwift where Base: UIImage {
     
     // center
-    public var center: CGPoint {
+    var center: CGPoint {
         return CGPoint(x: base.size.width / 2, y: base.size.height / 2)
     }
 
@@ -67,7 +67,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: true or false
      */
-    public func saveImageToFile(filePath: String, compressionFactor: CGFloat = 1.0) -> Bool {
+    func saveImageToFile(filePath: String, compressionFactor: CGFloat = 1.0) -> Bool {
         if FileManager.default.fileExists(atPath: filePath) {
             do {
                 try FileManager.default.removeItem(atPath: filePath)
@@ -79,9 +79,9 @@ public extension CSSwift where Base: UIImage {
         
         var imageData: Data?
         if filePath.hasSuffix(".jpeg") {
-            imageData = UIImageJPEGRepresentation(base, compressionFactor)
+            imageData = base.jpegData(compressionQuality: compressionFactor)
         } else {
-            imageData = UIImagePNGRepresentation(base)
+            imageData = base.pngData()
         }
         
         if FileManager.default.createFile(atPath: filePath, contents: imageData, attributes: nil) {
@@ -109,7 +109,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: UIImage cropped
      */
-    public func imageCropped(bounds: CGRect) -> UIImage {
+    func imageCropped(bounds: CGRect) -> UIImage {
         let imageRef = base.cgImage!.cropping(to: bounds)
         let imageCropped = UIImage(cgImage: imageRef!)
         return imageCropped
@@ -120,7 +120,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: UIImage cropped
      */
-    public func imageCroppedToFit(targetSize: CGSize) -> UIImage {
+    func imageCroppedToFit(targetSize: CGSize) -> UIImage {
         var widthImage: CGFloat = 0.0
         var heightImage: CGFloat = 0.0
         var rectRatioed: CGRect!
@@ -145,7 +145,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: UIImage mirrored
      */
-    public var imageMirrored: UIImage {
+    var imageMirrored: UIImage {
         let width = base.size.width
         let height = base.size.height
         
@@ -174,7 +174,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: UIImage rotated
      */
-    public func imageRotatedByDegrees(degrees: CGFloat) -> UIImage {
+    func imageRotatedByDegrees(degrees: CGFloat) -> UIImage {
         let radians = CGFloat(Double.pi) * degrees / 180.0
         
         // calculate the size of the rotated view's containing box for our drawing space
@@ -215,7 +215,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: UIImage scaled
      */
-    public func imageScaledToSize(targetSize: CGSize, withOriginalRatio: Bool = true) -> UIImage {
+    func imageScaledToSize(targetSize: CGSize, withOriginalRatio: Bool = true) -> UIImage {
         var sizeFinal = targetSize
         
         if withOriginalRatio {
@@ -249,7 +249,7 @@ public extension CSSwift where Base: UIImage {
      
      - returns: UIImage
      */
-    public func imageWithCornerRadius(cornerRadius: CGFloat, backgroundColor: UIColor = UIColor.clear) -> UIImage {
+    func imageWithCornerRadius(cornerRadius: CGFloat, backgroundColor: UIColor = UIColor.clear) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: base.size.width, height: base.size.height)
         
         UIGraphicsBeginImageContext(base.size)
@@ -271,8 +271,8 @@ public extension CSSwift where Base: UIImage {
         return imageWithCornerRadius!
     }
     
-    public var imageWithNormalOrientation: UIImage {
-        if base.imageOrientation == UIImageOrientation.up {
+    var imageWithNormalOrientation: UIImage {
+        if base.imageOrientation == UIImage.Orientation.up {
             return base
         }
         
@@ -287,7 +287,7 @@ public extension CSSwift where Base: UIImage {
         return normalizedImage!
     }
     
-    public var grayScale: UIImage {
+    var grayScale: UIImage {
         // Create image rectangle with current image width/height
         let rect = CGRect(x: 0, y: 0, width: base.size.width, height: base.size.height);
         // Grayscale color space
@@ -318,7 +318,7 @@ public extension CSSwift where Base: UIImage {
 // MARK: - Watermark
 public extension CSSwift where Base: UIImage {
     // Add image watermark via rect
-    public func imageWithWatermark(img: UIImage, rect: CGRect) -> UIImage {
+    func imageWithWatermark(img: UIImage, rect: CGRect) -> UIImage {
         p_setUpImageContext()
         
         img.draw(in: rect)
@@ -331,7 +331,7 @@ public extension CSSwift where Base: UIImage {
     }
     
     // Add image watermark via center and size
-    public func imageWithWatermark(img: UIImage,
+    func imageWithWatermark(img: UIImage,
                                    center: CGPoint,
                                    size: CGSize) -> UIImage {
         let rect = CGRect(x: center.x - size.width / 2,
@@ -343,7 +343,7 @@ public extension CSSwift where Base: UIImage {
     }
     
     // Text
-    public func imageWithWatermark(text: String,
+    func imageWithWatermark(text: String,
                                    point: CGPoint,
                                    font: UIFont,
                                    color: UIColor = .white) -> UIImage {
@@ -353,7 +353,7 @@ public extension CSSwift where Base: UIImage {
             .font: font,
             .paragraphStyle: paraStyle,
             .foregroundColor: color
-        ] as [NSAttributedStringKey: Any]
+        ] as [NSAttributedString.Key: Any]
         return imageWithWatermark(text: text, point: point, attributes: attributes)
     }
     
@@ -368,9 +368,9 @@ public extension CSSwift where Base: UIImage {
      ]
      imageWithWatermark(text: text, point: point, attributes: attributes)
      */
-    public func imageWithWatermark(text: String,
+    func imageWithWatermark(text: String,
                                    point: CGPoint,
-                                   attributes: [NSAttributedStringKey: Any]?) -> UIImage {
+                                   attributes: [NSAttributedString.Key: Any]?) -> UIImage {
         p_setUpImageContext()
         
         (text as NSString).draw(at: point, withAttributes: attributes)
@@ -404,7 +404,7 @@ public extension CSSwift where Base: UIImage {
 // MARK: - 微信分享缩略图
 public extension CSSwift where Base: UIImage {
     
-    public var wechatShareThumbnail: UIImage {
+    var wechatShareThumbnail: UIImage {
         var scale: CGFloat = 0
         var isNeedCut = false
         var imageSize = CGSize.zero
@@ -441,7 +441,7 @@ public extension CSSwift where Base: UIImage {
         }
         
         let image = p_thumbnailWithSize(targetSize: imageSize, isNeedCut: isNeedCut)
-        let imageData = UIImageJPEGRepresentation(image, 0.4)
+        let imageData = image.jpegData(compressionQuality: 0.4)
         return UIImage(data: imageData!)!
     }
     
