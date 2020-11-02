@@ -1,0 +1,33 @@
+{
+  "name": "CSSwiftExtension",
+  "version": "0.2.0",
+  "summary": "Some ***useful extension for Swift*** to boost your productivity.",
+  "description": "Some ***useful extension for Swift*** to boost your productivity.\nIncluding Foundation, UIKit.",
+  "homepage": "https://github.com/icetime17/CSSwiftExtension",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE.md"
+  },
+  "authors": {
+    "Chris Hu": "icetime017@gmail.com"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source": {
+    "http": "http://iosframeworkserver-shopkeeperclient.app.2dfire.com/download/CSSwiftExtension/0.2.0.zip",
+    "type": "zip"
+  },
+  "source_files": [
+    "CSSwiftExtension.framework/Headers/*",
+    "CSSwiftExtension.framework/Versions/A/Headers/*"
+  ],
+  "requires_arc": true,
+  "swift_versions": "5.0",
+  "vendored_frameworks": "CSSwiftExtension.framework",
+  "public_header_files": [
+    "CSSwiftExtension.framework/Headers/*",
+    "CSSwiftExtension.framework/Versions/A/Headers/*"
+  ],
+  "swift_version": "5.0"
+}
